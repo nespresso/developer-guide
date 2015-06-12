@@ -1,4 +1,4 @@
-Base::Application.routes.draw do
+DeveloperGuide::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   scope '(:locale)', locale: /en|de/ do

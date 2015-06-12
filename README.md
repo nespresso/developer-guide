@@ -1,4 +1,4 @@
-# TITLE
+# Accessibility Developer Guide
 
 TODO: Add badges!
 
@@ -14,8 +14,8 @@ Recommended environment:
 
 Setup:
 
-- `$ git clone git@github.com:GITHUB/PROJECT.git`
-- `$ cd PROJECT`
+- `$ git clone git@github.com:Access4all/developer-guide.git`
+- `$ cd developer-guide`
 - `$ bundle install`
 
 You can use [direnv](https://github.com/zimbatm/direnv) to automatically add `bin` to your `$PATH`. Otherwise you should always use `bundle exec` to run commands.

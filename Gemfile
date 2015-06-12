@@ -74,6 +74,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw] # Timezone Data for T
 
 gem 'wannabe_bool' # Converts strings, integers, etc. intuitively to boolean values
 
+gem 'rollbar', '~> 1.5.1' # Exception tracking
+
 group :doc do
   gem 'sdoc', require: false # bundle exec rake doc:rails generates the API under doc/api.
 end

@@ -1,7 +1,7 @@
 ---
 en:
   app:
-    name: Base
+    name: Accessibility Developer Guide
   buttons:
     save: Save
   'false': 'No'
@@ -25,9 +25,9 @@ en:
       toggle_navigation: Menu
   pages:
     about:
-      title: About Base
+      title: About
     home:
-      title: Welcome to Base!
+      title: Accessibility Developer Guide
     news:
       title: Latest news
     statistics:

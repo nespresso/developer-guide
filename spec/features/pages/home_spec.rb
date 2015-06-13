@@ -5,7 +5,7 @@ describe 'Showing the home page' do
 
   it 'displays a welcome message' do
     within 'main' do
-      expect(page).to have_content 'Welcome to Base!'
+      expect(page).to have_content 'Accessibility Developer Guide'
     end
   end
 end

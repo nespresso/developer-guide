@@ -4,15 +4,15 @@ describe 'Page title, headline and flash' do
   it 'displays the page title and the headline on the home page' do
     visit root_path
 
-    expect(page).to have_title 'Welcome to Base!'
-    expect(page).to have_css 'main h1', text: 'Welcome to Base!'
+    expect(page).to have_title 'Accessibility Developer Guide'
+    expect(page).to have_css 'main h1', text: 'Accessibility Developer Guide'
   end
 
   it 'displays the page title and the headline on other pages' do
     visit page_path('about')
 
-    expect(page).to have_title 'About Base - Base'
-    expect(page).to have_css 'main h1', text: 'About Base'
+    expect(page).to have_title 'About - Accessibility Developer Guide'
+    expect(page).to have_css 'main h1', text: 'About'
   end
 
   context 'with flash' do
@@ -20,7 +20,7 @@ describe 'Page title, headline and flash' do
       visit root_path
       click_button 'Sign in' # Trigger validation error
 
-      expect(page).to have_title 'Alert: Invalid login or password. Sign in - Base'
+      expect(page).to have_title 'Alert: Invalid login or password. Sign in - Accessibility Developer Guide'
       within 'main' do
         expect(page).to have_css 'h1', text: 'Sign in'
         expect(page).to have_content 'Alert: Invalid login or password'

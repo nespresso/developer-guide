@@ -7,7 +7,7 @@ describe 'Navigation' do
       visit root_path
 
       within 'nav' do
-        expect(page).to have_link 'Base'
+        expect(page).to have_link 'Accessibility Developer Guide'
       end
     end
 

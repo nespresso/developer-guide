@@ -42,16 +42,16 @@ describe 'Accessibility' do
   describe 'page title' do
     it "displays the app name suffix on every page except the home page" do
       visit root_path
-      expect(page).to have_title 'Welcome to Base!'
+      expect(page).to have_title 'Accessibility Developer Guide'
 
       visit page_path('about')
-      expect(page).to have_title 'About Base - Base'
+      expect(page).to have_title 'About - Accessibility Developer Guide'
     end
 
     it 'prepends flash messages' do
       visit new_user_registration_path
       click_button 'Sign up'
-      expect(page).to have_title 'Alert: User could not be created. Sign up - Base'
+      expect(page).to have_title 'Alert: User could not be created. Sign up - Accessibility Developer Guide'
     end
   end
 end

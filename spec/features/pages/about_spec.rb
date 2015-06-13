@@ -5,7 +5,7 @@ describe 'Showing about page' do
 
   it 'displays a welcome message' do
     within 'main' do
-      expect(page).to have_content 'About Base'
+      expect(page).to have_content 'About'
     end
   end
 end

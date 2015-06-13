@@ -7,11 +7,16 @@ html lang=I18n.locale
     meta name="description" content="#{yield(:description)}"
 
     = stylesheet_link_tag    'application', media: 'all'
+    = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css'
+    /[if lt IE 9]
+      = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.ie.min.css'
+
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
   body class=body_css_classes
     == render 'layouts/jump_links'
+    == render 'layouts/fork_me'
 
     header
       h1.sr-only = t '.header'

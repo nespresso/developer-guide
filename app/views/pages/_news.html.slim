@@ -3,9 +3,12 @@ h2.sr-only = t '.title'
 = accordion :news do |accordion|
   = accordion.panel do |panel|
     = panel.title do
-      time datetime="2015-4-26" 26th April 2015
+      time datetime="2015-5-12" June 12th 2015
       => fa_icon 'newspaper-o'
-      | Some great tagline
+      | Finally online
 
     = panel.body do
-      | And some great news here...
+      markdown:
+        After being used during workshops for some time and being checked out by some selected web developers, the Accessibility Developer Guide is now publicly available to everyone interested.
+
+        Hooray! Let's make the web accessible for everybody!

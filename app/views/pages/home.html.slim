@@ -2,5 +2,40 @@
 = headline_with_flash
 
 .row
-  .col-sm-8 == render 'news'
-  .col-sm-4 == render 'statistics'
+  .col-md-8
+    markdown:
+      With this pragmatic guide you'll learn how to use a [screenreader](https://en.wikipedia.org/wiki/Screen_reader) in only a few hours. It was **written specifically for web developers** who want to build [accessible websites](https://en.wikipedia.org/wiki/Web_Accessibility_Initiative), but it will be useful for anyone else interested in learning a screenreader. It's easy, we promise!
+
+      ## Why this guide?
+
+      For sighted users, **it's not trivial to enter the world of the blind**, where all visual information must be transformed somehow to the auditive channel. This guide is written by me, [Joshua](/pages/about_us), a sighted web developer who already spent a lot of time learning how to create accessible websites using screenreaders (among other tools), and I want to share my knowledge, "Heureka!" moments, workflows, techniques, and concrete recipes with you. This means you won't have to go through all the hassle I had to, and you will become an accessibility crack in no time! :-)
+
+      All the informations and examples in this guide are counter-checked by [Daniele](/pages/about_us), [Petra](/pages/about_us), and [Gianfranco](/pages/about_us), who are blind accessibility consultants and hence very experienced screenreader users.
+
+      ## What you will get
+
+      Here you'll learn in a very pragmatic way many important things you need to know when creating accessible websites. We'll provide you with sensible examples that you can experiment with so you get a profound feeling about what's needed to make a website accessible.
+
+      We'll focus on screenreader usage, as it covers most of the important topics. Some other tools may be discussed, too.
+
+      ## Contribute!
+
+      This guide is open source! Contribute to it by forking it on GitHub.
+
+  .col-md-4
+    .alert.alert-warning
+      h2.sr-only Disclaimer
+
+      markdown:
+        **Notice: this guide is (and always will be) heavy work in progress!**
+
+        The web is a quickly evolving place, and so is the topic of accessibility. We are striving to keep this guide up to date and invest a lot of effort into it.
+
+        Alas, we are only providing our own opinions here. They are based on profound experience with the topic as both developers and users. They may not always be the "best" solutions in every situation, and certainly they are not the only solutions available. But we are sure they'll prove helpful in most cases.
+
+        So we don't claim this guide to be based on any "hard, scientific facts".
+
+        Please keep this in mind while reading our guide.
+
+    == render 'news'
+    == render 'statistics'

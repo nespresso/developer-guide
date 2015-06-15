@@ -1,0 +1,22 @@
+#introduction aria-hidden="true"
+  / i18n-tasks-use t('.title')
+  = headline_with_flash 'Block vs. inline content'
+
+  markdown:
+    - Browse the following block and inline elements using `Ctrl + ↓/↑`
+    - What is treated as block? What is treated inline?
+
+    By the way, `span`s have a red translucent background and `div`s a yellow translucent one.
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'gbzvzL'
+
+#conclusion aria-hidden="true"
+  markdown:
+    - NVDA respects the block's `display` attribute
+    - A `br` (or any block element) makes NVDA treat the content before and the content after like blocks
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

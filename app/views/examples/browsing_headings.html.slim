@@ -1,0 +1,26 @@
+#introduction aria-hidden="true"
+  / i18n-tasks-use t('.title')
+  = headline_with_flash 'Browsing headings'
+
+  markdown:
+    - Use `H` and `Shift + H` to jump to the next / previous heading
+    - Use `1` and `Shift + 1` to jump to the next / previous heading 1 (you can do that up to heading 6 with the respective number key)
+    - Use `Insert + F7`, followed by `Option + H`, to open the headings outline
+
+    [CSS counters](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Counters) are used to generate the hierarchical heading numbers (superscripted at the end of each heading).
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'MYGQXB'
+
+#conclusion aria-hidden="true"
+  markdown:
+    - Headings are the most common way to navigate within web pages
+    - Headings are announced with their level
+    - Skipping heading levels is bad style (#{link_to 'HTML5 heading outlines', 'https://developer.mozilla.org/de/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document'} are not yet supported by NVDA)
+    - When browsing using `↓` or `↑`, the element's meta data is read **before** the element's content (<q>Heading level 1. Programming languages.</q>)
+    - When targetting headings directly using `h` or `1` to `6`, the element's meta data is read **after** the element's content (<q>Programming languages. Heading level 1.</q>)
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

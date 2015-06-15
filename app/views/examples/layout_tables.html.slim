@@ -1,0 +1,25 @@
+#introduction aria-hidden="true"
+  / i18n-tasks-use t('.title')
+  = headline_with_flash 'Layout tables'
+
+  markdown:
+    - Nobody uses layout tables anymore \*cough*
+    - Still, there are ancient pages online using this technique
+    - Navigate through the following three tables! What does the screen reader announce in addition to the individual table cells' contents?
+
+    Notice: the headings in the example are hidden using `aria-hidden="true"`.
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'azGqar'
+
+#conclusion aria-hidden="true"
+  markdown:
+    ## Conclusion
+
+    - Tables are interpreted by NVDA as layout tables when:
+      - they don't have any `thead` nor `th` elements
+      - and (in addition) they don't have "full" border
+    - Note: there may be even more sophisticated heuristics involved in detecting layout tables!
+    - Layout tables are not announced by NVDA as tables

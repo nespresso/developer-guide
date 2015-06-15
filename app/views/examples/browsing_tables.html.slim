@@ -1,0 +1,23 @@
+#introduction aria-hidden="true"
+  / i18n-tasks-use t('.title')
+  = headline_with_flash 'Browsing tables'
+
+  markdown:
+    - Use `Ctrl + Alt + ↓`, `Ctrl + ↑`, `Ctrl + Alt + ←` and `Ctrl + →` to browse tables
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'zxjRLb'
+
+#conclusion aria-hidden="true"
+  markdown:
+    - NVDA announces the content of the `summary` attribute, if available
+    - NVDA announces each data cell with the corresponding heading information(s)
+    - For good linearization of table data:
+      - data tables must always have a `thead` with `th` elements for column captions
+      - it's highly recommended that each data row also has an identifying `th` element (in the standard example above, it's the ID)
+    - Don't over-use stuff like `rowspan` and `colspan`!
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

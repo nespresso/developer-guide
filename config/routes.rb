@@ -13,6 +13,9 @@ DeveloperGuide::Application.routes.draw do
       get code, to: 'errors#show', code: code
     end
 
+    get '/examples/:view', to: 'examples#show',
+                           as: 'example'
+
     get '/pages/:view', to: 'pages#show',
                         as: 'page'
 

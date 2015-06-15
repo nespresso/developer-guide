@@ -1,0 +1,34 @@
+#introduction aria-hidden="true"
+  / i18n-tasks-use t('.title')
+  = headline_with_flash 'Empty page'
+
+  markdown:
+    To a screen reader, this page appears as a completely empty page. You notice this because your screen reader stops reading aloud after saying something similar to:
+    
+    > "Empty page. Document. Blank."
+    
+    This - by the way - is the webpage's `<title>`, the type of the displayed info (<q>Document</q>), and the non-existent content of the info (<q>Blank</q>).
+    
+    "Why doesn't my screen reader continue reading the stuff I see here on this page?", you may ask.
+
+    Here's the reason: every example page will have a short introductory section on top which is hidden from screen readers. This is done using the `aria-hidden="true"` attribute (which we will learn more about later).
+
+    The whole content you are reading now is in exactly this introductory section.
+
+    You can press `Ctrl + Option + X` anytime to toggle a visual debug mode which shows some information about the accessibility features used in the current example. Try this out now!
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+br
+
+#conclusion aria-hidden="true"
+  markdown:
+    ## Conclusion
+
+    - After a page refresh, NVDA always announces the webpage's `<title>`, followed by <q>Document</q>, followed by the page's content
+    - If there's no content, NVDA announces <q>Blank</q>
+    - Content can be hidden from screenreaders using the `aria-hidden="true"` attribute
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

@@ -1,0 +1,26 @@
+#introduction aria-hidden="true"
+  / i18n-tasks-use t('.title')
+  = headline_with_flash 'Browsing paragraphs'
+
+  markdown:
+    - Use the `↓` and `↑` keys to browse line by line (max. 100 characters)
+    - Use `Ctrl + ↓` and `Ctrl + ↑` to browse block by block
+
+    **By the way:** Simply hover with your mouse over the example to display a link to the example code on [Codepen.io](http://www.codepen.io), where you can play around with it online!
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'yyjbqq'
+
+#conclusion aria-hidden="true"
+  markdown:
+    ## Conclusion
+
+    - You can read content line by line (max. 100 characters) or block by block
+    - There's no way to browse sentence by sentence
+    - NVDA doesn't jump to the beginning of the document automatically when it reaches its end
+    - As you can see when toggling visual debug mode (`Ctrl + Option + X`), this conclusion section is also hidden from screen readers
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

@@ -12,6 +12,10 @@ $(document).ready ->
   # Bootstrap tooltips
   $('[title]').tooltip()
 
+  $(document).bind 'keydown', (event) ->
+    if event.altKey and event.ctrlKey and event.which is 88 # Ctrl-Alt-X
+      $('html').toggleClass('debug')
+
   # Fancybox
   $('a.fancybox').fancybox
     openSpeed: 0

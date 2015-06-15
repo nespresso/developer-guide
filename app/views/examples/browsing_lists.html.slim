@@ -1,0 +1,25 @@
+#introduction aria-hidden="true"
+  / i18n-tasks-use t('.title')
+  = headline_with_flash 'Browsing lists'
+
+  markdown:
+    - Use the `↓` and `↑` keys to browse line by line
+    - Use `Ctrl + ↓` and `Ctrl + ↑` to browse block by block
+    - Use `L` and `Shift + L` to jump to the next / previous list
+    - Use `I` and `Shift + I` to jump to the next / previous list item
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'NPMyBw'
+
+#conclusion aria-hidden="true"
+  markdown:
+    - Lists are announced when entering and exiting them
+    - The number of items is announced
+    - Definition lists are not distinguished from normal lists (and `dt` and `dd` are announced the same way)
+      - `I` also only jumps between `dt` elements ([NVDA issue #3858](http://community.nvda-project.org/ticket/3858))
+    - TODO: HOW IS IT POSSIBLE TO JUMP TO THE NEXT ITEM ON THE SAME LEVEL IN A NESTED LIST? => JAWS can do this, but NVDA??
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

@@ -1,0 +1,26 @@
+#introduction aria-hidden="true"
+  / i18n-tasks-use t('.title')
+  = headline_with_flash 'Links in action'
+
+  markdown:
+    - Navigate through the following paragraphs and lists with links in it (`↓` / `↑` and `Ctrl + ↓` / `Ctrl + ↑`)
+    - Use `Tab` and `Shift + Tab` to navigate through the links in the currently focused block
+    - Use `Insert + F7` to open the links list
+    - Use `K` to jump to the next link
+    - Use `V` to jump to the next visited link
+    - Use `U` to jump to the next unvisited link
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'gbzvBg'
+
+#conclusion aria-hidden="true"
+  markdown:
+    ## Conclusion
+
+    - Links need descriptive captions (something like "More" isn't of much use when it's provided out of context, e.g. in the links list) << TODO: In fact, according to WCAG this IS in context!
+    - Links with the same text and/or target should be avoided
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

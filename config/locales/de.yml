@@ -14,15 +14,16 @@ de:
       home_page: Zur Startseite springen
       navigation: Zur Navigation springen
     navigation:
-      choose_language: Sprache wählen
       content_navigation: Inhaltsnavigation
       current_group: aktuelle Menügruppe
       current_item: aktueller Menüpunkt
-      meta_navigation: Benutzernavigation
       navigation: Navigation
+      toggle_navigation: Menü
+    meta_navigation:
+      choose_language: Sprache wählen
+      meta_navigation: Benutzernavigation
       show_account: Konto anzeigen
       sign_up: Registrieren
-      toggle_navigation: Menü
   pages:
     about:
       title: "Über Base"

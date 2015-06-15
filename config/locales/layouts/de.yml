@@ -3,9 +3,10 @@ de:
   layouts:
     navigation:
       about: "Über"
+      home: A11y Dev Guide
+    meta_navigation:
       admin: Admin
       edit_account: Konto bearbeiten
-      home: A11y Dev Guide
       log_out: Abmelden
       sign_in: Anmelden
       user_menu: Benutzer Menü

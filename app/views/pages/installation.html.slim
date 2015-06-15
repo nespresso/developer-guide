@@ -1,0 +1,113 @@
+/ i18n-tasks-use t('.title')
+= headline_with_flash 'Preparation'
+
+markdown:
+  Most of this guide is about learning how to use a screenreader.
+
+  ## Why a screenreader?
+
+  - Screenreaders don't simply read aloud websites with CSS and JavaScript disabled (like a text browser kinda does)
+  - Screenreaders rely exactly on the same website data like other web browsers do (including custom CSS and JavaScript), in fact: a screenreader runs on top of a "normal" web browser (e.g. Firefox)!
+  - Conclusion: you won't get around learning how to use a screenreader if you want to design modern accessible websites
+
+  ## Our screenreader of choice: NVDA
+
+  - Most blind internet surfers are using [NVDA](http://www.nvaccess.org/) or [JAWS](http://www.freedomscientific.com/Products/Blindness/Jaws)
+  - NVDA is free and more compliant to the specs, so we're using NVDA as reference
+
+  ## NVDA installation
+
+  - [Download NVDA](http://www.nvaccess.org/download/) and [install it](http://community.nvda-project.org/documentation/userGuide.html#toc9) (→ help, #{link_to "I don't use Windows!", page_path('i_dont_use_windows')})
+  - [Download Focus Highlight Plugin](http://addons.nvda-project.org/addons/focusHighlight.en.html) and install it
+    - This plugin shows a red border for focusable and a green border for non-focusable elements when NVDA is reading them
+
+  ## Starting NVDA (and make it shut up on demand)
+
+  - You can start and restart NVDA any time by pressing the `Ctrl + Option + N`
+  - After clicking away the start screen, you won't see much of NVDA except a small icon in the system tray
+  - After launching NVDA, it will begin talking and talking whatever your current focus lies on the screen:
+      - You can make it shut up for the time being by pressing the `Ctrl` key
+      - Whenever you move the focus though (e.g. by moving your mouse), NVDA will begin talking again!
+      - To make NVDA completely shut up:
+          - You can shut it down: In the NVDA menu (which opens by pressing `Insert + N`), select `(E)xit`
+          - You can change speech mode to "beep" or "off" by pressing `Insert + S` repeatedly → be aware that NVDA is still running and intercepting your key presses!
+
+  ## NVDA Configuration
+
+  ### Disable mouse focus
+
+  As visually non-impaired developers, we usually want to rely on using the mouse sometimes. To avoid NVDA brabbling like hell when moving it, we disable mouse focus like so:
+
+  - In the NVDA menu, choose `(P)references` → `(M)ouse settings`
+  - Disable `Enable mouse tracking` and press `Enter`
+
+  ### Stop reading and reading (and reading and reading...) automatically
+
+  NVDA by default reads everything from the position of the focus onwards down (e.g. when refreshing a webpage). This is not what developers usually want.
+
+  - In the NVDA menu, choose `(P)references` → `(B)rowse mode`
+  - Disable `Automatic say all on page load` and press `Enter`
+
+  Now NVDA stops after reading the current element.
+
+  ### A bearable voice synthesizer (optional)
+
+  The standard NVDA voice synthesizer is a bit hard to understand, so let's install a nicer, more natural one.
+
+  - [Download Microsoft Speech Platform - Runtime (x86)](http://www.microsoft.com/en-us/download/details.aspx?id=27225) and install it
+  - [Download Microsoft Speech Platform - Runtime Languages](http://www.microsoft.com/en-us/download/confirmation.aspx?id=27224) and install them (my favorites are `MSSpeech_TTS_en-US_ZiraPro` for english and `MSSpeech_TTS_de-DE_Hedda` for german)
+  - In the NVDA menu, choose `(P)references` → `(S)ynthesizer` (or simply press `P` and then `S`)
+  - As synthesizer, choose `Microsoft Speech Platform` and press `Enter`
+  - In the NVDA menu, choose `(P)references` → `(V)oice settings`, choose your desired voice, and press `Enter`
+
+  While this voice synthesizer sounds more natural, it tends to be slower. It might be a good idea to think about switching back to the original voice after you have accustomed a bit to NVDA and maybe want to let it read out stuff faster.
+
+  ### GUI language
+
+  You can choose the language of NVDA itself (the GUI, not the voice).
+
+  - In the NVDA menu, choose `(P)references` → `(G)eneral settings`
+  - Choose your desired language (I suggest you're using `English, en` to be able to easily follow this guide)
+
+  ### Keyboard layout
+
+  There's a "Desktop" and a "Laptop" layout. For this guide, "Laptop" is used.
+
+  - In the NVDA menu, choose `(P)references` → `(K)eyboard settings`
+  - Choose "laptop" as keyboard layout
+
+  ## Keyboard vs. mouse
+
+  - There are 3 typical user types:
+    - General users who use keyboard and mouse (while seeing the screen)
+    - People with motoric impairments who often only use a keyboard (while seeing the screen)
+    - Blind people who only use a keyboard (while - evidently - **not** seeing the screen)
+  - **Each and every piece** of your website has to be accessible to all 3 users, and the stuff displayed on screen should always reflect what you are doing with either keyboard or mouse!
+  - So you should learn #{link_to 'how to control a computer using the keyboard only', page_path('keyboard_navigation_basics')}
+  - Keep in mind: When NVDA is active, it intercepts the key strokes and may alter existing functionality or add new one! So don't be surprised when the computer sometimes behaves differently when controlling it with the keyboard while NVDA is activated.
+
+  ## Which browser to use?
+
+  - Most NVDA users browse with Internet Explorer or [Firefox](http://www.mozilla.com/en-US/firefox)
+  - For development, Firefox surely is a good choice, but be sure to test your stuff on Internet Explorer, too!
+    - NVDA accesses the accessibility layer of the chosen browser
+    - This means: NVDA behaves differently depending on the browser (or whatever application) used
+  - Chrome (at the time being) sadly is no browser of choice in this respect
+
+  ## Let's browse some web now!
+
+  At this point, you're ready to use NVDA. Continue with this guide and...
+
+  - #{link_to 'Learn how to browse websites', page_path('browsing')}
+  - #{link_to 'Learn how to use forms (TODO)', page_path('forms')}
+  - #{link_to 'Learn how to browse images (TODO)', page_path('images')}
+  - #{link_to 'Learn how to handle JavaScript (TODO)', page_path('javascript')}
+  - More to come
+
+  Should you already basically know how to use NVDA, you may be interested in:
+
+  - How an experienced screenreader user approaches a new website (TODO)
+
+  If you are interested in more general tips for daily programming with accessibility in mind, check out the following links:
+
+  - #{link_to 'Linearize full pages into text (or: How a screenreader perceives a page', page_path('linearize_full_page')}

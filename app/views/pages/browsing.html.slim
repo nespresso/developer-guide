@@ -1,0 +1,22 @@
+/ i18n-tasks-use t('.title')
+= headline_with_flash 'Browsing a website with NVDA'
+
+markdown:
+  Look at the following tutorials to gain a first idea on how to control a screenreader.
+
+  Each tutorial is very small and narrowed to the specific topic. This is to make the experience as easy and enjoyable as possible.
+
+  After you have some experience with controlling a screenreader, you will be ready to check out bigger websites (which often times are not optimised for screenreaders and therefore are difficult to use).
+
+  Make your way through all the links below. Make sure that you have fired up NVDA when opening them (start NVDA using `Ctrl + Option + N`), and you may want to have the Speech Viewer window open, too (in the NVDA menu, choose `(T)ools` → `(S)peech viewer`).
+
+  - #{link_to 'Browsing an empty page', page_path('browsing_an_empty_page')}
+  - #{link_to 'Browsing paragraphs', page_path('browsing_paragraphs')}
+  - #{link_to 'Block vs. inline', page_path('block_vs_inline')}
+  - #{link_to 'Browsing lists', page_path('browsing_lists')}
+  - #{link_to 'Browsing headings', page_path('browsing_headings')}
+  - #{link_to 'Links in action', page_path('links_in_action')}
+  - #{link_to 'Layout tables', page_path('layout_tables')}
+  - #{link_to 'Browsing tables', page_path('browsing_tables')}
+
+  You made your way until here? Congrats, now we want to #{link_to 'play with some web forms', page_path('forms')}!

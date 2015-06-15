@@ -1,0 +1,19 @@
+/ i18n-tasks-use t('.title')
+= headline_with_flash 'Linearize full pages into text'
+
+markdown:
+  Or: "How a screenreader perceives a page"
+
+  This is very useful to convert a page into a full 1:1 transcript of how NVDA perceives and outputs it.
+
+  ## Preparation
+
+  - In the NVDA menu, choose `(P)references` → `(S)ynthesizer`
+  - Choose "No speech" as synthesizer
+  - In the NVDA menu, choose `(T)ools` → `(S)peech viewer` to display the "NVDA Speech Viewer" window
+
+  ## Linearize!
+
+  - Place the browse cursor at the beginning of the page (`Ctrl + Home`, or `Fn + Up` multiple times on a Mac)
+  - Press `NVDA + A` to make NVDA browse the whole page and dump the output in the speech viewer window
+  - If you find it hard to find the start point of the output in the speech viewer window after the output was generated, press `NVDA + T` (which outputs the window name) multiple times to generate an easy to recognise start point

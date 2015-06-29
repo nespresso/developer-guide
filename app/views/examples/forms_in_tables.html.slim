@@ -1,0 +1,30 @@
+#introduction aria-hidden="true"
+  / i18n-tasks-use t('.title')
+  = headline_with_flash 'Playground'
+
+  markdown:
+    - Complex forms may be marked up as tables
+    - Use `Ctrl + Alt + ↓`, `Ctrl + ↑`, `Ctrl + Alt + ←` and `Ctrl + →` to browse tables
+    - Use `Tab` to navigate through the form fields
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'aOyVEZ'
+
+#conclusion aria-hidden="true"
+  markdown:
+    ## Conclusion
+
+    - Every requirement that applies to accessible forms and tables also applies when mixing them:
+        - Every form fields needs a label
+        - Every table row needs at least one of these:
+            - A horizontal header
+            - A vertical header
+        - Use stuff like `rowspan` and `colspan` sparingly
+    - `<label>` elements can be used as contents of table headers
+    - The `summary` attribute can be used for tables (TODO: example!)
+    - `<fieldset>`/`<legend>` combos can be applied around tables (TODO: example!)
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

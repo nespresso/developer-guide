@@ -4,13 +4,13 @@
 .row
   .col-md-8
     markdown:
-      With this pragmatic guide you'll learn how to use a [screenreader](https://en.wikipedia.org/wiki/Screen_reader) in only a few hours. It was **written specifically for web developers** who want to build [accessible websites](https://en.wikipedia.org/wiki/Web_Accessibility_Initiative), but it will be useful for anyone else interested in learning a screenreader. It's easy, we promise!
+      With this pragmatic guide you'll learn how to use a [screenreader](https://en.wikipedia.org/wiki/Screen_reader) in only a few hours. It is **written for physically non-impaired web developers** who want to build [accessible websites](https://en.wikipedia.org/wiki/Web_Accessibility_Initiative), but it will be useful for anyone else interested in learning a screenreader. It's easy, we promise!
 
       ## Why this guide?
 
-      My name is [Joshua](/pages/about_us), and **I am a sighted web developer**. I'm working for the foundation [Access for all](http://www.access-for-all.ch/), which targets to make the internet an accessible place. I already spent a lot of time learning how to create accessible websites, and I know this is not a trivial topic. So **I want to share my full knowledge with you** to make your life easier.
+      My name is #{link_to 'Joshua', page_path('about', anchor: 'joshua')}, and **I am a sighted web developer**. I'm working for the foundation [Access for all](http://www.access-for-all.ch/), which targets to make the internet an accessible place. I already spent a lot of time learning how to create accessible websites, and I know this is not a trivial topic. So **I want to share my full knowledge with you** to make your life easier.
 
-      Everything in this **guide is counter-checked by my blind co-workers** (#{link_to 'Daniele, Petra, and Gianfranco', page_path('about_us')}), who are very experienced accessibility consultants.
+      Everything in this **guide is counter-checked by my blind co-workers** (#{link_to 'Daniele', page_path('about', anchor: 'daniele')}, #{link_to 'Petra', page_path('about', anchor: 'petra')}, and #{link_to 'Gianfranco', page_path('about', anchor: 'petra')}), who are very experienced accessibility consultants.
 
       ## What you will get
 
@@ -24,27 +24,25 @@
     .alert.alert-info
       h2.sr-only Contribute!
       markdown:
-        **This guide is open source**.
-
-        Contribute by clicking the "Fork me on GitHub" banner on the top right!
+        **This guide is open source**. Contribute by clicking "Fork me on GitHub" on top of this page!
 
     .alert.alert-warning
       h2.sr-only Disclaimer I
 
       markdown:
-        **This guide is heavy work in progress (and it always will be).**
-
-        We are providing our own opinions here, based on profound experience as both users and developers. We don't claim them to be the only (let alone the "best") solutions.
-
-        But we know what we're doing, and we also know the official stuff like the [WCAG 2.0](https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines) pretty well.
+        **This guide is heavy work in progress** (and it always will be). We are providing our own opinions and best practices here. They are based on profound experience as both users and developers of websites and built upon knowledge of the official resources like [WCAG 2.0](https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines).
 
     .alert.alert-danger
       h2.sr-only Accessibility disclaimer
 
       markdown:
-        **This guide itself may not be 100% accessible.**
+        **This guide itself may not be 100% accessible.** While general efforts are taken to make this guide accessible, it is written for "typical", physically non-impaired web developers.
 
-        While general efforts are taken to make this guide accessible, it is written for "typical" web developers without impairments.
+    .alert.alert-success
+      h2.sr-only Support
+
+      markdown:
+        **This guide doesn't finance itself.** We put a lot of effort into this guide. Show your appreciation and make a donation using [PayPal](https://www.paypal.com/ch/cgi-bin/webscr?cmd=_flow&SESSION=fUcUo64rzRLlk5B9l6eCYjHwJQTdqXXbBybdbpflCbEqorYJBAZsODLDIC0&dispatch=5885d80a13c0db1f8e263663d3faee8de6030e9239419d79c3f52f70a3ed57ec) or [Pledgie](https://pledgie.com/campaigns/29614)!
 
 .row
   .col-md-12

@@ -17,11 +17,21 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
     .collapse.navbar-collapse
       h3.sr-only = t '.content_navigation'
       = semantic_navigation :content_navigation do |navigation|
-        - navigation.item 'Preparation', page_path('installation')
-        - navigation.item 'Browsing', page_path('browsing')
-        - navigation.item 'Forms', page_path('forms')
-        - navigation.item 'Images', page_path('images')
-        - navigation.item 'JavaScript', page_path('javascript')
+        - navigation.group 'Preparation' do
+          - navigation.item 'Screenreader installation', page_path('installation')
+          - navigation.item "I don't use Windows!", page_path('i_dont_use_windows')
+          - navigation.item 'Keyboard navigation basics', page_path('keyboard_navigation_basics')
+          
+
+        - navigation.group 'Examples' do
+          - navigation.item 'General browsing', page_path('browsing')
+          - navigation.item 'Forms', page_path('forms')
+          - navigation.item 'Images', page_path('images')
+          - navigation.item 'JavaScript', page_path('javascript')
+
+        - navigation.group 'Appendix' do
+          - navigation.item 'Linearize full page into text', page_path('linearize_full_page')
+
         - navigation.item t('.about'), page_path('about')
 
       /== render 'layouts/meta_navigation'

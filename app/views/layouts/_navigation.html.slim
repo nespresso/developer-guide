@@ -25,11 +25,12 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
 
         - navigation.group 'Examples' do
           - navigation.item 'General browsing', page_path('browsing')
-          - navigation.item 'Forms', page_path('forms')
           - navigation.item 'Images', page_path('images')
+          - navigation.item 'Forms', page_path('forms')
           - navigation.item 'JavaScript', page_path('javascript')
 
         - navigation.group 'Appendix' do
+          - navigation.item 'Basic testing workflow', page_path('basic_testing_workflow')
           - navigation.item 'Linearize full page into text', page_path('linearize_full_page')
 
         - navigation.item t('.about'), page_path('about')

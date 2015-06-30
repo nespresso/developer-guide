@@ -17,21 +17,33 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
     .collapse.navbar-collapse
       h3.sr-only = t '.content_navigation'
       = semantic_navigation :content_navigation do |navigation|
+        - navigation.item 'Overview', page_path('overview')
+
         - navigation.group 'Preparation' do
+          - navigation.item 'Overview', page_path('preparation_overview')
+          li role="separator" class="divider"
           - navigation.item 'Screenreader installation', page_path('installation')
           - navigation.item "I don't use Windows!", page_path('i_dont_use_windows')
           - navigation.item 'Keyboard navigation basics', page_path('keyboard_navigation_basics')
           
 
         - navigation.group 'Examples' do
+          - navigation.item 'Overview', page_path('examples_overview')
+          li role="separator" class="divider"
           - navigation.item 'General browsing', page_path('browsing')
           - navigation.item 'Images', page_path('images')
           - navigation.item 'Forms', page_path('forms')
           - navigation.item 'JavaScript', page_path('javascript')
 
-        - navigation.group 'Appendix' do
-          - navigation.item 'Basic testing workflow', page_path('basic_testing_workflow')
+        - navigation.group 'Tools & Workflows' do
+          - navigation.item 'Overview', page_path('tools_and_workflows_overview')
+          li role="separator" class="divider"
           - navigation.item 'Linearize full page into text', page_path('linearize_full_page')
+
+        - navigation.group 'Appendix' do
+          - navigation.item 'Overview', page_path('appendix_overview')
+          li role="separator" class="divider"
+          - navigation.item 'Basic testing workflow', page_path('basic_testing_workflow')
 
         - navigation.item t('.about'), page_path('about')
 

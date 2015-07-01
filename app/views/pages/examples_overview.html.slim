@@ -1,11 +1,44 @@
 / i18n-tasks-use t('.title')
 = headline_with_flash 'Examples overview'
 
-markdown:
-  At this point, you're ready to use NVDA. Continue with this guide and check out our examples which will teach you:
+.row
+  .col-md-9
+    == render 'examples_teaser'
 
-  - #{link_to 'How to browse websites', page_path('browsing')}
-  - #{link_to 'How to use forms', page_path('forms')}
-  - #{link_to 'How to browse images', page_path('images')}
-  - #{link_to 'How to handle JavaScript', page_path('javascript')}
-  - More to come
+    .row
+      .col-md-4
+        h2 = link_to 'How to browse websites', page_path('browsing')
+        == render 'screenreader_installation_teaser'
+
+      .col-md-4
+        h2 = link_to 'How to use forms', page_path('forms')
+        == render 'i_dont_use_windows_teaser'
+
+      .col-md-4
+        h2 = link_to 'How to browse images', page_path('images')
+        == render 'keyboard_navigation_basics_teaser'
+
+    .row
+      .col-md-4
+        h2 = link_to 'How to handle JavaScript', page_path('javascript')
+        == render 'screenreader_installation_teaser'
+
+      .col-md-4
+        markdown:
+          ## More to come!
+
+          We have a lot more in petto! But so much to do and so little time...
+
+  .col-md-3
+    .alert.alert-success
+      h2.sr-only Focus of these examples
+
+      markdown:
+        **Focus on screenreader usage!**
+
+        The following examples' focus mainly lies on screenreader usage.
+
+        You'll learn more about other tools and topics in the "Tools & workshops" section.
+
+p#lets_go
+  = link_to 'This was great action! But what to do in specific situations?', page_path('tools_and_workflows_overview'), class: 'btn btn-warning btn-lg'

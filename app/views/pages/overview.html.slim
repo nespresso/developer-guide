@@ -1,53 +1,49 @@
 / i18n-tasks-use t('.title')
 = headline_with_flash 'Guide overview'
 
-markdown:
-  There's quite some information in this guide. So we grouped it into four parts: preparation, examples, tools & workflows, and the appendix.
-
 .row
   .col-md-9
-    .row
-      .col-md-6
-        markdown:
-          ## Preparation
-
-          To develop accessible websites, some specific tools are needed.
-
-          In this section, we'll show you which tools we use in our daily business, and how they can be configured for optimum performance when developing and testing websites on accessibility.
-
-      .col-md-6
-        markdown:
-          ## Examples
-
-          To develop good websites, one first has to know, what differs a normal website from an accessible website.
-
-          You'll notice that there's not so much difference, and most of it lies in the cleanliness of everyday HTML code - accessibility is no sorcery! Sure, there are more sophisticated topics (e.g. the use of [WAI-ARIA](https://en.wikipedia.org/wiki/WAI-ARIA)), and we'll cover them too.
+    markdown:
+      There's quite some information in this guide. So we grouped it into four parts: "Preparation", "Examples", "Tools & Workflows", and the "Appendix".
 
     .row
       .col-md-6
-        markdown:
-          ## Tools & Workflows
-
-          Much of the "magic" about developing accessible websites (and testing them) boils down to not much more than a handful of tools and a few specific workflows associated to them.
-
-          Here you'll get specific instructions on how to inspect the most common accessibility problems, and how you can elaborate solutions for them.
+        h2 Preparation
+        == render 'preparation_teaser'
 
       .col-md-6
-        markdown:
-          ## Appendix
+        h2 Examples
+        == render 'examples_teaser'
 
-          There are some ever-repeating topics in accessibility, and they are worth to be discussed in more detail.
+    .row
+      .col-md-6
+        h2 Tools & Workflows
+        == render 'tools_and_workflows_teaser'
 
-          So in the appendix you find a collection of interesting articles about various topics.
+      .col-md-6
+        h2 Appendix
+        == render 'appendix_teaser'
 
   .col-md-3
+    .alert.alert-success
+      h2.sr-only Structure of this guide
+      markdown:
+        **Full read vs. reading parts**
+
+        While you can read this guide from beginning to end, we tried to make the different sections as self-standing as possible.
+        
+        You are free to read every page on its own, but we encourage to read the full guide thoroughly.
+
     .alert.alert-info
       h2.sr-only Navigation instructions
       markdown:
-        **How to navigate this guide?**
+        **How to navigate?**
 
-        While you can read this guide from beginning to end (following the golden thread laid out for you), we tried to make the different sections as self-standing as possible, so you are free to read every page in solitude, too.
+        Please use the menu on top of this page to navigate through the different sections. Every menu group has an overview page, which you should read first.
 
-        Please use the menu on top of this page to navigate through the different sections. Every menu item has an overview page, which you should read first.
+        Except the examples, every page has its own entry in its specific submenu.
 
-        With the exception of the examples, every page has its own entry in its specific submenu.
+.row
+  .col-md-9
+    p#lets_go
+      = link_to "Okay, this was interesting, but let's do something now!", page_path('preparation_overview'), class: 'btn btn-warning btn-lg'

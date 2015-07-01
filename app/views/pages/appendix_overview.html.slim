@@ -1,8 +1,31 @@
 / i18n-tasks-use t('.title')
 = headline_with_flash 'Appendix overview'
 
+== render 'appendix_teaser'
+
 markdown:
   We packed some useful resources about various topics into our appendix.
 
   <!-- - How an experienced screenreader user approaches a new website -->
   - #{link_to 'Basic Workflow when testing a website for accessibility', page_path('basic_testing_workflow')}
+
+h2 What to do now?
+
+.row
+  .col-md-4
+    .alert.alert-success
+      h3.sr-only Please support us
+      markdown:
+        **"I'm full of gratitude and want to express it!"**
+
+        So you learned something thanks to this guide and want to give something in return?
+
+        No problem, simply make a donation using [PayPal](https://www.paypal.com/ch/cgi-bin/webscr?cmd=_flow&SESSION=fUcUo64rzRLlk5B9l6eCYjHwJQTdqXXbBybdbpflCbEqorYJBAZsODLDIC0&dispatch=5885d80a13c0db1f8e263663d3faee8de6030e9239419d79c3f52f70a3ed57ec) or [Pledgie](https://pledgie.com/campaigns/29614)! Thank you.
+
+  .col-md-4
+    .alert.alert-warning
+      h3.sr-only Further resources
+      markdown:
+        **Further resources**
+
+        TODO

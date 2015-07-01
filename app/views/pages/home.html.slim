@@ -4,7 +4,7 @@
 .row
   .col-md-8
     markdown:
-      With this pragmatic guide you'll learn how to use a [screenreader](https://en.wikipedia.org/wiki/Screen_reader) in only a few hours. It is **written for physically non-impaired web developers** who want to build [accessible websites](https://en.wikipedia.org/wiki/Web_Accessibility_Initiative), but it will be useful for anyone else interested in learning a screenreader. It's easy, we promise!
+      With this pragmatic guide you'll learn how to develop and test accessible websites. It is **written for physically non-impaired web developers** who want to build [accessible websites](https://en.wikipedia.org/wiki/Web_Accessibility_Initiative), but it will be useful for anyone else interested in learning about [accessibility](https://en.wikipedia.org/wiki/Accessibility).
 
       ## Why this guide?
 
@@ -16,7 +16,7 @@
 
       You'll learn in a very pragmatic way many important things you need to know when creating accessible websites. We'll provide you with **sensible examples** that you can experiment with so you get a profound feeling about what's needed to make a website accessible.
 
-      We'll **focus on screenreader usage**, as it covers the most important topics. Some other tools may be discussed, too.
+      We'll **focus on [screenreader](https://en.wikipedia.org/wiki/Screen_reader) usage** (it's not that hard, you'll see), as it covers most of the important topics. Some other tools will be discussed, too, to give a fuller picture.
 
       This guide is written in a **rather shorthand and technical language**, so good knowledge of [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets), [JavaScript](https://en.wikipedia.org/wiki/JavaScript) and commonly used browser technologies is assumed.
 
@@ -45,6 +45,9 @@
         **This guide doesn't finance itself.** We put a lot of effort into this guide. Show your appreciation and make a donation using [PayPal](https://www.paypal.com/ch/cgi-bin/webscr?cmd=_flow&SESSION=fUcUo64rzRLlk5B9l6eCYjHwJQTdqXXbBybdbpflCbEqorYJBAZsODLDIC0&dispatch=5885d80a13c0db1f8e263663d3faee8de6030e9239419d79c3f52f70a3ed57ec) or [Pledgie](https://pledgie.com/campaigns/29614)!
 
 .row
-  .col-md-12
+  .col-md-8
     p#lets_go
-      = link_to "Stop babbling - let's get our hands dirty!", page_path('overview'), class: 'btn btn-danger btn-lg'
+      = link_to page_path('overview'), class: 'btn btn-success btn-lg' do
+        => icon 'heart'
+        | Start becoming an accessibility expert now
+        =< icon 'heart'

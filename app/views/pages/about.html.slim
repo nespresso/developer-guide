@@ -1,53 +1,71 @@
 / i18n-tasks-use t('.title')
 = headline_with_flash
 
-markdown:
-  This guide is maintained by a small team of web developers and accessibility consultants, employed by the foundation [«Access for all»](http://www.access-for-all.ch).
-
 .row
-  .col-md-6
-    h2 Joshua
+  .col-md-9
+    markdown:
+      This guide is written and maintained by a small team of web developers and accessibility consultants, employed by the foundation [«Access for all»](http://www.access-for-all.ch).
 
     .row
-      .col-md-7
+      .col-md-6
+        h2 Joshua
+
+        = image_tag 'pages/about/joshua.jpg', class: 'img-rounded', alt: 'Portrait of Joshua'
+
         markdown:
-          I'm working as a web developer (frontend and backend) since more than 10 years. My motto has always been: "Good code is clean code is less code is accessible code."
+          I'm working as a web developer (frontend and backend) since more than 10 years. My motto has always been: "**Good code** is **clean code** is **less code** is **accessible code**."
 
-          I'm working for «Access for all» for one year now, and being the first qualified web developer in the team, I'm heavily pushing our services for other web developers, be it creating this guide, holding [workshops](http://www.access-for-all.ch/ch/schulung/kurse-und-seminare.html) or conducting in-house consulting for clients.
+          I'm working for «Access for all» for one year now, and being the first qualified web developer in the team, I'm heavily pushing our services for other web developers, be it creating this guide, holding [workshops for developers](http://www.access-for-all.ch/ch/schulung/kurse-und-seminare.html) or conducting in-house consulting for clients.
 
-      .col-md-5
-        = image_tag 'pages/about/joshua.jpg', class: 'img-rounded'
+      .col-md-6
+        h2 Daniele
 
-  .col-md-6
-    h2 Daniele
+        = image_tag 'pages/about/daniele.jpg', class: 'img-rounded', alt: 'Portrait of Daniele'
 
-    .row
-      .col-md-7
-        markdown:
-          TODO
-
-      .col-md-5
-        = image_tag 'pages/about/daniele.jpg', class: 'img-rounded'
-
-.row
-  .col-md-6
-    h2 Petra
-
-    .row
-      .col-md-7
         markdown:
           TODO
 
-      .col-md-5
-        = image_tag 'pages/about/petra.jpg', class: 'img-rounded'
-
-  .col-md-6
-    h2 Gianfranco
-
     .row
-      .col-md-7
+      .col-md-6
+        h2 Petra
+
+        = image_tag 'pages/about/petra.jpg', class: 'img-rounded', alt: 'Portrait of Petra'
+
         markdown:
           TODO
 
-      .col-md-5
-        = image_tag 'pages/about/gianfranco.jpg', class: 'img-rounded'
+      .col-md-6
+        h2 Gianfranco
+
+        = image_tag 'pages/about/gianfranco.jpg', class: 'img-rounded', alt: 'Portrait of Gianfranco'
+
+        markdown:
+          TODO
+
+  .col-md-3
+    .alert.alert-info
+      h2.sr-only Information about «Access for all»
+      markdown:
+        **What's «Access for all»?**
+
+        «Access for all» is a recognised Swiss non profit organisation. Founded in 2000, it has campaigned for a greater public understanding of the problems concerning the accessibility of information and communication technology, in particular the internet for people with disabilities.
+
+    .alert.alert-warning
+      h2.sr-only Our services
+
+      markdown:
+        **What else can we do for you?**
+        
+        We offer a wide range of services, be it testing websites, holding workshops, lobbying activities, and many more.
+
+        Visit our website to find detailed information.
+
+    .alert.alert-success
+      h2.sr-only Support
+
+      markdown:
+        **We are 100% self-sustained.**
+        
+        We work hard for our money, and as a foundation with a social aim, we often give support at our own expense.
+
+        So if this guide was of any value to you, please show your appreciation and make a donation using [PayPal](https://www.paypal.com/ch/cgi-bin/webscr?cmd=_flow&SESSION=fUcUo64rzRLlk5B9l6eCYjHwJQTdqXXbBybdbpflCbEqorYJBAZsODLDIC0&dispatch=5885d80a13c0db1f8e263663d3faee8de6030e9239419d79c3f52f70a3ed57ec) or [Pledgie](https://pledgie.com/campaigns/29614)!

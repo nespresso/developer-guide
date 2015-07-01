@@ -7,27 +7,29 @@
 
     .row
       .col-md-4
-        h2 = link_to 'How to browse websites', page_path('browsing')
-        == render 'screenreader_installation_teaser'
+        h2 = link_to 'How to browse websites', page_path('browsing_examples')
+        == render 'browsing_examples_teaser'
 
       .col-md-4
-        h2 = link_to 'How to use forms', page_path('forms')
-        == render 'i_dont_use_windows_teaser'
+        h2 = link_to 'How to use forms', page_path('forms_examples')
+        == render 'forms_examples_teaser'
 
       .col-md-4
-        h2 = link_to 'How to browse images', page_path('images')
-        == render 'keyboard_navigation_basics_teaser'
+        h2 = link_to 'What about images?', page_path('images_examples')
+        == render 'images_examples_teaser'
 
     .row
       .col-md-4
-        h2 = link_to 'How to handle JavaScript', page_path('javascript')
-        == render 'screenreader_installation_teaser'
+        h2 = link_to 'How to handle JavaScript', page_path('javascript_examples')
+        == render 'javascript_examples_teaser'
 
       .col-md-4
         markdown:
           ## More to come!
 
           We have a lot more in petto! But so much to do and so little time...
+
+          Give us tailwind by #{link_to 'supporting us', page_path('support_us')}!
 
   .col-md-3
     .alert.alert-success
@@ -40,5 +42,7 @@
 
         You'll learn more about other tools and topics in the "Tools & workshops" section.
 
-p#lets_go
-  = link_to 'This was great action! But what to do in specific situations?', page_path('tools_and_workflows_overview'), class: 'btn btn-warning btn-lg'
+.row
+  .col-md-9
+    p#lets_go
+      = link_to 'This was great action! But what to do in specific situations?', page_path('tools_and_workflows_overview'), class: 'btn btn-warning btn-lg'

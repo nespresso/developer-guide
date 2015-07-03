@@ -1,51 +1,43 @@
 / i18n-tasks-use t('.title')
 = headline_with_flash
 
-.row
-  .col-md-8
-    markdown:
-      With this pragmatic guide you'll learn how to develop and test accessible websites. It is **written for physically non-impaired web developers** who want to build [accessible websites](https://en.wikipedia.org/wiki/Web_Accessibility_Initiative), but it will be useful for anyone else interested in learning about [accessibility](https://en.wikipedia.org/wiki/Accessibility).
-
-      ## Why this guide?
-
-      My name is #{link_to 'Joshua', page_path('about', anchor: 'joshua')}, and **I am a sighted web developer**. I'm working for the foundation [Access for all](http://www.access-for-all.ch/), which targets to make the internet an accessible place. I already spent a lot of time learning how to create accessible websites, and I know this is not a trivial topic. So **I want to share my full knowledge with you** to make your life easier.
-
-      Everything in this **guide is counter-checked by my blind co-workers** (#{link_to 'Daniele', page_path('about', anchor: 'daniele')}, #{link_to 'Petra', page_path('about', anchor: 'petra')}, and #{link_to 'Gianfranco', page_path('about', anchor: 'petra')}), who are very experienced accessibility consultants.
-
-      ## What you will get
-
-      You'll learn in a very pragmatic way many important things you need to know when creating accessible websites. We'll provide you with **sensible examples** that you can experiment with so you get a profound feeling about what's needed to make a website accessible.
-
-      We'll **focus on [screenreader](https://en.wikipedia.org/wiki/Screen_reader) usage** (it's not that hard, you'll see), as it covers most of the important topics. Some other tools will be discussed, too, to give a fuller picture.
-
-      This guide is written in a **rather shorthand and technical language**, so good knowledge of [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets), [JavaScript](https://en.wikipedia.org/wiki/JavaScript) and commonly used browser technologies is assumed.
-
-  .col-md-4
-    .alert.alert-info
-      h2.sr-only Contribute!
-      markdown:
-        **This guide is open source**. Contribute by clicking "Fork me on GitHub" on top of this page!
-
-    .alert.alert-warning
-      h2.sr-only Disclaimer I
-
-      markdown:
-        **This guide is heavy work in progress** (and it always will be). We are providing our own opinions and best practices here. They are based on profound experience as both users and developers of websites and built upon knowledge of the official resources like [WCAG 2.0](https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines).
-
-    .alert.alert-danger
-      h2.sr-only Accessibility disclaimer
-
-      markdown:
-        **This guide itself may not be 100% accessible.** While general efforts are taken to make this guide accessible, it is written for "typical", physically non-impaired web developers.
-
-    .alert.alert-success
-      h2.sr-only Support
-
-      markdown:
-        **This guide doesn't finance itself.** We put a lot of effort into this guide. Please show your appreciation and #{link_to 'support us', page_path('support_us')}!
+markdown:
+  With this pragmatic guide you'll learn how to develop and test accessible websites. It is **written for physically non-impaired web developers** who want to build [accessible websites](https://en.wikipedia.org/wiki/Web_Accessibility_Initiative), but it will be useful for anyone else interested in learning about [accessibility](https://en.wikipedia.org/wiki/Accessibility).
 
 .row
-  .col-md-8
+  .col-md-7
+    p = image_tag 'pages/home/keyboard.jpg', class: 'img-rounded', alt: ''
+    == render 'news'
+
+  .col-md-5
+    .row
+      .col-md-6
+        .alert.alert-info
+          h2.sr-only Contribute!
+          markdown:
+            **This guide is open source**. Contribute by clicking "Fork me on GitHub" on top of this page!
+
+        .alert.alert-warning
+          h2.sr-only Disclaimer
+
+          markdown:
+            **This guide is heavy work in progress** (and it always will be). We are providing our own opinions and best practices here. They are based on profound experience as both users and developers of websites and built upon knowledge of the official resources like [WCAG 2.0](https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines).
+
+      .col-md-6
+        .alert.alert-danger
+          h2.sr-only Accessibility disclaimer
+
+          markdown:
+            **This guide itself may not be 100% accessible.** While general efforts are taken to make this guide accessible, it is written for "typical", physically non-impaired web developers, and it's the nature of the topic that it can't be made accessible for everyone.
+
+        .alert.alert-success
+          h2.sr-only Support
+
+          markdown:
+            **This guide is non-profit.** But we put a lot of effort into creating and maintaining it. Please show your appreciation and #{link_to 'support us', page_path('support_us')}!
+
+.row
+  .col-md-12
     p#lets_go
       = link_to page_path('overview'), class: 'btn btn-success btn-lg' do
         => icon 'heart'

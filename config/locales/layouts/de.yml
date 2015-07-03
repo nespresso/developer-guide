@@ -3,7 +3,7 @@ de:
   layouts:
     navigation:
       about: "Über"
-      home: A11y Dev Guide
+      home: ADG
     meta_navigation:
       admin: Admin
       edit_account: Konto bearbeiten

@@ -17,7 +17,9 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
     .collapse.navbar-collapse
       h3.sr-only = t '.content_navigation'
       = semantic_navigation :content_navigation do |navigation|
-        - navigation.item 'Overview', page_path('overview')
+        - navigation.group 'Overview' do
+          - navigation.item 'Introduction', page_path('introduction')
+          - navigation.item 'General overview', page_path('overview')
 
         - navigation.group 'Preparation' do
           - navigation.item 'Overview', page_path('preparation_overview')
@@ -25,7 +27,6 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
           - navigation.item 'Screenreader installation', page_path('screenreader_installation')
           - navigation.item "I don't use Windows!", page_path('i_dont_use_windows')
           - navigation.item 'Keyboard navigation basics', page_path('keyboard_navigation_basics')
-          
 
         - navigation.group 'Examples' do
           - navigation.item 'Overview', page_path('examples_overview')
@@ -43,9 +44,10 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
         - navigation.group 'Appendix' do
           - navigation.item 'Overview', page_path('appendix_overview')
           li role="separator" class="divider"
-          - navigation.item 'Basic testing workflow', page_path('basic_testing_workflow')
+          - navigation.item 'The golden thread for accessibility testing', page_path('the_golden_thread')
 
-        - navigation.item 'Support us', page_path('support_us')
-        - navigation.item t('.about'), page_path('about')
+        - navigation.group 'More' do
+          - navigation.item 'Support us', page_path('support_us')
+          - navigation.item t('.about'), page_path('about')
 
       /== render 'layouts/meta_navigation'

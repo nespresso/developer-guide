@@ -20,6 +20,11 @@ html lang=I18n.locale
     header
       h1.sr-only = t '.header'
       == render 'layouts/navigation'
+      h2.sr-only Newsletter subscription
+      = form_tag '/mcsubscribe/subscribe', method: :post, id: :mcsubscribe, remote: :true do
+         = email_field :email, :address, {id: :email, placeholder: 'Subscribe for newsletter'}
+         = submit_tag "Subscribe"
+      #response
 
     main#main.container
       .row

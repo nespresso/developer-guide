@@ -10,13 +10,14 @@ markdown:
 
   Make your way through all the links below. Make sure that you have fired up NVDA when opening them (start NVDA using `Ctrl + Option + N`), and you may want to have the Speech Viewer window open, too (in the NVDA menu, choose `(T)ools` → `(S)peech viewer`).
 
-  - #{link_to 'Browsing an empty page', example_path('browsing_an_empty_page')}
-  - #{link_to 'Browsing paragraphs', example_path('browsing_paragraphs')}
-  - #{link_to 'Block vs. inline', example_path('block_vs_inline')}
-  - #{link_to 'Browsing lists', example_path('browsing_lists')}
-  - #{link_to 'Browsing headings', example_path('browsing_headings')}
-  - #{link_to 'Links in action', example_path('links_in_action')}
-  - #{link_to 'Layout tables', example_path('layout_tables')}
-  - #{link_to 'Browsing tables', example_path('browsing_tables')}
+  - **#{link_to 'Browsing an empty page', example_path('browsing_an_empty_page')}** - see what an empty page looks like to a screenreader
+  - **#{link_to 'Browsing paragraphs', example_path('browsing_paragraphs')}** - browse paragraphs of different lengths
+  - **#{link_to 'Block vs. inline', example_path('block_vs_inline')}** - experience the difference between block and inline content
+  - **#{link_to 'Browsing lists', example_path('browsing_lists')}** - lists are announced differently to screenreaders than "bare" text content
+  - **#{link_to 'Browsing headings', example_path('browsing_headings')}** - see why headings are very important things
+  - **#{link_to 'Links in action', example_path('links_in_action')}** - the things which made the internet the internet
+  - **#{link_to 'Layout tables', example_path('layout_tables')}** - they still aren't dead!
+  - **#{link_to 'Browsing tables', example_path('browsing_tables')}** - experience how tables are linearised
 
-  Want to learn more? You can! Let's #{link_to 'take a look at some images', page_path('images')}!
+p#lets_go
+  = link_to "Want to learn more? You can! Let's take a look at some images...", page_path('images_examples'), class: 'btn btn-warning'

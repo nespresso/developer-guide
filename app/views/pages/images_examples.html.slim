@@ -5,5 +5,5 @@
 
 == render 'shared/no_content_yet'
 
-markdown:
-  You made your way until here? Congrats, now we want to #{link_to 'play with some web forms', page_path('forms')}!
+p#lets_go
+  = link_to "You made your way until here? Congrats! Now we want to play with some web forms!", page_path('forms_examples'), class: 'btn btn-warning'

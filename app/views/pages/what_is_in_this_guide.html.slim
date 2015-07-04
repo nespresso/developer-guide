@@ -1,5 +1,5 @@
 / i18n-tasks-use t('.title')
-= headline_with_flash 'Guide overview'
+= headline_with_flash "What's in this guide?"
 
 .row
   .col-md-9
@@ -43,7 +43,5 @@
 
         Except the examples, every page has its own entry in its specific submenu.
 
-.row
-  .col-md-9
-    p#lets_go
-      = link_to "Okay, this was interesting, but let's do something now!", page_path('preparation_overview'), class: 'btn btn-warning btn-lg'
+p#lets_go
+  = link_to "Okay, this was interesting, but let's do something now!", page_path('preparation_overview'), class: 'btn btn-warning btn-lg'

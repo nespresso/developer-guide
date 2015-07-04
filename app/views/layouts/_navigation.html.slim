@@ -5,7 +5,9 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
     .navbar-header
       // Place brand before the "Toggle navigation" button to have an intuitive the focus order (on the Bootstrap examples page it's after the button which seems unintuitive)
       // TODO: Replace with logo! Or add some sr-only text like "(back to home page)"!
-      = link_to t('.home'), root_path, class: home_link_class
+      = link_to root_path, class: home_link_class do
+        = t('.home')
+        span.sr-only (Accessibility Developer Guide)
 
       button#toggle_navigation.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false"
         span.menu-text = t '.toggle_navigation'
@@ -19,7 +21,8 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
       = semantic_navigation :content_navigation do |navigation|
         - navigation.group 'Overview' do
           - navigation.item 'Introduction', page_path('introduction')
-          - navigation.item 'General overview', page_path('overview')
+          - navigation.item 'Content disclaimer', page_path('content_disclaimer')
+          - navigation.item "What's in this guide?", page_path('what_is_in_this_guide')
 
         - navigation.group 'Preparation' do
           - navigation.item 'Overview', page_path('preparation_overview')
@@ -50,4 +53,4 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
           - navigation.item 'Support us', page_path('support_us')
           - navigation.item t('.about'), page_path('about')
 
-      /== render 'layouts/meta_navigation'
+      == render 'layouts/meta_navigation'

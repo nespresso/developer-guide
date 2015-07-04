@@ -1,8 +1,7 @@
 / i18n-tasks-use t('.title')
 = headline_with_flash
 
-markdown:
-  With this pragmatic guide you'll learn how to develop and test accessible websites. It is **written for physically non-impaired web developers** who want to build [accessible websites](https://en.wikipedia.org/wiki/Web_Accessibility_Initiative), but it will be useful for anyone else interested in learning about [accessibility](https://en.wikipedia.org/wiki/Accessibility).
+== render 'home_teaser'
 
 .row
   .col-md-7
@@ -15,16 +14,16 @@ markdown:
         .alert.alert-info
           h2.sr-only Contribute!
           markdown:
-            **This guide is open source**. Contribute by clicking "Fork me on GitHub" on top of this page!
+            **This guide is open source**. Contribute by clicking "Fork me on GitHub" at the bottom of this page!
 
-        .alert.alert-warning
-          h2.sr-only Disclaimer
+        .alert.alert-danger
+          h2.sr-only Content disclaimer
 
           markdown:
             **This guide is heavy work in progress** (and it always will be). We are providing our own opinions and best practices here. They are based on profound experience as both users and developers of websites and built upon knowledge of the official resources like [WCAG 2.0](https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines).
 
       .col-md-6
-        .alert.alert-danger
+        .alert.alert-warning
           h2.sr-only Accessibility disclaimer
 
           markdown:
@@ -36,10 +35,12 @@ markdown:
           markdown:
             **This guide is non-profit.** But we put a lot of effort into creating and maintaining it. Please show your appreciation and #{link_to 'support us', page_path('support_us')}!
 
-.row
-  .col-md-12
-    p#lets_go
-      = link_to page_path('overview'), class: 'btn btn-success btn-lg' do
-        => icon 'heart'
-        | Start becoming an accessibility expert now
-        =< icon 'heart'
+h2.sr-only Newsletter subscription
+markdown:
+  **Stay informed** about new content in this guide and **#{link_to 'sign up as a user', new_user_registration_path}**! We are continuously adding examples, recipes, and appendices, and by signing up, you'll receive our newsletter with important announcements. Don't miss the newest developments and insights in the field of accessibility! No spam, no inconveniences - we promise.
+
+p#lets_go
+  = link_to page_path('introduction'), class: 'btn btn-success btn-lg' do
+    => icon 'heart'
+    | Start becoming an accessibility expert now
+    =< icon 'heart'

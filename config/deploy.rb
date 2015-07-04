@@ -10,9 +10,9 @@ require 'mina/git'
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :server_name, 'sirius'
-set :user, 'base'
-set :repository_name, 'jmuheim/base'
+set :server_name, 'dubhe'
+set :user, 'adg'
+set :repository_name, 'Access4all/developer-guide'
 set :forward_agent, true
 
 set :domain, "#{server_name}.uberspace.de"

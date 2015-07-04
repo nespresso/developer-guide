@@ -4,7 +4,7 @@ TODO: Add badges!
 
 ## Setting up project locally
 
-Live project: [ACCOUNT.SERVER.uberspace.de](http://ACCOUNT.SERVER.uberspace.de)
+Live project: [adg.dubhe.uberspace.de](http://adg.dubhe.uberspace.de)
 
 Recommended environment:
 

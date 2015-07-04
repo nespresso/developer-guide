@@ -2,8 +2,6 @@
 
 We chose [Uberspace](http://www.uberspace.de) as our hosting provider and [InternetWorx](http://www.inwx.ch) as our domain registrar.
 
-In the following document, replace `ACCOUNT` with your Uberspace account name (e.g. `base`), `SERVER` with the Uberspace server (e.g. `sirius`), `PROJECT` with your GitHub repository name (e.g. `base`), and `PORT` with an open port on the server! **When you worked through this document, remove this paragraph here, then commit the document.**
-
 **Notice:** the `$` sign in code examples indicates a shell prompt! If you copy&pase, don't copy the `$` sign!
 
 ## Register new account
@@ -12,7 +10,7 @@ In the following document, replace `ACCOUNT` with your Uberspace account name (e
 - Choose a password for your account (for webpanel access)
 - Then add your public SSH key on the [authentication](https://uberspace.de/dashboard/authentication) page (**notice:** [Mina](http://nadarei.co/mina/) seems to have [problems with password authentication](http://stackoverflow.com/questions/22606771)!)
 - You can see the chosen Uberspace server's name in the [datasheet](https://uberspace.de/dashboard/datasheet)
-- Now you can connect to your account: `$ ssh ACCOUNT@SERVER.uberspace.de`
+- Now you can connect to your account: `$ ssh adg@dubhe.uberspace.de`
 
 **Notice:** In the following document, execute commands of sections with a superscripted "local" on your local shell, and commands of sections with a superscripted "remote" on your server's shell.
 
@@ -27,26 +25,6 @@ In the following code snippet, replace `email@example.com` with your own email a
 
 Change the default URL options' `:host` in `config/environments/production.rb` to `http://ACCOUNT.SERVER.uberspace.de`.
 
-## Setup Ruby <sup>(remote)</sup>
-
-To [activate Ruby 2.1](http://uberspace.de/dokuwiki/cool:rails#ruby_aktivieren), execute the script for the newest Ruby path on [Uberspace's Ruby configuration page](https://wiki.uberspace.de/development:ruby#section22).
-
-Load your new configuration by executing `$ . ~/.bash_profile`.
-
-`ruby -v` should now output something like this:
-
-```
-$ ruby -v
-ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-linux]
-```
-
-## Setup gems management <sup>(remote)</sup>
-
-[Rails, bundler and other gems](https://uberspace.de/dokuwiki/cool:rails) need to be installed always in our user's directory.
-
-- `$ echo "gem: --user-install --no-rdoc --no-ri" > ~/.gemrc`
-- `$ gem install bundler`
-- `$ bundle config path ~/.gem`
 
 ## Setup Passenger with Nginx <sup>(remote)</sup>
 
@@ -55,7 +33,7 @@ ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-linux]
     - select `Ruby` when prompted
     - if you're told to cancel and execute a `$ chmod ...`, then simply press `Enter` to continue
     - select `Yes: download, compile and install Nginx for me.` when prompted
-    - when told to enter path, enter `/home/ACCOUNT/nginx`
+    - when told to enter path, enter `/home/adg/nginx`
 
 ### Configuration
 
@@ -67,16 +45,16 @@ daemon off; # We execute Nginx using Daemontools # <-- Do we still need this??
 ...
 
 server {
-    listen            PORT; # Choose an open port (see instuctions below)!
-    server_name       ACCOUNT.SERVER.uberspace.de;
-    root              /home/ACCOUNT/rails/current/public;
+    listen            63826; # Choose an open port (see instuctions below)!
+    server_name       adg.dubhe.uberspace.de;
+    root              /home/adg/rails/current/public;
     passenger_enabled on;
 
     # Be sure to remove or comment the `location / { ... }` block!
 }
 ```
 
-- To check whether a port is open, execute `netstat -tulpen | grep :PORT`: empty output means the port is open, otherwise the blocking process is displayed.
+- To check whether a port is open, execute `netstat -tulpen | grep :63826`: empty output means the port is open, otherwise the blocking process is displayed.
 - **Notice:** only [ports](http://uberspace.de/dokuwiki/system:ports) within 61000 and 65535 are allowed!
 
 ### Forward web requests to Passenger
@@ -91,7 +69,7 @@ RewriteCond %{HTTP_HOST} !^www\.
 RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
 
 # Redirect everything to Passenger
-RewriteRule ^(.*)$ http://localhost:PORT/$1 [P]
+RewriteRule ^(.*)$ http://localhost:63826/$1 [P]
 ```
 
 ## Daemontools <sup>(remote)</sup>
@@ -114,10 +92,10 @@ To config `ActionMailer`, edit [`config/application.rb`](config/application.rb):
 ```
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  address:              'SERVER.uberspace.de',
+  address:              'dubhe.uberspace.de',
   port:                 587,
-  domain:               'SERVER.uberspace.de',
-  user_name:            'ACCOUNT-mailer',
+  domain:               'dubhe.uberspace.de',
+  user_name:            'adg-mailer',
   password:             'l3tm3s3nd3m41lS!',
   authentication:       'login',
   enable_starttls_auto: true
@@ -130,7 +108,7 @@ Execute `ssh -T git@github.com` and confirm.
 
 ## Setup Mina <sup>(local)</sup>
 
-- Edit [`config/deploy.rb`](config/deploy.rb) and set the correct `:server_name`, `:user`, and `:repository_name`. Commit everything into `master` branch (or also set the `:branch` option to your branch name).
+- Edit [`config/deploy.rb`](config/deploy.rb) and set the correct `:server_name`, `:user`, and `:repository_name`. Commit everything into `master` branch (or also set the `:branch` option to your branch name, or be sure to deploy using `mina deploy branch=YOUR-BRANCH`).
 
 Be sure you have commited and pushed all changes.
 
@@ -144,9 +122,9 @@ Then edit `~/rails/shared/config/database.yml` and add the following:
 production:
   adapter: mysql2
   encoding: utf8
-  username: ACCOUNT
+  username: adg
   password: ???
-  database: ACCOUNT
+  database: adg
   socket: /var/lib/mysql/mysql.sock
 ```
 
@@ -156,7 +134,7 @@ The password for [MySQL](http://uberspace.de/dokuwiki/database:mysql) can be fou
 
 It's time for the first deployment: execute `$ mina deploy`! Use the `--verbose` and `--trace` switch for debugging if something goes wrong.
 
-Now go to [http://ACCOUNT.SERVER.uberspace.de](http://ACCOUNT.SERVER.uberspace.de) and enjoy your site!
+Now go to [http://adg.dubhe.uberspace.de](http://adg.dubhe.uberspace.de) and enjoy your site!
 
 You may now want to update the link to the live project in `README.md`. :-)
 
@@ -181,7 +159,7 @@ Add the following records to the DNS for the domain:
   - `www`
   - `autoconfig` and `autodiscover` (for [automx](https://wiki.uberspace.de/mail:automx) support)
 - Email (MX):
-  - `SERVER.uberspace.de` with priority `5`
+  - `dubhe.uberspace.de` with priority `5`
 
 ## Create email account(s)<sup>(remote)</sup>
 
@@ -195,7 +173,7 @@ Mail sent to `user@example.com` will be received by this account.
 
 OSX Mail:
 
-- Go to [http://automx.SERVER.uberspace.de](http://automx.SERVER.uberspace.de) and create and download a `.mobileconfig` file
+- Go to [http://automx.dubhe.uberspace.de](http://automx.dubhe.uberspace.de) and create and download a `.mobileconfig` file
 - Execute the file
 
 Thunderbird:

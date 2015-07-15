@@ -6,8 +6,11 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
       // Place brand before the "Toggle navigation" button to have an intuitive the focus order (on the Bootstrap examples page it's after the button which seems unintuitive)
       // TODO: Replace with logo! Or add some sr-only text like "(back to home page)"!
       = link_to root_path, class: home_link_class do
-        = t('.home')
-        span.sr-only (Accessibility Developer Guide)
+        span.visible-xs.visible-lg = t('.home')
+
+        span aria-hidden="true"
+          span.visible-md A11y Dev Guide
+          span.visible-sm ADG
 
       button#toggle_navigation.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false"
         span.menu-text = t '.toggle_navigation'
@@ -24,7 +27,7 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
           - navigation.item 'Content disclaimer', page_path('content_disclaimer')
           - navigation.item "What's in this guide?", page_path('what_is_in_this_guide')
 
-        - navigation.group 'Preparation' do
+        - navigation.group '<span class="hidden-sm">Preparation</span><span class="visible-sm-inline-block" aria-hidden="false">Prep.</span>' do
           - navigation.item 'Overview', page_path('preparation_overview')
           li role="separator" class="divider"
           - navigation.item 'Screenreader installation', page_path('screenreader_installation')
@@ -49,8 +52,42 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
           li role="separator" class="divider"
           - navigation.item 'The golden thread for accessibility testing', page_path('the_golden_thread')
 
-        - navigation.group 'More' do
+        - navigation.group "#{fa_icon 'info-circle', class: 'visible-sm-inline-block'} <span class='hidden-sm'>More</span>" do
           - navigation.item 'Support us', page_path('support_us')
           - navigation.item t('.about'), page_path('about')
 
-      == render 'layouts/meta_navigation'
+      h3.sr-only = t '.meta_navigation'
+
+      = semantic_navigation :meta_navigation, class: 'navbar-right' do |navigation|
+        - if user_signed_in?
+          - navigation.group user_avatar(t('.user_menu')) do
+            - navigation.item "#{fa_icon :user} #{t '.show_account'}", user_registration_path
+            - navigation.item "#{fa_icon :edit} #{t '.edit_account'}", edit_user_registration_path
+
+            li
+              = link_to destroy_user_session_path, method: :delete do
+                = fa_icon('sign-out')
+                =< t('.log_out')
+
+            - if can? :access, :rails_admin
+              li.divider
+              li = link_to rails_admin_path(locale: :en) do
+                = fa_icon(:gears)
+                =< t('.admin')
+
+        - else
+          - navigation.item "<span class='visible-sm-inline-block'>#{fa_icon 'user-plus'}</span> <span class='hidden-sm'>#{t '.sign_up'}</span>", new_user_registration_path
+
+          - navigation.group "<span class='visible-sm-inline-block'>#{fa_icon 'sign-in'}</span> <span class='hidden-sm'>#{t '.sign_in'}</span>", id: :sign_in_panel do
+            li
+              .yamm-content
+                .row = render 'devise/sessions/form', resource: User.new, display: :small
+
+        / - navigation.group flag(current_locale_flag, t('.choose_language')), id: :language_chooser do
+        /   li lang="en" = link_to locale: 'en' do
+        /     => flag(:gb)
+        /     | Show page in english
+        /
+        /   li lang="de" = link_to locale: 'de' do
+        /     => flag(:de)
+        /     | Seite auf Deutsch anzeigen

@@ -19,7 +19,6 @@ en:
       current_item: current menu item
       navigation: Navigation
       toggle_navigation: Menu
-    meta_navigation:
       choose_language: Choose language
       meta_navigation: User navigation
       show_account: Show account

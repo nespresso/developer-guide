@@ -23,8 +23,7 @@ In the following code snippet, replace `email@example.com` with your own email a
 
 ## Update default URL options <sup>(local)</sup>
 
-Change the default URL options' `:host` in `config/environments/production.rb` to `http://ACCOUNT.SERVER.uberspace.de`.
-
+Change the default URL options' `:host` in `config/environments/production.rb` to `http://adg.dubhe.uberspace.de`.
 
 ## Setup Passenger with Nginx <sup>(remote)</sup>
 
@@ -179,3 +178,7 @@ OSX Mail:
 Thunderbird:
 
 - Just add the account in the account settings using user name and password - Thunberbird will automatically detect the correct settings!
+
+## Additional information
+
+- If you ever have to inspect server logs, they're here: `/home/adg/nginx/logs/error.log`

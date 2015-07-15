@@ -21,6 +21,7 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
 
     .collapse.navbar-collapse
       h3.sr-only = t '.content_navigation'
+
       = semantic_navigation :content_navigation do |navigation|
         - navigation.group 'Overview' do
           - navigation.item 'Introduction', page_path('introduction')

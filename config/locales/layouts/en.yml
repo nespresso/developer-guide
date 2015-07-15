@@ -3,9 +3,9 @@ en:
   layouts:
     navigation:
       about: About
-      home: Accessibility Developer Guide
       admin: Admin
       edit_account: Edit account
+      home: Accessibility Developer Guide
       log_out: Log out
       sign_in: Sign in
       user_menu: User menu

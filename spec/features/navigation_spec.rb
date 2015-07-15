@@ -19,14 +19,6 @@ describe 'Navigation' do
       end
     end
 
-    it 'offers a link to the "List Users" page' do
-      visit root_path
-
-      within 'nav' do
-        expect(page).to have_link 'List Users'
-      end
-    end
-
     it 'offers the possibility to switch languages' do
       visit root_path
 
@@ -89,9 +81,9 @@ describe 'Navigation' do
       visit root_path
 
       active_menu_group_css  = '.dropdown.active > a.dropdown-toggle'
-      active_menu_group_text = 'Users (current menu group)'
+      active_menu_group_text = 'Overview (current menu group)'
       active_menu_item_css   = '.dropdown.active > ul.dropdown-menu > li.active > a'
-      active_menu_item_text  = 'List Users (current menu item)'
+      active_menu_item_text  = 'Introduction (current menu item)'
 
       within 'nav' do
         expect(page).not_to have_css  active_menu_group_css
@@ -101,7 +93,7 @@ describe 'Navigation' do
         expect(page).not_to have_text active_menu_item_text
       end
 
-      click_link 'List Users'
+      click_link 'Introduction'
 
       within 'nav' do
         expect(page).to have_css active_menu_group_css, text: active_menu_group_text
@@ -117,14 +109,14 @@ describe 'Navigation' do
       visit root_path
 
       active_menu_group_css  = '.dropdown.active > a.dropdown-toggle'
-      active_menu_group_text = 'Users (current menu group)'
+      active_menu_group_text = 'Overview (current menu group)'
 
       within 'nav' do
         expect(page).not_to have_css  active_menu_group_css
         expect(page).not_to have_text active_menu_group_text
       end
 
-      visit edit_user_path(user)
+      visit page_path('introduction')
 
       within 'nav' do
         expect(page).to have_css active_menu_group_css, text: active_menu_group_text
@@ -186,18 +178,6 @@ describe 'Navigation' do
 
       within 'nav' do
         expect(page).not_to have_link 'Admin'
-      end
-    end
-
-    it 'offers a link to the "Create User" page' do
-      within 'nav' do
-        expect(page).to have_link 'Create User'
-      end
-
-      visit destroy_user_session_path
-
-      within 'nav' do
-        expect(page).not_to have_link 'Create User'
       end
     end
   end

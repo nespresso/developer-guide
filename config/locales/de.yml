@@ -40,9 +40,6 @@ de:
     statistics:
       number_of_users: Anzahl Benutzer
       title: Statistiken
-  resources:
-    create: "%{resource} erstellen"
-    list: "%{resource} auflisten"
   shared:
     form:
       actions:

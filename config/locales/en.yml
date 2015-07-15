@@ -40,9 +40,6 @@ en:
     statistics:
       number_of_users: Number of users
       title: Statistics
-  resources:
-    create: Create %{resource}
-    list: List %{resource}
   shared:
     form:
       actions:

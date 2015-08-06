@@ -1,0 +1,24 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Content flow'
+
+  markdown:
+    In this example there are two content blocks (green and red bordered) whose contents look identical - but they aren't!
+
+    - Browse both blocks using `↓` and `↑` and look out for differences!
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'pJGVRQ'
+
+#conclusion aria-hidden="true"
+  markdown:
+    - In the first content block (green bordered), the headings and contents are correctly structured
+    - In the second content block (red bordered), they're not:
+        - The headings "Object oriented" and "Procedural" follow each other directly
+        - Below, the contents for each heading follow each other directly, too
+        - Thus, the contents both belong to the heading "Procedural" (and "Object oriented doesn't have any content")
+    - So while visually there often are many ways to lay out something, the structure in the DOM always has to reflect the logical order of the content!
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

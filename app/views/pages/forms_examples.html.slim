@@ -2,10 +2,14 @@
 
 == render 'forms_examples_teaser'
 
-== render 'shared/no_content_yet'
-
 markdown:
+  Make your way through all the links below. Make sure that you have fired up NVDA when opening them (start NVDA using `Ctrl + Option + N`), and you may want to have the Speech Viewer window open, too (in the NVDA menu, choose `(T)ools` → `(S)peech viewer`).
+
+  - **#{link_to 'Browse mode vs. focus mode', example_path('browse_mode_vs_focus_mode')}** - interact with form elements!
+
   <!-- - #{link_to 'Forms in tables', example_path('forms_in_tables')} -->
+
+== render 'shared/no_content_yet'
 
 p#lets_go
   = link_to "You're still here? Head over to some JavaScript action!", page_path('javascript_examples'), class: 'btn btn-warning'

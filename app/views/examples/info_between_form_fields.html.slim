@@ -1,0 +1,32 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Info between form fields'
+
+  markdown:
+    - Recap: as soon as in forms mode, a screenreader user typically doesn't leave it anymore
+        - This means, he uses `Tab` and `Shift-Tab` to move between form fields
+        - This means, he will only catch on information that's linked somehow to the form field
+    - Sometimes, there's additional information needed between form fields
+    - In the form below, the following info usually would be missed in forms mode:
+        - The lists with information next to every radio button
+        - The paragraphs about the "Terms and conditions" (red background)
+        - Also, when switching between the radio buttons using the `↓` and `↑` keys, the corresponding "More info" links may be missed
+    - Browse the form now and watch out for precautions that make sure no info is missed, even in forms mode!
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'WvVMYz'
+
+#conclusion aria-hidden="true"
+  markdown:
+    ## Conclusion
+
+    - In some situations, the default elements of HTML forms (e.g. `<fieldset>`/`<legend>` combos and `<label>`) are not sufficient to provide all information needed about form inputs
+    - Use `aria-describedby` to connect additional information to form inputs, but don't overdo it!
+        - In the form above, the prices are connected to each radio button, as it seems to be a decision-leading information
+        - The list with the additional infos is not linked, as it's too much information and may slow down the user
+    - Use sensible visually hidden texts to inform the user whenever he has to leave the "default" workflow, i.e. switching from focus mode back to browse mode
+        - Do this in an accurate way, so the user isn't forced to search for info himself by trial and error (tell him where he as to look, and not some general hint "Please look out for some possible information that could be in some place" at the beginning of a big form)
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

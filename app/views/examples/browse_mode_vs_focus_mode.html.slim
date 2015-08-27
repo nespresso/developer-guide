@@ -3,10 +3,9 @@
 
   markdown:
     - Use the `↓` and `↑` keys to browse through the form elements
-    - When on a form element, you hear a *beep*
-        - This indicates that you can interact with the element
-    - To interact with an element, press `Enter`
-    - To stop interacting with an element, press `Esc`
+    - When on a form element (announced as e.g. "edit" for an input of type text), you can interact with the element:
+      - To interact with an element, press `Enter` (you'll hear a \*beep\*)
+      - To stop interacting with an element, press `Esc` (you'll hear a different \*beep\*)
     - What happens when you navigate the elements using `Tab` and `Shift-Tab`?
 
   p#home
@@ -18,9 +17,11 @@
   markdown:
     - In browse mode, NVDA intercepts every key stroke and decides what to do with it
         - E.g., when pressing `P`, NVDA jumps to the next paragraph
+        - The browse mode is typically active when reading a page
     - In focus mode, every key stroke is passed through to the opened application
         - E.g., when pressing `P`, the letter `P` is typed
-    - You can enter forms mode when hearing the *beep*
+        - The focus mode is active when interacting with a page (e.g. with form fields)
+    - You can enter forms mode when hearing the \*beep\*
     - You can leave forms mode by pressing `Esc`
     - When you navigate the elements using `Tab` and `Shift-Tab`:
         - Focus mode is activated automatically when focusing an element that accepts text or navigation input (e.g. text inputs, select boxes)

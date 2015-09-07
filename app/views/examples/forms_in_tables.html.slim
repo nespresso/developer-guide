@@ -1,9 +1,9 @@
 #introduction aria-hidden="true"
-  = headline_with_flash 'Playground'
+  = headline_with_flash 'Forms in tables'
 
   markdown:
-    - Complex forms may be marked up as tables
-    - Use `Ctrl + Alt + ↓`, `Ctrl + ↑`, `Ctrl + Alt + ←` and `Ctrl + →` to browse tables
+    - Complex forms (typically resembling tabular data) may be marked up as tables
+    - Use `Ctrl + Alt + ↓`, `Ctrl + ↑`, `Ctrl + Alt + ←` and `Ctrl + Alt + →` to browse tables cell by cell
     - Use `Tab` to navigate through the form fields
 
   p#home
@@ -16,14 +16,16 @@
     ## Conclusion
 
     - Every requirement that applies to accessible forms and tables also applies when mixing them:
-        - Every form field needs a label
+        - Every form field needs its own label
+            - `<label>` elements can be used as contents of table headers (`<th>`)
+            - `<label>` elements and their corresponding inputs don't necessarily need to be in the same table cell
         - Every table row needs at least one of these:
-            - A horizontal header
-            - A vertical header
+            - A horizontal header (`<th>`)
+            - A vertical header (`<th>`)
         - Use stuff like `rowspan` and `colspan` sparingly
-    - `<label>` elements can be used as contents of table headers
-    - The `summary` attribute can be used for tables (TODO: example!)
-    - `<fieldset>`/`<legend>` combos can be applied around tables (TODO: example!)
+        - `<fieldset>`/`<legend>` combos can be applied around tables
+    - Some minor redundancies because of similar (or even equal) contents of `<label>` and `<th>` elements are neglectable
+    - Important: only use tables to structure complex forms! Tables are not the first choice to structure the visual layout of basic forms (instead, use CSS!).
 
   p#home
     = link_to 'Accessibility Developer Guide', root_path

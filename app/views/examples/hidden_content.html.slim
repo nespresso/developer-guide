@@ -1,0 +1,29 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Hidden content'
+
+  markdown:
+    - Use `Ctrl + ↓` and `Ctrl + ↑` to browse the content of this page
+    - Watch out for differences between what you see and what you hear
+    - Are there differences between browse and focus mode?
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'KdpYyb'
+
+#conclusion aria-hidden="true"
+  markdown:
+    ## Conclusion
+
+    - Content can be made **inaudible** using `aria-hidden="true"`
+    - Focusable elements are still reachable in focus mode, though:
+        - If `aria-hidden` is set directly on the element, it is announced as "blank" (or not at all)!
+        - If `aria-hidden` is set on a parent element, it is announced correctly!
+    - Content can be made **invisible** using the "move out of viewport CSS hack"
+        - General information here: [WebAIM: Invisible Content Just for Screen Reader Users](http://webaim.org/techniques/css/invisiblecontent/)
+        - Implementation used here: [Twitter Bootstrap `.sr-only` class](http://getbootstrap.com/css/#helper-classes-screen-readers)
+
+    **Notice:** the situation with focusable elements that are hidden using `aria-hidden="true"` feels very half-baked (not only in NVDA, also JAWS acts in strange ways here). So be careful using `aria-hidden` and don't over-use it!
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

@@ -1,0 +1,24 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Block vs. inline-block content'
+
+  markdown:
+    - Browse the following menubars using `Ctrl + ↓/↑`
+        - The items of the first menubar are styled using `display: block`
+        - The items of the second menubar are styled using `display: inline-block`
+    - What is easier to browse? Are you able to click on "Chips" or "Cookies"?
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'RWPdxN'
+
+#conclusion aria-hidden="true"
+  markdown:
+    - NVDA reads `display: inline-block` as if it were `display: inline`
+    - Whenever you style something like a block, be sure to use the right property:
+        - If the user typically wants to interact with each element alone (and thus is happy to be able to browse every item individually), use `block`
+        - If everything should be read out in one line, use `inline-block`
+    - By the way, you can only click on "Chips" or "Cookies" by pressing `Tab` (and thus leaving browse mode, strictly speaking)
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

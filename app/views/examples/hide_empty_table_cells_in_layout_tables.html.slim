@@ -1,0 +1,26 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Hide empty table cells in layout tables'
+
+  markdown:
+    - Use `Ctrl + ↓` and `Ctrl + ↑` to browse the two (visually identical) dummy email templates
+    - What's the difference?
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'epdVmr'
+
+#conclusion aria-hidden="true"
+  markdown:
+    ## Conclusion
+
+    - HTML in email relies a lot on layout tables because even some modern email clients don't support proper CSS
+        - They are not only used for general layouting purposes
+        - They are also used for more specific stuff like spacing between elements
+    - This results in empty cells which are announced as "Blank" by NVDA
+    - Empty cells can be hidden from screenreaders by using `aria-hidden="true"`
+
+    **Notice:** to learn more about how to create working HTML emails (and if you wonder why the HTML code of the example above looks so incredibly archaic and ugly), check out [Building a rock-solid HTML email](https://www.campaignmonitor.com/resources/will-it-work/guidelines/) (sadly they don't point out the "Blank" issue themselves).
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

@@ -1,0 +1,27 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Websites in other languages'
+
+  markdown:
+    - First of all, make sure your NVDA voice is set to "english":
+        - In the NVDA menu, choose `(P)references` → `(V)oice settings`
+        - Set "Voice" to "english" and click "OK"
+    - Browse the following page using `Ctrl + ↓/↑` first (Browse mode)
+    - Then browse the table cells using `Ctrl + Alt + ↓/↑/←/→`
+    - Now jump between elements using `Tab` and `Shift + Tab`
+    - Do you notice any differences?
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'doVPqg'
+
+#conclusion aria-hidden="true"
+  markdown:
+    - Meta information about an element (e.g. "Heading level 1") is always pronounced in the language set in "Voice settings", regardless of the website's language
+    - NVDA correctly switches language pronounciation when the `lang` attribute is set to an element
+    - NVDA pronounces everything correctly in bare Browse mode
+    - But as soon as NVDA needs to collect associated info (e.g. when focusing an input field or browsing left, right, up and down in a table), it falls back to the language set in "Voice settings"
+        - This seems to be a [bug](http://community.nvda-project.org/ticket/5161)
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

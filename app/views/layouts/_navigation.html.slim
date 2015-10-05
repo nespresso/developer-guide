@@ -58,9 +58,11 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
         - navigation.group 'Appendix' do
           - navigation.item 'Overview', page_path('appendix_overview')
           li role="separator" class="divider"
+          - navigation.item 'How an experienced screenreader user approaches a new website', page_path('how_an_experienced_screenreader_user_approaches_a_new_website')
           - navigation.item 'Relevant screenreaders', page_path('relevant_screenreaders')
           - navigation.item 'The golden thread for accessibility testing', page_path('the_golden_thread')
           - navigation.item 'Things to consider when choosing a plugin', page_path('things_to_consider_when_choosing_a_plugin')
+          - navigation.item 'Typical disabled users: their preferred tools and workflows', page_path('typical_disabled_users_tools_and_workflows')
 
         - navigation.group "#{fa_icon 'info-circle', class: 'visible-sm-inline-block'} <span class='hidden-sm'>More</span>" do
           - navigation.item 'Support us', page_path('support_us')

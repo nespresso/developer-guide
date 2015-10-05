@@ -1,0 +1,27 @@
+= headline_with_flash 'Accordion plugins'
+
+== render 'accordion_plugins_teaser'
+
+markdown:
+  ## Things to consider
+
+  TODO
+
+  ## Reviews
+
+table.table.table-bordered.table-striped
+  thead
+    tr
+      th Name
+      th Producer
+      th Rating
+
+  / tbody
+  /   tr
+  /     th = link_to 'Bootstrap Accordion', example_path('bootstrap_accordion_plugin')
+  /     td = link_to 'Twitter Bootstrap', 'http://getbootstrap.com/'
+  /     td Rating: 4 of 5
+  /   tr
+  /     th = link_to 'Whatsock Accordion', example_path('whatsock_accordion_plugin')
+  /     td = link_to 'Whatsock', 'http://whatsock.com/'
+  /     td Rating: 4 of 5

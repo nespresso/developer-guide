@@ -1,0 +1,35 @@
+= headline_with_flash 'Tabs plugins'
+
+== render 'tabs_plugins_teaser'
+
+markdown:
+  ## Things to consider
+
+  TODO
+
+  ## Reviews
+
+table.table.table-bordered.table-striped
+  thead
+    tr
+      th Name
+      th Producer
+      th Rating
+
+  / tbody
+  /   tr
+  /     th = link_to 'Bootstrap Tabs', example_path('bootstrap_tabs_plugin')
+  /     td = link_to 'Twitter Bootstrap', 'http://getbootstrap.com/'
+  /     td Rating: 4 of 5
+  /   tr
+  /     th = link_to 'Whatsock Tabs', example_path('whatsock_tabs_plugin')
+  /     td = link_to 'Whatsock', 'http://whatsock.com/'
+  /     td Rating: 4 of 5
+  /   tr
+  /     th = link_to 'jQuery UI Tabs', example_path('jquery_ui_tabs_plugin')
+  /     td = link_to 'jQuery UI', 'https://jqueryui.com/tabs/'
+  /     td Rating: 4 of 5
+  /   tr
+  /     th = link_to 'jQuery Accessible Tabs', example_path('jquery_accessible_tabs_plugin')
+  /     td = link_to 'Accessible-Tabs', 'https://github.com/ginader/Accessible-Tabs'
+  /     td Rating: 4 of 5

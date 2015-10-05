@@ -1,0 +1,39 @@
+= headline_with_flash 'Carousel plugins'
+
+== render 'carousel_plugins_teaser'
+
+markdown:
+  ## Things to consider
+
+  So you really think you need a fancy accordion on your page? Well, read this first:
+
+  - [Auto-Forwarding Carousels and Accordions Annoy Users and Reduce Visibility](http://www.nngroup.com/articles/auto-forwarding/)
+  - [Carousel Interaction Stats](http://erikrunyon.com/2013/01/carousel-stats/)
+  - [Should I use a carousel?](http://shouldiuseacarousel.com/)
+
+  ## Reviews
+
+table.table.table-bordered.table-striped
+  thead
+    tr
+      th Name
+      th Producer
+      th Rating
+
+  / tbody
+  /   tr
+  /     th = link_to 'Bootstrap Carousel', example_path('bootstrap_carousel_plugin')
+  /     td = link_to 'Twitter Bootstrap', 'http://getbootstrap.com/'
+  /     td Rating: 4 of 5
+  /   tr
+  /     th = link_to 'Whatsock Carousel', example_path('whatsock_carousel_plugin')
+  /     td = link_to 'Whatsock', 'http://whatsock.com/'
+  /     td Rating: 4 of 5
+  /   tr
+  /     th = link_to 'a11y Carousel', example_path('a11ycarousel_accordion_plugin')
+  /     td = link_to 'a11ycarousel', 'http://skyefradd.me/plugins/a11ycarousel/'
+  /     td Rating: 4 of 5
+  /   tr
+  /     th = link_to 'Responsive BP Carousel', example_path('responsivebp_carousel_plugin')
+  /     td = link_to 'responsivebp', 'http://responsivebp.com/javascript/carousel/'
+  /     td Rating: 4 of 5

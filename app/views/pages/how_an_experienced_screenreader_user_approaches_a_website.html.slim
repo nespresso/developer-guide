@@ -1,0 +1,29 @@
+= headline_with_flash 'How an experienced screenreader user approaches a website'
+
+markdown:
+  For a sighted person, it's hard to imagine how a screenreader user surfs the web. In this article, we try to give you a concrete idea of the main strategies used by screenreader users when approaching a website.
+
+  ## Getting a general overview of a page
+
+  A blind person doesn't perceive the full layout of a page intuitively within a second, the way a sighted person does.
+
+  - When reaching a new website, I press `Ctrl + Home` to make sure that I'm at the beginning of the document
+      - This is important, because sometimes there is some autofocus functionality
+      - Autofocus may be helpful, but when I open a site for the first time, I want to read the whole content to have an overview
+  - When reaching a new website it's always a surprise which kind of elements are used to structure the content, so I always search for semantical information:
+      - Usually I search for headings (by pressing `h` or `1`)
+          - Headings should introduce every piece of content, so I assume that this way I find the content content I'm looking for
+      - When no headings are present I have to go line by line through the whole content to gain a first impression (using `↓` and `↑`, **not** using `Tab`)
+  - I can also get a first impression of the page by using the elements list dialog (`NVDA + F7`), which (beneath headings and links) shows given landmarks
+  - When I encounter a table, then I typically use the table reading commands (`Ctrl + Alt + Arrow`) so the content of each cell is announced in relation to the corresponding header
+  - When I encounter a form and want to interact with it, I press Enter on an input to activate forms mode.
+      - From now on, I jump from form element to form element using the `Tab` key
+
+  ## Interacting with a familiar page
+
+  Most websites' pages look similar, so after having gained a general overview, interacting with other pages of the same website is going much faster now.
+
+  - If there are jump links, I use them to jump to the wanted part of the page
+  - As soon as I know the type of elements available, I can browse directly through certain types of elements like headings (`h` and `1` to `6`), form inputs (keys `f` and `i`), links (keys `a`, `v` and `k`), lists (keys `i` and `l`), images (`g`) and so on.
+      - For Example, if I open a webmail page, and I want to login, I directly search for an input field by pressing `i`
+  - Sometimes I search for content directly using `Ctrl + F`

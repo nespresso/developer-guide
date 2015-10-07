@@ -1,0 +1,22 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Footnotes and other references'
+
+  markdown:
+    Footnotes and other references (like asterisks) are easy to implement, if you know how.
+
+    - Browse the following elements using `↓` and `↑` and look out for hidden texts!
+    - To focus an inline link, use `Tab`
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'NGjmNY'
+
+#conclusion aria-hidden="true"
+  markdown:
+    - If you have a 1 to 1 relationship of references and info (like numbered footnotes), you can link from the reference to the info and vice versa
+    - If you have a many to 1 relationship (like asterisks are often used), you can can only link from the reference to the info, but not vice versa
+        - The good thing: clicking the `Back` button in modern browsers has the same effect
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

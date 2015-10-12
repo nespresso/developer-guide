@@ -1,0 +1,34 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Associate other information with elements'
+
+  markdown:
+    Sometimes, it's necessary to provide screenreader users with additional or other information than displayed on screen. There are different ways of doing this.
+
+    - Use the `↓` and `↑` keys to browse through the elements
+        - Are there differences between what you see and what you hear?
+    - Is there a difference when jumping from element to element using `Tab` and `Shift-Tab`?
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'gaxmPM'
+
+#conclusion aria-hidden="true"
+  markdown:
+    - The first link doesn't have any additional text associated
+    - The second link has an `aria-label` attribute applied
+        - It replaces the whole content of the element with the value of the attribute
+    - The third link has an `aria-labelledby` attribute applied
+        - It references another element (by ID) and replaces the whole content of the element with the content of the referenced element
+    - The fourth link has an `aria-labelledby` and an `aria-label` attribute applied (in this exact sequence)
+        - The `aria-labelledby` attribute has precedence over `aria-label`
+    - The fifth link has an `aria-label` and an `aria-labelledby` attribute applied (in this exact sequence)
+        - The `aria-labelledby` attribute still has precedence over `aria-label`, so the sequence of the attributes doesn't seem to be essential
+    - The sixth link has an `aria-describedby` attribute applied
+        - It references another element (by ID) and adds the whole content of the element to the content of the referenced element
+        - **Notice:** this added content is only announced in focus mode!
+    - The seventh link uses #{link_to 'visually hidden text', example_path('hidden_content')} to add a description
+        - **Notice:** this added content is always announced (which means in both browse and focus mode)
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

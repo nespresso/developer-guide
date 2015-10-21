@@ -17,6 +17,7 @@
   markdown:
     - Some of the headings, while defined using `<h1>` tags, are made to be of level 2 and 3 using `role="heading"` and the `aria-level` attribute
     - Be careful to always have both attributes present, as JAWS doesn't interpret `aria-level` without `role="heading"`!
+    - NVDA seems to have some issues when it comes to jumping to specific heading levels using e.g. `1` ([NVDA issue #5434](http://community.nvda-project.org/ticket/5434))
 
     Be careful when overruling standard HTML semantics with ARIA attributes, as you never know whether your clients' assistive devices support it!
 

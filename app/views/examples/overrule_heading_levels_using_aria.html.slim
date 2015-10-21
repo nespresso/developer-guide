@@ -15,8 +15,8 @@
 
 #conclusion aria-hidden="true"
   markdown:
-    - Some of the headings, while defined using `<h1>` tags, are made to be of level 2 and 3 using the `aria-level` attribute
-    - While NVDA does it's job very well in this respect, JAWS seems to ignore this completely
+    - Some of the headings, while defined using `<h1>` tags, are made to be of level 2 and 3 using `role="heading"` and the `aria-level` attribute
+    - Be careful to always have both attributes present, as JAWS doesn't interpret `aria-level` without `role="heading"`!
 
     Be careful when overruling standard HTML semantics with ARIA attributes, as you never know whether your clients' assistive devices support it!
 

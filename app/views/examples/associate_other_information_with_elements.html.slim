@@ -30,5 +30,10 @@
     - The seventh link uses #{link_to 'visually hidden text', example_path('hidden_content')} to add a description
         - **Notice:** this added content is always announced (which means in both browse and focus mode)
 
+    As you can see, it's a bit hard to predict when to use which method. More info here:
+    
+    - [aria-label, aria-labelledby and aria-describedby: very unforeseeable behaviour (NVDA issue#5398)](http://community.nvda-project.org/ticket/5398)
+    - [aria-label, aria-labelledby and aria-describedby: very unforeseeable behaviour in screenreaders (StackOverflow question)](http://stackoverflow.com/questions/32951169)
+
   p#home
     = link_to 'Accessibility Developer Guide', root_path

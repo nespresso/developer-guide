@@ -1,0 +1,24 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Overrule heading levels using ARIA'
+
+  markdown:
+    The following headings are all of type `<h1>` - but are they?
+
+    - Jump from heading to heading using the `h` key (press `Shift` to reverse the direction)
+    - Jump from heading to heading using the `1`, `2`, and `3` key
+    - Display the headings outline using `NVDA + F7` and then `Option + h`
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'avEQXJ'
+
+#conclusion aria-hidden="true"
+  markdown:
+    - Some of the headings, while defined using `<h1>` tags, are made to be of level 2 and 3 using the `aria-level` attribute
+    - While NVDA does it's job very well in this respect, JAWS seems to ignore this completely
+
+    Be careful when overruling standard HTML semantics with ARIA attributes, as you never know whether your clients' assistive devices support it!
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

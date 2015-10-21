@@ -5,9 +5,143 @@
 markdown:
   ## Things to consider
 
-  TODO
+  - The [interaction design pattern promoted for ARIA-enabled tabs](http://www.w3.org/TR/2009/WD-wai-aria-practices-20091215/#tabpanel) suggests that just the currently active tab control be found in the Tab order, and that the tab controls be navigable using the arrow keys. Setting focus to a tab control loads the associated content tabpanel which is otherwise hidden. In a web page, for most screen readers (or, at least those that work with a virtual buffer) this means switching to Application Mode. JAWS 11 and NVDA 2010.1 both automatically enter Application Mode when focus is set to a tab control. Yet, because the screen reader is now passing keyboard commands through to the browser, we can no longer use the normal reading commands to access the tabpanel’s content. We can still easily use the Tab key to move to the first form control or focussable element in the tabpanel and interact with it. However, if a tabpanel contains nothing but regular text content, there is nothing to set focus to using the Tab key. The user can, of course, manually turn the Virtual Cursor back on, but it is worth noting that setting focus to a non-form or non-application element can accomplish the same thing in some instances; so this suggests a possible workaround, namely including such an element, for example, a heading, in the Tab order at the beginning of the tabpanel content.
+  - Conclusion: there is the impression that there does not appear to be one ideal approach where broad accessibility is concerned. It may be reasonable to include for screen reader users some sort of instructions just before the tabbed interface. Still, the very fact that such instructions should prove useful suggests, I think, that an ARIA-enabled tabbed interface might for now just get in the way of a usable experience for too many users. To sum up, in none of the versions presented here will the experience necessarily be clear and obvious for all users with all screen readers, and especially not for older versions.
+  
+  Source: [Accessible ARIA Tabs](http://accessibleculture.org/articles/2010/08/aria-tabs/), published in 2010!
+  
+  Frage: GEHT JAWS IMMER IN DEN APP MODUS, EGAL WIE DAS WIDGET PROGRAMIERT IST?!
+  Frage: IST NVDA IM IE IMMER SO EXTREM LANGSAM?!
+  Da hat es evtl. gute zugängliche Widgets: http://accessibility.athena-ict.com/aria/aria-examples-index.shtml
 
   ## Reviews
+
+  http://accessibleculture.org/research-files/aria-tabs/version1.php
+  
+  - Keyboard only
+      - OK
+      - Ich finde allerdings, hoch und runter sollte nicht zum Wechseln von Tabs verwendet werden (wird zum Scrollen langer Inhalte benötigt, nicht jeder weiss von Spacebar für Seitenblättern)
+      - Auch kann man sich streiten, ob die einzelnen Tabs angetabbt werden können sollen oder nicht
+  - NVDA
+      - IE
+          - Browse Mode
+              - Alles OK
+          - Focus Mode
+              - Liest alle 3 Tabs gleich vor, und dann den selektierten Tab
+      - FF
+          - Alles OK
+  - JAWS
+      - IE
+          - Browse Mode
+              - Geht autom. in Application Mode, Inhalt nur durch Drücken von Esc lesbar (da hoch/runter für Steuerung der Tabs verwendet werden)
+              - Sagt zwar, man soll Spacebar drücken um zum Inhalt zu springen, aber das klappt nicht
+          - Focus Mode
+              - OK
+      - FF
+          - Browse Mode
+              - Geht autom. in Application Mode, Inhalt nur durch Drücken von Esc lesbar (da hoch/runter für Steuerung der Tabs verwendet werden)
+          - Focus Mode
+              - OK
+
+  http://accessibleculture.org/research-files/aria-tabs/version2a.php
+
+  - Keyboard only
+      - Siehe oben
+  - NVDA
+      - IE
+          - Browse Mode
+              - Ein Tab selektieren gibt keine Ausgabe
+          - Focus Mode
+              - Liest alle 3 Tabs gleich vor, und dann den selektierten Tab
+      - FF
+          - Alles OK
+  - JAWS
+      - IE
+          - Browse Mode
+              - Geht autom. in Application Mode, Inhalt nur durch Drücken von Esc lesbar (da hoch/runter für Steuerung der Tabs verwendet werden)
+              - Sagt zwar, man soll Spacebar drücken um zum Inhalt zu springen, aber das klappt nicht
+          - Focus Mode
+              - OK
+      - FF
+          - Browse Mode
+              - Geht autom. in Application Mode, Inhalt nur durch Drücken von Esc lesbar (da hoch/runter für Steuerung der Tabs verwendet werden)
+          - Focus Mode
+              - OK
+
+  http://accessibleculture.org/research-files/aria-tabs/version2b.php
+
+  - Keyboard only
+      - Siehe oben
+  - NVDA
+      - IE
+          - Browse Mode
+              - Alles OK
+          - Focus Mode
+              - Liest alle 3 Tabs gleich vor, und dann den selektierten Tab inkl. href Attribut
+      - FF
+          - Alles OK
+  - JAWS
+      - IE
+          - Browse Mode
+              - Geht autom. in Application Mode, Inhalt nur durch Drücken von Esc lesbar (da hoch/runter für Steuerung der Tabs verwendet werden)
+              - Sagt zwar, man soll Spacebar drücken um zum Inhalt zu springen, aber das klappt nicht
+          - Focus Mode
+              - OK
+      - FF
+          - Browse Mode
+              - Geht autom. in Application Mode, Inhalt nur durch Drücken von Esc lesbar (da hoch/runter für Steuerung der Tabs verwendet werden)
+          - Focus Mode
+              - OK
+
+  http://accessibleculture.org/research-files/aria-tabs/version3a.php
+
+  - Keyboard only
+      - Siehe oben
+  - NVDA
+      - IE
+          - Browse Mode
+              - Alles OK
+          - Focus Mode
+              - Liest alle 3 Tabs gleich vor, und dann den selektierten Tab inkl. href Attribut
+      - FF
+          - Alles OK
+  - JAWS
+      - IE
+          - Browse Mode
+              - Geht autom. in Application Mode, Inhalt nur durch Drücken von Esc lesbar (da hoch/runter für Steuerung der Tabs verwendet werden)
+              - Sagt zwar, man soll Spacebar drücken um zum Inhalt zu springen, aber das klappt nicht
+          - Focus Mode
+              - OK
+      - FF
+          - Browse Mode
+              - Geht autom. in Application Mode, Inhalt nur durch Drücken von Esc lesbar (da hoch/runter für Steuerung der Tabs verwendet werden)
+          - Focus Mode
+              - OK
+
+  http://accessibleculture.org/research-files/aria-tabs/version3b.php
+
+  - Keyboard only
+      - Siehe oben
+  - NVDA
+      - IE
+          - Browse Mode
+              - Alles OK
+          - Focus Mode
+              - Liest alle 3 Tabs gleich vor, und dann den selektierten Tab inkl. href Attribut
+      - FF
+          - Alles OK
+  - JAWS
+      - IE
+          - Browse Mode
+              - Geht autom. in Application Mode, Inhalt nur durch Drücken von Esc lesbar (da hoch/runter für Steuerung der Tabs verwendet werden)
+              - Sagt zwar, man soll Spacebar drücken um zum Inhalt zu springen, aber das klappt nicht
+          - Focus Mode
+              - OK
+      - FF
+          - Browse Mode
+              - Geht autom. in Application Mode, Inhalt nur durch Drücken von Esc lesbar (da hoch/runter für Steuerung der Tabs verwendet werden)
+          - Focus Mode
+              - OK
 
 table.table.table-bordered.table-striped
   thead
@@ -16,20 +150,75 @@ table.table.table-bordered.table-striped
       th Producer
       th Rating
 
-  / tbody
-  /   tr
-  /     th = link_to 'Bootstrap Tabs', example_path('bootstrap_tabs_plugin')
-  /     td = link_to 'Twitter Bootstrap', 'http://getbootstrap.com/'
-  /     td Rating: 4 of 5
-  /   tr
-  /     th = link_to 'Whatsock Tabs', example_path('whatsock_tabs_plugin')
-  /     td = link_to 'Whatsock', 'http://whatsock.com/'
-  /     td Rating: 4 of 5
-  /   tr
-  /     th = link_to 'jQuery UI Tabs', example_path('jquery_ui_tabs_plugin')
-  /     td = link_to 'jQuery UI', 'https://jqueryui.com/tabs/'
-  /     td Rating: 4 of 5
-  /   tr
-  /     th = link_to 'jQuery Accessible Tabs', example_path('jquery_accessible_tabs_plugin')
-  /     td = link_to 'Accessible-Tabs', 'https://github.com/ginader/Accessible-Tabs'
-  /     td Rating: 4 of 5
+  tbody
+    tr
+      th = link_to 'Bootstrap Tabs', example_path('bootstrap_tabs_plugin')
+      td = link_to 'Twitter Bootstrap', 'http://getbootstrap.com/javascript/#tabs'
+      td
+        markdown:
+          - JAWS
+              - IE: Sagt den geöffneten Status mit "collapsed" an
+          - NVDA
+              - IE: beim Aktivieren von Tab wird direkt der Inhalt vorgelesen, der Fokus bleibt aber beim Tab selber?!
+    tr
+      th = link_to 'Whatsock Tabs', example_path('whatsock_tabs_plugin')
+      td = link_to 'Whatsock', 'http://whatsock.com/modules/aria_tabs_menu_modules/demo.htm'
+      td
+        markdown:
+          - JAWS/NVDA
+              - FF/IE: Non-ARIA Tabs geben kein Feedback, wenn man sie öffnet
+          - NVDA
+              - IE: Non-ARIA Tabs werden in einem Schwall vorgelesen und sind nicht einzeln mit im Browse-Modus annavigierbar
+    tr
+      th = link_to 'jQuery UI Tabs', example_path('jquery_ui_tabs_plugin')
+      td = link_to 'jQuery UI', 'https://jqueryui.com/tabs/'
+      td
+        markdown:
+          - JAWS:
+              - IE/FF: Recht seltsames (dafür in beiden Browsern konsistentes?) Verhalten, recht unterschiedlich ob Browse oder Focus Mode; dafür kann mit Spacebar tatsächlich aktiviert werden. Aber es wird oft fälschlicherweise "collapsed" ausgegeben.
+          - NVDA:
+              - IE/FF: Unbedienbar! Nur in Focus Mode einigermassen verwendbar. Aber es wird oft fälschlicherweise "collapsed" ausgegeben.
+    tr
+      th = link_to 'jQuery Accessible Tabs', example_path('jquery_accessible_tabs_plugin')
+      td = link_to 'Accessible-Tabs', 'http://blog.ginader.de/dev/jquery/accessible-tabs/simple.html'
+      td
+        markdown:
+          - JAWS:
+              - IE/FF: Eine sehr einfache und gute Idee, ohne irgendwas über Tabs zu sagen (kein ARIA!). Allerdings sind die Inhalte nicht richtig versteckt: die Headings der einzelnen Tabs sind sichtbar für Screenreader, deren Inhalte aber nur, wenn der entsprechende Tab aktiviert ist (und es gibt keine Info darüber, dass bzw. welcher Tab aktiviert ist)
+
+
+    markdown:
+      http://accessibility.athena-ict.com/aria/examples/tabpanel2.shtml
+      
+      - JAWS: Sieht gut aus! Up/down ist nicht intercepted, juhu!
+      - NVDA: Im IE und Browse Modus werden alle Tabs in einem Schwall vorgelesen (ist aber einigermassen akzeptabel) => wenn man display:inline entfernt (und nur floaten lässt), ist es glaubs besser
+
+      http://a11y.nicolas-hoffmann.net/tabs/#used_on
+      
+      - JAWS: Sähe auch gut aus, aber up/down ist intercepted. :( Zwar recht gut bedienbar, wenn man mal gecheckt hat, dass man 1x mehr tabben muss und dann im Content landet, wo man mit up/down wieder scrollen kann. Aber meines Erachtens nicht perfekt.
+      - NVDA: Im IE wird nicht immer Feedback gegeben wenn Tab selektiert wird
+
+      http://oaa-accessibility.org/examplep/tabpanel2/
+      
+      - JAWS: Unbedienbar, da up/down immer intercepted! Es ist unmöglich, die Inhalte zu lesen im Browse Modus.
+      - NVDA: ebenfalls.
+
+      http://oaa-accessibility.org/examplep/accordian2/
+
+      - JAWS: Unbedienbar, da up/down immer intercepted! Es ist unmöglich, die Inhalte zu lesen im Browse Modus.
+
+      http://www.zvv.ch/zvv/de/aktuelles.html
+
+      - JAWS: Sobald mal ein Tab ausgewählt ist (Focus Mode), wird mit Pfeiltasten navigiert, aber es gibt dem Screenreader kein Feedback.
+      - NVDA: Ebenfalls
+
+      http://www.barrierefreies-webdesign.de/knowhow/tablist/tabpanel-links-tabindex.html
+
+      - Keyboard-only: Tabbing zurück aus den Tabs ist nicht möglich
+
+      https://hanshillen.github.io/jqtest
+
+      - JAWS: Im IE wird beim Öffnen eines Tabs der Fokus wieder an den Anfang des Dokuments gesetzt; im FF kann man die Tabs nicht mehr verlassen im Browse Modus
+      - NVDA: Im FF wird beim Öffnen eines Tabs kein Feedback gegeben; im IE wird zum Inhalt gesprungen und gleich alles vorgelesen (finde ich generell schlecht, besser nur erstes Element fokussieren)
+      
+      => Von Paciello Group! Sind wir blöd und machen irgendwas falsch, oder sind die blöd?!

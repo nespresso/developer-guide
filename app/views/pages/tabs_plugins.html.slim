@@ -76,6 +76,22 @@ table.table.table-bordered.table-striped
         .label.label-success Recommended
 
     tr
+      th = link_to 'Accessible Culture Tabs', 'http://accessibleculture.org/articles/2010/08/aria-tabs/'
+      td
+        ul
+          li.info Uses ARIA
+          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
+          li.info Of the different versions listed, we recommend #{link_to '#2b', 'http://accessibleculture.org/research-files/aria-tabs/version2b.php'} and #{link_to '#3a', 'http://accessibleculture.org/research-files/aria-tabs/version3a.php'}
+      td
+        ul
+          li
+            strong JAWS + IE
+            ul
+              li.neglectable Gives instruction to use <code>Space</code> to open tab, but doesn't work
+      td
+        .label.label-success Recommended
+
+    tr
       th = link_to 'OAAA Tab Panel', 'http://oaa-accessibility.org/examplep/tabpanel2/'
       td
         ul

@@ -1,65 +1,205 @@
 = headline_with_flash 'Tabs plugins'
 
-== render 'tabs_plugins_teaser'
-
-markdown:
-  ## Things to consider
-
-  - The [interaction design pattern promoted for ARIA-enabled tabs](http://www.w3.org/TR/2009/WD-wai-aria-practices-20091215/#tabpanel) suggests that just the currently active tab control be found in the Tab order, and that the tab controls be navigable using the arrow keys. Setting focus to a tab control loads the associated content tabpanel which is otherwise hidden. In a web page, for most screen readers (or, at least those that work with a virtual buffer) this means switching to Application Mode. JAWS 11 and NVDA 2010.1 both automatically enter Application Mode when focus is set to a tab control. Yet, because the screen reader is now passing keyboard commands through to the browser, we can no longer use the normal reading commands to access the tabpanel’s content. We can still easily use the Tab key to move to the first form control or focussable element in the tabpanel and interact with it. However, if a tabpanel contains nothing but regular text content, there is nothing to set focus to using the Tab key. The user can, of course, manually turn the Virtual Cursor back on, but it is worth noting that setting focus to a non-form or non-application element can accomplish the same thing in some instances; so this suggests a possible workaround, namely including such an element, for example, a heading, in the Tab order at the beginning of the tabpanel content.
-  - Conclusion: there is the impression that there does not appear to be one ideal approach where broad accessibility is concerned. It may be reasonable to include for screen reader users some sort of instructions just before the tabbed interface. Still, the very fact that such instructions should prove useful suggests, I think, that an ARIA-enabled tabbed interface might for now just get in the way of a usable experience for too many users. To sum up, in none of the versions presented here will the experience necessarily be clear and obvious for all users with all screen readers, and especially not for older versions.
+.row
+  .col-md-9
+    == render 'tabs_plugins_teaser'
   
-  Source: [Accessible ARIA Tabs](http://accessibleculture.org/articles/2010/08/aria-tabs/), published in 2010!
-  
-  Frage: GEHT JAWS IMMER IN DEN APP MODUS, EGAL WIE DAS WIDGET PROGRAMIERT IST?!
-  Frage: IST NVDA IM IE IMMER SO EXTREM LANGSAM?!
-  Da hat es evtl. gute zugängliche Widgets: http://accessibility.athena-ict.com/aria/aria-examples-index.shtml
-  Nur fancy ARIA Tabs benutzen, wenn es sich tatsächlich um eine Webapp mit vielen, vielen Tabs handelt! Sonst besser nahe bei traditionellem HTML bleiben. (Kommentar von Jan Hellbusch im Mail vom 21.10.2015, 14:33)
-  Sowohl JAWS als auch NVDA scheinen Meta-Infos unabhängig von Seitensprache auszugeben
+    h3 Used software
 
-  ## Reviews
+    dl.dl-horizontal
+      dt Screenreaders
+      dd = link_to 'NVDA 2015.3', 'http://www.nvaccess.org'
+      dd = link_to 'JAWS 16.0.4463', 'http://www.freedomscientific.com/Products/Blindness/JAWS'
+
+      dt Browsers
+      dd = link_to 'Internet Explorer (IE) 11.0.9600.18059', 'http://windows.microsoft.com/de-ch/internet-explorer'
+      dd = link_to 'Firefox (FF) 41.0.2', 'https://www.mozilla.org'
+
+    h3 Considered use cases
+
+    ul
+      li Keyboard-only
+      li Any combination of the screenreaders NVDA/JAWS and the browsers FF/IE
+      / li iOS with activated VoiceOver on Safari
+      / li Android with activated TalkBack on Firefox
+
+  .col-md-3
+    == render 'plugins_related'
+
+h2 Results
 
 table.table.table-bordered.table-striped
   thead
     tr
       th Name
-      th Producer
-      th Rating
+      th General information
+      th Annoyances
+      th Verdict
 
   tbody
     tr
-      th = link_to 'Bootstrap Tabs', example_path('bootstrap_tabs_plugin')
-      td = link_to 'Twitter Bootstrap', 'http://getbootstrap.com/javascript/#tabs'
+      th = link_to 'Athena ICT Tabs', 'http://accessibility.athena-ict.com/aria/examples/tabpanel2.shtml'
       td
-        markdown:
-          - JAWS
-              - IE: Sagt den geöffneten Status mit "collapsed" an
-          - NVDA
-              - IE: beim Aktivieren von Tab wird direkt der Inhalt vorgelesen, der Fokus bleibt aber beim Tab selber?!
+        ul
+          li.info Uses ARIA
+          li.info Intercepts <code>←</code>/<code>→</code> keys
+      td
+        ul
+          li
+            strong NVDA + IE
+            ul
+              li.neglectable In browse mode, tabs are announced inline and thus not specifically selectable using <code>↑</code>/<code>↓</code>
+      td
+        .label.label-success Recommended
 
     tr
-      th = link_to 'Whatsock Tabs', example_path('whatsock_tabs_plugin')
-      td = link_to 'Whatsock', 'http://whatsock.com/modules/aria_tabs_menu_modules/demo.htm'
+      th = link_to 'jQuery Accessible tab panel system', 'http://a11y.nicolas-hoffmann.net/tabs/'
       td
-        markdown:
-          - JAWS/NVDA
-              - FF/IE: Non-ARIA Tabs geben kein Feedback, wenn man sie öffnet
-          - NVDA
-              - IE: Non-ARIA Tabs werden in einem Schwall vorgelesen und sind nicht einzeln im Browse-Modus annavigierbar
+        ul
+          li.info Uses ARIA
+          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
+      td
+        ul
+          li
+            strong NVDA + IE
+            ul
+              li.neglectable Tabs are announced twice
+      td
+        .label.label-success Recommended
 
     tr
-      th = link_to 'jQuery UI Tabs', example_path('jquery_ui_tabs_plugin')
-      td = link_to 'jQuery UI', 'https://jqueryui.com/tabs/'
+      th = link_to 'OAAA Tab Panel', 'http://oaa-accessibility.org/examplep/tabpanel2/'
       td
-        markdown:
-          - JAWS:
-              - IE/FF: Recht seltsames (dafür in beiden Browsern konsistentes?) Verhalten, recht unterschiedlich ob Browse oder Focus Mode; dafür kann mit Spacebar tatsächlich aktiviert werden. Aber es wird oft fälschlicherweise "collapsed" ausgegeben. Es wird im Fokus Modus autom. geöffnet.
-          - NVDA:
-              - IE/FF: Unbedienbar! Nur in Focus Mode einigermassen verwendbar. Aber es wird oft fälschlicherweise "collapsed" ausgegeben.
+        ul
+          li.info Uses ARIA
+          li.info Uses <code>role="application"</code>
+          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
+      td
+      td
+        .label.label-warning For applications only
 
     tr
-      th = link_to 'jQuery Accessible Tabs', example_path('jquery_accessible_tabs_plugin')
-      td = link_to 'Accessible-Tabs', 'http://blog.ginader.de/dev/jquery/accessible-tabs/simple.html'
+      th = link_to 'Twitter Bootstrap Tabs', 'http://getbootstrap.com/javascript/#tabs'
       td
-        markdown:
-          - JAWS:
-              - IE/FF: Eine sehr einfache und gute Idee, ohne irgendwas über Tabs zu sagen (kein ARIA!). Allerdings sind die Inhalte nicht richtig versteckt: die Headings der einzelnen Tabs sind sichtbar für Screenreader, deren Inhalte aber nur, wenn der entsprechende Tab aktiviert ist (und es gibt keine Info darüber, dass bzw. welcher Tab aktiviert ist)
+        ul
+          li.info Uses ARIA
+      td
+        ul
+          li
+            strong JAWS + IE
+            ul
+              li.neglectable Once a tab is selected, focus mode is activated and other tabs can only be selected by leaving focus mode again
+              li.killer Announces expanded status as "collapsed"
+          li
+            strong NVDA + IE
+            ul
+              li.neglectable When opening a tab, its content is announced directly, but the focus itself stays on the tab
+      td
+        .label.label-danger Not recommended
+
+    tr
+      th = link_to 'Whatsock Tabs (ARIA)', 'http://whatsock.com/modules/aria_tabs_menu_modules/demo.htm'
+      td
+        ul
+          li.info Uses ARIA
+          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
+      td
+        ul
+          li
+            strong JAWS + FF/IE
+            ul
+              li.killer Focus mode is toggled on and off whenever a tab is activated
+      td
+        .label.label-danger Not recommended
+
+    tr
+      th = link_to 'Whatsock Tabs (non-ARIA)', 'http://whatsock.com/modules/aria_tabs_menu_modules/demo.htm'
+      td
+        ul
+          li.info No ARIA used
+      td
+        ul
+          li
+            strong JAWS/NVDA + FF/IE
+            ul
+              li.killer No feedback when activating a tab
+          li
+            strong NVDA + IE
+            ul
+              li.neglectable In browse mode, tabs are announced inline and thus not specifically selectable using <code>↑</code>/<code>↓</code>
+      td
+        .label.label-danger Not recommended
+
+    tr
+      th = link_to 'jQuery UI Tabs', 'https://jqueryui.com/tabs/'
+      td
+        ul
+          li.info Uses ARIA
+          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
+      td
+        ul
+          li
+            strong JAWS/NVDA + FF/IE
+            ul
+              li.killer Announces expanded status as "collapsed"
+          li
+            strong NVDA + FF/IE
+            ul
+              li.killer Tabs can't be activated in browse mode
+      td
+        .label.label-danger Not recommended
+
+    tr
+      th = link_to 'jQuery Accessible Tabs', 'http://blog.ginader.de/dev/jquery/accessible-tabs/simple.html'
+      td
+        ul
+          li.info No ARIA used
+          li.info Hybrid of jump links and tabs
+          li.info Allows navigation between tabs only using <code>Tab</code> key
+      td
+        ul
+          li
+            strong JAWS/NVDA + FF/IE
+            ul
+              li.killer Buggy (behaviour becomes unpredictable when playing with it)
+      td
+        .label.label-danger Not recommended
+
+    tr
+      th = link_to 'Barrierefreies Webdesign Tabs', 'http://www.barrierefreies-webdesign.de/knowhow/tablist/tabpanel-links-tabindex.html'
+      td
+        ul
+          li.info Uses ARIA
+          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
+      td
+        ul
+          li
+            strong Keyboard-only
+            ul
+              li.neglectable Tabs can only be activated using <code>Space</code>
+          li
+            strong JAWS + FF/IE
+            ul
+              li.killer Focus mode is toggled on and off whenever a tab is activated
+              li.killer Tabs are only activated when pressing <code>Enter</code> in browse mode (whereas pressing <code>Space</code> always works)
+      td
+        .label.label-danger Not recommended
+
+    tr
+      th = link_to 'Accessible jQuery UI Tabs', 'https://hanshillen.github.io/jqtest'
+      td
+        ul
+          li.info Uses ARIA
+          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
+      td
+        ul
+          li
+            strong JAWS + IE
+            ul
+              li.killer Focus jumps to the beginning of the document when activating a tab
+          li
+            strong NVDA + FF
+            ul
+              li.killer No feedback when activating a tab
+      td
+        .label.label-danger Not recommended

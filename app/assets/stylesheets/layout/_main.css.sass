@@ -12,9 +12,11 @@ main
 
   a[href^="http:"],
   a[href^="https:"]
-    white-space: nowrap
-
     &:after
       font: normal normal normal 14px/1 FontAwesome
       content: " \f08e"
       color: $alert-danger-text
+
+  table
+    ul, ol
+      padding-left: 20px

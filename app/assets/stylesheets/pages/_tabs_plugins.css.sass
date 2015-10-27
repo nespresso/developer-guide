@@ -1,0 +1,24 @@
+body.pages.tabs_plugins
+  .killer,
+  .neglectable,
+  .info
+    &:before
+      @extend .label
+      font-weight: normal
+      margin-right: 0.5em
+      padding-right: 0.25em
+
+  .killer
+    &:before
+      @extend .label-danger
+      content: 'Killer '
+
+  .neglectable
+    &:before
+      @extend .label-warning
+      content: 'Neglectable '
+
+  .info
+    &:before
+      @extend .label-primary
+      content: 'Info '

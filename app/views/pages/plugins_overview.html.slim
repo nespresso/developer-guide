@@ -5,19 +5,18 @@
     == render 'plugins_teaser'
 
     .row
-      .col-md-4
-        h2 = link_to 'Accordion plugins', page_path('accordion_plugins')
-        == render 'accordion_plugins_teaser'
-
-      .col-md-4
-        h2 = link_to 'Carousel plugins', page_path('carousel_plugins')
-        == render 'carousel_plugins_teaser'
+      / .col-md-4
+      /   h2 = link_to 'Accordion plugins', page_path('accordion_plugins')
+      /   == render 'accordion_plugins_teaser'
+      /
+      / .col-md-4
+      /   h2 = link_to 'Carousel plugins', page_path('carousel_plugins')
+      /   == render 'carousel_plugins_teaser'
 
       .col-md-4
         h2 = link_to 'Tabs plugins', page_path('tabs_plugins')
         == render 'tabs_plugins_teaser'
 
-    .row
       .col-md-4
         markdown:
           ## Want more? Know more?
@@ -27,15 +26,7 @@
           Or ask us to do a review while #{link_to 'donating some bucks', page_path('support_us')}!
 
   .col-md-3
-    .alert.alert-success
-      h2.sr-only Focus of these examples
-
-      markdown:
-        **Focus on screenreader usage!**
-
-        The following examples' focus mainly lies on screenreader usage.
-
-        You'll learn more about other tools and topics in the "Tools & workshops" section.
+    == render 'plugins_related'
 
 p#lets_go
   = link_to 'This was great action! But what to do in specific situations?', page_path('recipes_overview'), class: 'btn btn-warning btn-lg'

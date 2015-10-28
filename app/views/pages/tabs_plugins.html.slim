@@ -48,7 +48,7 @@ table.table.table-bordered.table-striped
           li
             strong NVDA + IE
             ul
-              li.neglectable In browse mode, tabs are announced inline and thus not specifically selectable using <code>↑</code>/<code>↓</code>
+              li.neglectable In #{link_to 'browse mode', example_path('browsing_paragraphs')}, tabs are announced #{link_to 'inline', example_path('block_vs_inline_block')} and thus are not specifically selectable using <code>↑</code>/<code>↓</code>
           li
             strong iOS + VoiceOver
             ul
@@ -87,7 +87,7 @@ table.table.table-bordered.table-striped
           li
             strong JAWS + IE
             ul
-              li.neglectable In focus mode, gives instruction to use <code>Space</code> to open tab, but doesn't work
+              li.neglectable In #{link_to 'focus mode', example_path('browse_mode_vs_focus_mode')}, gives instruction to use <code>Space</code> to open tab, but doesn't work
       td
         .label.label-success Recommended
 
@@ -112,7 +112,7 @@ table.table.table-bordered.table-striped
           li
             strong JAWS + IE
             ul
-              li.neglectable Once a tab is selected, focus mode is activated and other tabs can only be selected by leaving focus mode again
+              li.neglectable Once a tab is selected, #{link_to 'focus mode', example_path('browse_mode_vs_focus_mode')} is activated and other tabs can only be selected by leaving focus mode again
               li.killer Announces expanded status as "collapsed"
           li
             strong NVDA + IE
@@ -132,7 +132,7 @@ table.table.table-bordered.table-striped
           li
             strong JAWS + FF/IE
             ul
-              li.killer Focus mode is toggled on and off whenever a tab is activated
+              li.killer #{link_to 'Focus mode', example_path('browse_mode_vs_focus_mode')} is toggled on and off whenever a tab is activated
       td
         .label.label-danger Not recommended
 
@@ -150,7 +150,7 @@ table.table.table-bordered.table-striped
           li
             strong NVDA + IE
             ul
-              li.neglectable In browse mode, tabs are announced inline and thus not specifically selectable using <code>↑</code>/<code>↓</code>
+              li.neglectable In #{link_to 'browse mode', example_path('browsing_paragraphs')}, tabs are announced #{link_to 'inline', example_path('block_vs_inline_block')} and thus are not specifically selectable using <code>↑</code>/<code>↓</code>
       td
         .label.label-danger Not recommended
 
@@ -169,7 +169,7 @@ table.table.table-bordered.table-striped
           li
             strong NVDA + FF/IE
             ul
-              li.killer Tabs can't be activated in browse mode
+              li.killer Tabs can't be activated in #{link_to 'browse mode', example_path('browsing_paragraphs')}
       td
         .label.label-danger Not recommended
 
@@ -204,8 +204,8 @@ table.table.table-bordered.table-striped
           li
             strong JAWS + FF/IE
             ul
-              li.killer Focus mode is toggled on and off whenever a tab is activated
-              li.killer Tabs are only activated when pressing <code>Enter</code> in browse mode (whereas pressing <code>Space</code> always works)
+              li.killer #{link_to 'Focus mode', example_path('browse_mode_vs_focus_mode')} is toggled on and off whenever a tab is activated
+              li.killer Tabs are only activated when pressing <code>Enter</code> in #{link_to 'browse mode', example_path('browsing_paragraphs')} (whereas pressing <code>Space</code> always works)
       td
         .label.label-danger Not recommended
 
@@ -225,5 +225,21 @@ table.table.table-bordered.table-striped
             strong NVDA + FF
             ul
               li.killer No feedback when activating a tab
+      td
+        .label.label-danger Not recommended
+
+    tr
+      th = link_to 'Heydon Works Tabs', 'http://heydonworks.com/practical_aria_examples/#tab-interface'
+      td
+        ul
+          li.info Uses ARIA
+          li.info Intercepts <code>←</code>/<code>→</code> keys
+      td
+        ul
+          li
+            strong NVDA + IE
+            ul
+              li.neglectable In #{link_to 'browse mode', example_path('browsing_paragraphs')}, tabs are announced #{link_to 'inline', example_path('block_vs_inline_block')} and thus are not specifically selectable using <code>↑</code>/<code>↓</code>
+              li.killer Can't be controlled in #{link_to 'browse mode', example_path('browsing_paragraphs')} (tabs must be entered using <code>Tab</code> to be controllable)
       td
         .label.label-danger Not recommended

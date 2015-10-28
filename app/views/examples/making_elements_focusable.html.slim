@@ -1,0 +1,24 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Making elements focusable'
+
+  markdown:
+    - Use `Tab` and `Shift + Tab` to navigate through the elements
+        - Are they focusable as expected?
+        - What about the tab order (sequence of the focused elements)?
+
+= example 'RWyZYJ'
+
+#conclusion aria-hidden="true"
+  markdown:
+    ## Conclusion
+
+    - `tabindex="0"` makes any element focusable
+    - `tabindex="-1"` removes any element from the tab order...
+    - ...but it can still be focused using JavaScript!
+    - `tabindex` with values greater than `0` allow to set a specific tab order, regardless of the element's sequence in the DOM (while all values greater than 0 come first, followed by the other elements)
+        - But it's never (really, **never**) advised to do this!
+        - Better keep your DOM clean, and everything will work for free for everyone.
+    - `aria-hidden="true"` has **no influence** on an element's visibility in focus mode (see [NVDA issue #5014](http://community.nvda-project.org/ticket/5014) for more info)
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

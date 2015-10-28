@@ -3,25 +3,46 @@
 .row
   .col-md-9
     == render 'tabs_plugins_teaser'
-  
-    h3 Used software
 
-    dl.dl-horizontal
-      dt Screenreaders
-      dd #{link_to 'NVDA', 'http://www.nvaccess.org'}, version 2015.3
-      dd #{link_to 'JAWS', 'http://www.freedomscientific.com/Products/Blindness/JAWS'}, version 16.0.4463
+    .row
+      .col-md-6
+        h3 Desktop
 
-      dt Browsers
-      dd #{link_to 'Internet Explorer (IE)', 'http://windows.microsoft.com/de-ch/internet-explorer'}, version 11.0.9600.18059
-      dd #{link_to 'Firefox (FF)', 'https://www.mozilla.org'}, version 41.0.2
+        h4 Software
 
-    h3 Considered use cases
+        dl.dl-horizontal
+          dt Screenreaders
+          dd #{link_to 'NVDA', 'http://www.nvaccess.org'}, version 2015.3
+          dd #{link_to 'JAWS', 'http://www.freedomscientific.com/Products/Blindness/JAWS'}, version 16.0.4463
 
-    ul
-      li Keyboard-only
-      li Any combination of the screenreaders NVDA/JAWS and the browsers FF/IE
-      / li iOS with activated VoiceOver on Safari
-      / li Android with activated TalkBack on Firefox
+          dt Browsers
+          dd #{link_to 'Internet Explorer', 'http://windows.microsoft.com/de-ch/internet-explorer'} (IE), version 11.0.9600.18059
+          dd #{link_to 'Firefox', 'https://www.mozilla.org'} (FF), version 41.0.2
+
+        h4 Considered use-cases
+
+        ul
+          li Keyboard-only
+          li JAWS on IE and FF
+          li NVDA on IE and FF
+
+      .col-md-6
+        h3 Mobile
+
+        h4 Software
+
+        dl.dl-horizontal
+          dt Screenreaders
+          dd #{link_to 'VoiceOver (iOS)', 'http://www.apple.com/accessibility/ios/voiceover/'}, version ?
+
+          dt Browsers
+          dd #{link_to 'Safari', 'http://www.apple.com/safari/'}, version ?
+
+        h4 Considered use-cases
+
+        ul
+          li VoiceOver (iOS) on Safari
+          / li TalkBack on Firefox
 
   .col-md-3
     == render 'plugins_related'
@@ -50,7 +71,7 @@ table.table.table-bordered.table-striped
             ul
               li.neglectable In #{link_to 'browse mode', example_path('browsing_paragraphs')}, tabs are announced #{link_to 'inline', example_path('block_vs_inline_block')} and thus are not specifically selectable using <code>↑</code>/<code>↓</code>
           li
-            strong iOS + VoiceOver
+            strong VoiceOver (iOS) + Safari
             ul
               li.neglectable When selecting a tab, it's announced twice
       td
@@ -69,7 +90,7 @@ table.table.table-bordered.table-striped
             ul
               li.neglectable Tabs are announced twice
           li
-            strong iOS + VoiceOver
+            strong VoiceOver (iOS) + Safari
             ul
               li.neglectable When selecting a tab, it's announced twice
       td

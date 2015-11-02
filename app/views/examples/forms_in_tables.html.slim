@@ -26,6 +26,7 @@
         - `<fieldset>`/`<legend>` combos can be applied around tables
     - Some minor redundancies because of similar (or even equal) contents of `<label>` and `<th>` elements are neglectable
     - Important: only use tables to structure complex forms! Tables are not the first choice to structure the visual layout of basic forms (instead, use CSS!).
+    - While NVDA announces table headers when a form element is focused within a table, JAWS doesn't! So be sure to always have a self-speaking, meaningful `<label>` for each form element, even when they are in a semantically highly marked up and structured table!
 
   p#home
     = link_to 'Accessibility Developer Guide', root_path

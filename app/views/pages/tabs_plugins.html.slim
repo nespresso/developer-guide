@@ -5,7 +5,7 @@
     == render 'tabs_plugins_teaser'
 
     .row
-      .col-md-6
+      .col-md-12
         h3 Desktop
 
         h4 Software
@@ -26,23 +26,25 @@
           li JAWS on IE and FF
           li NVDA on IE and FF
 
-      .col-md-6
-        h3 Mobile
+        p In screenreaders, interaction with the tabs in both #{link_to 'browse and focus mode', example_path('browse_mode_vs_focus_mode')} was tested.
 
-        h4 Software
-
-        dl.dl-horizontal
-          dt Screenreaders
-          dd #{link_to 'VoiceOver (iOS)', 'http://www.apple.com/accessibility/ios/voiceover/'}, version ?
-
-          dt Browsers
-          dd #{link_to 'Safari', 'http://www.apple.com/safari/'}, version ?
-
-        h4 Considered use-cases
-
-        ul
-          li VoiceOver (iOS) on Safari
-          / li TalkBack on Firefox
+      / .col-md-6
+      /   h3 Mobile
+      /
+      /   h4 Software
+      /
+      /   dl.dl-horizontal
+      /     dt Screenreaders
+      /     dd #{link_to 'VoiceOver (iOS)', 'http://www.apple.com/accessibility/ios/voiceover/'}, version ?
+      /
+      /     dt Browsers
+      /     dd #{link_to 'Safari', 'http://www.apple.com/safari/'}, version ?
+      /
+      /   h4 Considered use-cases
+      /
+      /   ul
+      /     li VoiceOver (iOS) on Safari
+      /     / li TalkBack on Firefox
 
   .col-md-3
     == render 'plugins_related'
@@ -55,7 +57,7 @@ table.table.table-bordered.table-striped
       th Name
       th General information
       th Annoyances
-      th Verdict
+      th Accessible?
 
   tbody
     tr
@@ -78,7 +80,7 @@ table.table.table-bordered.table-striped
         .label.label-success Recommended
 
     tr
-      th = link_to 'jQuery Accessible tab panel system', 'http://a11y.nicolas-hoffmann.net/tabs/'
+      th = link_to 'Barrierefreies Webdesign Tabs', 'http://www.barrierefreies-webdesign.de/knowhow/tablist/tabpanel-links-tabindex.html'
       td
         ul
           li.info Uses ARIA
@@ -86,13 +88,14 @@ table.table.table-bordered.table-striped
       td
         ul
           li
-            strong NVDA + IE
+            strong Keyboard-only
             ul
-              li.neglectable Tabs are announced twice
+              li.neglectable Tabs can only be activated using <code>Space</code>
           li
-            strong VoiceOver (iOS) + Safari
+            strong JAWS + FF/IE
             ul
-              li.neglectable When selecting a tab, it's announced twice
+              li.neglectable #{link_to 'Focus mode', example_path('browse_mode_vs_focus_mode')} is toggled on and off whenever a tab is activated
+              li.neglectable Tabs are only activated when pressing <code>Enter</code> in #{link_to 'browse mode', example_path('browsing_paragraphs')} (whereas pressing <code>Space</code> always works)
       td
         .label.label-success Recommended
 
@@ -122,6 +125,25 @@ table.table.table-bordered.table-striped
       td
       td
         .label.label-warning For applications only
+
+    tr
+      th = link_to 'jQuery Accessible tab panel system', 'http://a11y.nicolas-hoffmann.net/tabs/'
+      td
+        ul
+          li.info Uses ARIA
+          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
+      td
+        ul
+          li
+            strong NVDA + IE
+            ul
+              li.killer No feedback when activating a tab
+          li
+            strong VoiceOver (iOS) + Safari
+            ul
+              li.neglectable When selecting a tab, it's announced twice
+      td
+        .label.label-danger Not recommended
 
     tr
       th = link_to 'Twitter Bootstrap Tabs', 'http://getbootstrap.com/javascript/#tabs'
@@ -207,26 +229,6 @@ table.table.table-bordered.table-striped
             strong JAWS/NVDA + FF/IE
             ul
               li.killer Buggy (behaviour becomes unpredictable when playing with it)
-      td
-        .label.label-danger Not recommended
-
-    tr
-      th = link_to 'Barrierefreies Webdesign Tabs', 'http://www.barrierefreies-webdesign.de/knowhow/tablist/tabpanel-links-tabindex.html'
-      td
-        ul
-          li.info Uses ARIA
-          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
-      td
-        ul
-          li
-            strong Keyboard-only
-            ul
-              li.neglectable Tabs can only be activated using <code>Space</code>
-          li
-            strong JAWS + FF/IE
-            ul
-              li.killer #{link_to 'Focus mode', example_path('browse_mode_vs_focus_mode')} is toggled on and off whenever a tab is activated
-              li.killer Tabs are only activated when pressing <code>Enter</code> in #{link_to 'browse mode', example_path('browsing_paragraphs')} (whereas pressing <code>Space</code> always works)
       td
         .label.label-danger Not recommended
 

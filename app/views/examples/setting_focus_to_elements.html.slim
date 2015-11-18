@@ -1,0 +1,35 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Setting focus to elements'
+
+  markdown:
+    Focus management is essential to an accessible website. For example, a screenreader won't notice a custom alert box that's popping up on a website after an AJAX call, so you have to set the focus on it.
+
+    - Activate the "Jump to..." links
+    - Activate the button
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'YyBdNv'
+
+#conclusion aria-hidden="true"
+  markdown:
+    - When jumping to an element, `<a>` tags are to be chosen
+        - Don't forget to add an `href` attribute, otherwise the link isn't focusable (as `<a>` tags without `href` attribute are interpreted as anchors, not links)
+            - The value of the `href` attribute is the ID of the target object
+        - For input fields, when wanting the user to input something, you have to rely on JavaScript
+    - When not simply jumping to an element, but altering it (e.g. toggling visibility, adding or moving it), `<button>` tags are to be chosen
+    - You can set focus to any focusable element
+        - Make non-focusable elements focusable using `tabindex` attribute
+            - Setting `tabindex="0"` makes the element focusable by keyboard, too
+            - Setting `tabindex="-1"` makes the element focusable only by JavaScript
+            - Setting `tabindex` with a value higher than 0 makes it focusable before every other element
+                - This is usually not recommended, you should try to rely on the "natural" sequence of the elements in the DOM
+    - Most of the times you better don't focus containers, as screenreaders will announce the entire content in one go
+        - It's usually better to simply focus the first element of the content (and let the user decide, whether he wants to read on manually)
+        - For small containers (e.g. an alert), it can be good to focus the whole item
+    - There is no way to make focusable items non-focusable for screenreaders only
+        - Important: the `aria-hidden` attribute can hide things from screenreaders in browse mode only, not in focus mode (more info: #{link_to 'Browse mode vs. focus mode', 'browse_mode_vs_focus_mode'})
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

@@ -1,8 +1,13 @@
 module ExamplesHelper
   def example(pen_id)
+    # TODO: aria hidden!!!
     content_tag :div, id: 'code' do
       style = content_tag :style do
         `curl http://codepen.io/jmuheim/pen/#{pen_id}.css`.html_safe
+      end
+
+      script = content_tag :script do
+        `curl http://codepen.io/jmuheim/pen/#{pen_id}.js`.html_safe
       end
 
       example = `curl http://codepen.io/jmuheim/pen/#{pen_id}.html`.html_safe
@@ -13,7 +18,7 @@ module ExamplesHelper
         end
       end
 
-      style + example
+      style + example + script
     end
   end
 end

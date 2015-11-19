@@ -1,21 +1,42 @@
 = headline_with_flash 'Recipes overview'
 
-== render 'recipes_teaser'
+.row
+  .col-md-9
+    == render 'recipes_teaser'
 
-markdown:
-  Here you'll be presented with all the tools and workflows we use in our daily testing business. We tried to phrase each workflow like a recipe, so you can easily apply it to your own needs.
+    markdown:
+      Here you'll be presented with all the tools and workflows we use in our daily testing business. We tried to phrase each workflow like a recipe, so you can easily apply it to your own needs.
 
-  ### Tools
+      ### Tools
 
-  TODO
+      - **#{link_to 'Visible Headings Bookmarklet', page_path('visible_heading_bookmarklet')}** - Shows you the current document's heading outline
+      - **WAVE Toolbar (Chrome, FF)**<sup>to do</sup> - Execute some general accessibility tests within the browser
+      - **Web Developer Toolbar (Chrome, FF)**<sup>to do</sup> - An important tool for every developer
+      - **Colour Contrast Analyser (Win, OS X)**<sup>to do</sup> - Check contrasts between two manually selected colors
+      - **Color Contrast Analyzer (Chrome)**<sup>to do</sup> - Check full websites for contrasts in one go (incl. images)
+      - **WCAG Contrast Checker (FF)**<sup>to do</sup> - Check full websites for contrasts in one go
+      - **Tanaguru Contrast-Finder (FF)**<sup>to do</sup> - Hover over an element of a website to check its contrast
+      - **Tanaguru Contrast-Finder (Online)**<sup>to do</sup> - Need to tweak your design's colors to improve contrast? Check this out!
+      - **Contents Structured Bookmarklet**<sup>to do</sup> - Displays semantic info about elements on a website
+      - **Web Accessibility Toolbar (IE)**<sup>to do</sup> - Has a lot of useful features
+      - **Jim Thatcher Favelets (FF)**<sup>to do</sup> - Has a lot of useful features
+      - **Juicy Studio Accessibility Toolbar (FF)**<sup>to do</sup> - Has a lot of useful features
+      - ...more to come...
 
-  ### Workflows
+      ### Workflows
 
-  TODO
+      - **Display images' alt attributes**<sup>to do</sup> - Review text alternatives of images
+      - ...more to come...
 
-  ### Tipps and Tricks
+      ### Tipps and Tricks
 
-  - #{link_to 'Linearize full page into text (or: How a screenreader perceives a page)', page_path('linearize_full_page')}
+      - #{link_to 'Linearize full page into text (or: How a screenreader perceives a page)', page_path('linearize_full_page')}
+      - ...more to come...
+
+  .col-md-3
+    == render 'recipes_related'
+
+== render 'shared/no_content_yet'
 
 p#lets_go
   = link_to 'I know all the tools, but gimme some more theoretical background!', page_path('appendix_overview'), class: 'btn btn-primary btn-lg'

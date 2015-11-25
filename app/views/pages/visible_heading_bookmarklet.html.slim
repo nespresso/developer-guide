@@ -3,7 +3,7 @@
 .row
   .col-md-8
     markdown:
-      This bookmarklet shows the current website's headings outline the same way a screenreader does.
+      This bookmarklet shows the current website's headings outline similar to like a screenreader does.
 
       ## Installation
 
@@ -19,9 +19,20 @@
     = image_tag 'pages/visible_heading_bookmarklet/screenshot.jpg', alt: 'Screenshot', class: 'img-rounded'
 
 markdown:
-  ## Warning
+  ## Disclaimer
 
-  While this tool is very accurate, there are other tools that pretend to do the same thing, but are not always accurate!
+  This bookmarklet relies on [jQuery's `:visible` selector](https://api.jquery.com/visible-selector/). Screenreaders may have other opinions about what exactly should be treated as visible, so always use a screenreader as a reference!
+
+  One difference between this bookmarklet and NVDA that we're aware of is when using a way machnism to visually hide things that don't have a `width` or `height` of at least `1px`:
+
+  - NVDA seems to treat such elements as visible
+  - jQuery doesn't (so this bookmarklet doesn't either)
+
+  Be sure to use a mechanism to visually hide things that is treated universally the same! There's a good WebAIM article about this topic: [Invisible Content Just for Screen Reader Users](http://webaim.org/techniques/css/invisiblecontent/).
+
+  ## Alternatives
+
+  While this tool is quite accurate (see disclaimer above), there are other tools that to do the same thing, but are not accurate in certain situations!
 
   For example, the browser extension "HeadingsMap" (for [Firefox](https://addons.mozilla.org/de/firefox/addon/headingsmap/) and [Chrome](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi)) also displays headings that are hidden from screenreaders (e.g. using CSS `display: none` or `visibility: hidden`).
   

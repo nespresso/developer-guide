@@ -23,12 +23,14 @@ markdown:
 
   This bookmarklet relies on [jQuery's `:visible` selector](https://api.jquery.com/visible-selector/). Screenreaders may have other opinions about what exactly should be treated as visible, so always use a screenreader as a reference!
 
-  One difference between this bookmarklet and NVDA that we're aware of is when using a way machnism to visually hide things that don't have a `width` or `height` of at least `1px`:
+  Be sure to use a mechanism to visually hide things that is treated universally the same! There's a good WebAIM article about this topic: [Invisible Content Just for Screen Reader Users](http://webaim.org/techniques/css/invisiblecontent/).
+
+  ### A difference to NVDA
+
+  One difference between this bookmarklet and NVDA (that we're aware of) is when using a machnism to visually hide things that don't have a `width` or `height` of at least `1px`:
 
   - NVDA seems to treat such elements as visible
   - jQuery doesn't (so this bookmarklet doesn't either)
-
-  Be sure to use a mechanism to visually hide things that is treated universally the same! There's a good WebAIM article about this topic: [Invisible Content Just for Screen Reader Users](http://webaim.org/techniques/css/invisiblecontent/).
 
   ## Alternatives
 

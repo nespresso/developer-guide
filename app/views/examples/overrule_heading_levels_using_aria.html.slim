@@ -16,8 +16,8 @@
 #conclusion aria-hidden="true"
   markdown:
     - Some of the headings, while defined using `<h1>` tags, are made to be of level 2 and 3 using `role="heading"` and the `aria-level` attribute
-        - You can use these attributes on any element, which (for example) means you can change a `<p>` to a heading like this: `<p role="heading" aria-level="1">This is a heading level 1</p>`
     - Be careful to always have both attributes present, as JAWS doesn't interpret `aria-level` without `role="heading"`!
+    - You can use these attributes on any element, which (for example) means you can change a `<p>` to a heading like this: `<p role="heading" aria-level="1">This is a heading level 1</p>`
     - NVDA seems to have some issues when it comes to jumping to specific heading levels using e.g. `1` ([NVDA issue #5434](http://community.nvda-project.org/ticket/5434))
 
     Be careful when overruling standard HTML semantics with ARIA attributes, as you never know whether your clients' assistive devices support it!

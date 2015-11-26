@@ -25,6 +25,8 @@ markdown:
 
   This bookmarklet relies on [jQuery's `:visible` selector](https://api.jquery.com/visible-selector/). Screenreaders may have other opinions about what exactly should be treated as visible, so always use a screenreader as a reference!
 
+  Especially, this bookmarklet **doesn't** take into account elements with `role="heading"` (see example #{link_to 'Overrule heading levels using ARIA', example_path('overrule_heading_levels_using_aria')}).
+
   ### NVDA vs. iOS VoiceOver
 
   We know about a difference between NVDA and VoiceOver when it comes to the decision about when something should be treated as visible. While iOS VoiceOver needs `width` or `height` of at least `1px` to treat an element as visible, NVDA doesn't. So iOS seems to be more conservative than NVDA.

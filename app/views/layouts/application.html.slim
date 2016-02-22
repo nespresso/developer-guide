@@ -15,10 +15,9 @@ html lang=I18n.locale
     = csrf_meta_tags
 
   body class=body_css_classes
-    == render 'layouts/jump_links'
-    == render 'layouts/fork_me'
-
     header
+      == render 'layouts/jump_links'
+
       h1.sr-only = t '.header'
       == render 'layouts/navigation'
 
@@ -33,7 +32,9 @@ html lang=I18n.locale
       .container
         .row
           .col-md-8.slogan
-            p #{link_to 'Base', 'https://github.com/jmuheim/base/'} - Pre-configured basic Rails project. Fork me!
+            p
+              => link_to t('app.name'), 'https://github.com/jmuheim/base/'
+              span.hidden-xs = t 'app.slogan'
 
           .col-md-4.copyright
-            p &copy; 2015 by #{link_to 'MuheimWebdesign.ch', 'http://www.muheimwebdesign.ch/'}
+            p &copy; 2015 #{link_to t('org.name'), 'http://www.muheimwebdesign.ch/'}

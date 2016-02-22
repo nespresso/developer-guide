@@ -1,29 +1,10 @@
+# See https://github.com/glebm/i18n-tasks/issues/183
+
 require 'rails_helper'
 require 'i18n/tasks'
 
 describe 'I18n' do
-  let(:i18n) { I18n::Tasks::BaseTask.new }
-
-  it 'does not have keys in locales that do not exist in base' do
-    # This produces ugly output, but for the moment it's enough. Lateron, there hopefully will be an i18n-task for this, see https://github.com/glebm/i18n-tasks/issues/71#issuecomment-48030057.
-    translated_missing_from_base = (i18n.locales - [i18n.base_locale]).map do |locale|
-       i18n.missing_tree i18n.base_locale, locale
-    end.reduce(:merge!)
-
-    expect(translated_missing_from_base).to be_empty
-  end
-
-  it "doesn't have any missing keys" do
-    count = i18n.missing_keys.count
-    pending "There are #{count} missing i18n keys! Run 'i18n-tasks missing' for more details." if count > 0
-  end
-
-  it "doesn't have any unused keys" do
-    count = i18n.unused_keys.count
-    pending "There are #{count} unused i18n keys! Run 'i18n-tasks unused' for more details." if count > 0
-  end
-
-  it "doesn't have missing model attribute translations" do
+  it 'does not have missing model attribute translations' do
     I18n.backend.send(:init_translations)
     fail_message = ''
     options = YAML.load_file(Rails.root.to_s + '/config/i18n-tasks.yml')
@@ -33,7 +14,7 @@ describe 'I18n' do
 
       project_models.each do |model|
         missing_columns = []
-        model_attributes_to_ignore = options['ignore_untranslated']['model_attributes'][model.name.underscore] || []
+        model_attributes_to_ignore = options['ignore_models']['attributes'][model.name.underscore] || []
 
         model.column_names.reject do |column_name|
           column_name =~ /^id$|_id$/
@@ -52,10 +33,10 @@ describe 'I18n' do
     fail "Missing model attribute translations:\n#{fail_message}" unless fail_message.empty?
   end
 
-  it "doesn't have missing model name translations" do
+  it 'does not have missing model name translations' do
     I18n.backend.send(:init_translations)
     fail_message = ''
-    model_names_to_ignore = YAML.load_file(Rails.root.to_s + '/config/i18n-tasks.yml')['ignore_untranslated']['model_names']
+    model_names_to_ignore = YAML.load_file(Rails.root.to_s + '/config/i18n-tasks.yml')['ignore_models']['names']
 
     I18n.available_locales.each do |locale|
       project_models.each do |model|

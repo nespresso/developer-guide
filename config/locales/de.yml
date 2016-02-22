@@ -1,57 +1,42 @@
 ---
 de:
   app:
-    name: Base
+    acronym: ADG
+    name: Accessibility Developer Guide
+    slogan: Lerne wie man Webseiten entwickelt und testet mit Zugänglichkeit im Hinterkopf!
   buttons:
     save: Speichern
   'false': Nein
-  layouts:
-    application:
-      footer: Fussbereich
-      header: Kopfbereich
-    jump_links:
-      content: Zum Inhalt springen
-      home_page: Zur Startseite springen
-      navigation: Zur Navigation springen
-    navigation:
-      choose_language: Sprache wählen
-      content_navigation: Inhaltsnavigation
-      current_group: aktuelle Menügruppe
-      current_item: aktueller Menüpunkt
-      meta_navigation: Benutzernavigation
-      navigation: Navigation
-      show_account: Konto anzeigen
-      sign_up: Registrieren
-      toggle_navigation: Menü
+  org:
+    name: MuheimWebdesign
   pages:
     about:
-      title: "Über Base"
+      title: "Über Accessibility Developer Guide"
     home:
-      title: Willkommen auf Base!
+      title: Willkommen auf dem Accessibility Developer Guide (ADG)!
     news:
       title: Letzte Neuigkeiten
     statistics:
-      number_of_users: Anzahl Benutzer
+      number_of_resource: Anzahl %{resource}
       title: Statistiken
   resources:
     create: "%{resource} erstellen"
     list: "%{resource} auflisten"
   shared:
     form:
-      actions:
-        toggle_dropdown: Menü umschalten
+      stale_info:
+        attribute: Attribut
+        difference: Differenz
+        instructions: Das Formular beinhaltet momentan nur deine Änderungen ("Neuer Wert"). Bitte führe die zwischenzeitlich von einem anderen Benutzer getätigten Änderungen manuell zu den deinen hinzu. Speichere erst, wenn du sicher bist, dass dadurch keine Änderungen ungewollt verloren gehen!
+        interim_image: Bisheriges Bild
+        interim_value: Zwischenzeitlicher Wert
+        new_image: Neues Bild
+        new_value: Neuer Wert
+        no_diff_available: Keine Differenz möglich
+        stale_attributes: Attribute, welche verändert worden sind
   'true': Ja
   users:
-    edit:
-      title: Benutzer %{user} bearbeiten
+    detail_inputs:
+      account_information: Konto Informationen
     form:
-      details: Details
       password: Passwort
-    index:
-      title: Benutzer auflisten
-    new:
-      title: Neuer Benutzer
-    show:
-      title: Benutzer %{user} anzeigen
-    users:
-      actions: Aktionen

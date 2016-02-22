@@ -31,6 +31,31 @@ describe ApplicationHelper do
     end
   end
 
+  describe '#sr_only' do
+    describe '#sr_only(content)' do
+      subject { sr_only 'This text is only for screen readers' }
+
+      it { should have_css 'span.sr-only' }
+      it { should have_content 'This text is only for screen readers' }
+    end
+  end
+
+  describe '#yes_or_no' do
+    describe '#yes_or_no(true)' do
+      subject { yes_or_no true }
+
+      it { should have_css 'span.glyphicon.glyphicon-ok' }
+      it { should have_content 'Yes' }
+    end
+
+    describe '#yes_or_no(false)' do
+      subject { yes_or_no false }
+
+      it { should have_css 'span.glyphicon.glyphicon-remove' }
+      it { should have_content 'No' }
+    end
+  end
+
   describe '#home_link_class' do
     pending "Doesn't work yet, see http://stackoverflow.com/questions/29400657"
 
@@ -87,6 +112,12 @@ describe ApplicationHelper do
   describe '#active_if_controller?' do
     describe '#active_if_controller?(current_controller)' do
       subject { active_if_controller?(:test) }
+
+      it { should be :active }
+    end
+
+    describe '#active_if_controller?(some_controller, current_controller)' do
+      subject { active_if_controller?(:some_controller, :test) }
 
       it { should be :active }
     end

@@ -9,7 +9,9 @@ describe 'Listing users' do
   it 'displays users' do
     visit users_path
 
-    expect(page).to have_content 'Users'
+    expect(page).to have_active_navigation_items 'Users', 'List Users'
+    expect(page).to have_breadcrumbs 'ADG', 'Users'
+    expect(page).to have_headline 'Users'
 
     within dom_id_selector(@user) do
       expect(page).to have_css '.name a', text: 'donald'
@@ -20,5 +22,30 @@ describe 'Listing users' do
     end
 
     expect(page).to have_link 'Create User'
+  end
+
+  it 'allows to filter users' do
+    @user_1 = create :user, name: 'anne', email: 'anne@example.com'
+    @user_2 = create :user, name: 'marianne', email: 'marianne@example.com'
+    @user_3 = create :user, name: 'eva', email: 'eva@example.com'
+
+    visit users_path
+
+    expect(page).to have_css dom_id_selector(@user_1)
+    expect(page).to have_css dom_id_selector(@user_2)
+    expect(page).to have_css dom_id_selector(@user_3)
+
+    fill_in 'q_name_cont', with: 'anne'
+    click_button 'Filter'
+
+    expect(page).to     have_css dom_id_selector(@user_1)
+    expect(page).to     have_css dom_id_selector(@user_2)
+    expect(page).not_to have_css dom_id_selector(@user_3)
+
+    click_link 'Remove filter'
+
+    expect(page).to have_css dom_id_selector(@user_1)
+    expect(page).to have_css dom_id_selector(@user_2)
+    expect(page).to have_css dom_id_selector(@user_3)
   end
 end

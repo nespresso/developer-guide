@@ -1,57 +1,42 @@
 ---
 en:
   app:
+    acronym: ADG
     name: Accessibility Developer Guide
+    slogan: Learn how to develop and test websites with accessibility in mind
   buttons:
     save: Save
   'false': 'No'
-  layouts:
-    application:
-      footer: Footer
-      header: Header
-    jump_links:
-      content: Jump to content
-      home_page: Jump to home page
-      navigation: Jump to navigation
-    navigation:
-      choose_language: Choose language
-      content_navigation: Content navigation
-      current_group: current menu group
-      current_item: current menu item
-      meta_navigation: User navigation
-      navigation: Navigation
-      show_account: Show account
-      sign_up: Sign up
-      toggle_navigation: Menu
+  org:
+    name: MuheimWebdesign
   pages:
     about:
       title: About
     home:
-      title: Accessibility Developer Guide
+      title: Welcome to the Accessibility Developer Guide (ADG)!
     news:
       title: Latest news
     statistics:
-      number_of_users: Number of users
+      number_of_resource: Anzahl %{resource}
       title: Statistics
   resources:
     create: Create %{resource}
     list: List %{resource}
   shared:
     form:
-      actions:
-        toggle_dropdown: Toggle dropdown
+      stale_info:
+        attribute: Attribute
+        difference: Difference
+        instructions: At the time being, the form only contains your changes ("New value"). Please merge the interim changes by the other user manually. Only save, when you are sure, that no changes are abandoned by error!
+        interim_image: Interim image
+        interim_value: Interim value
+        new_image: New image
+        new_value: New value
+        no_diff_available: No diff possible
+        stale_attributes: Attributes that have been changed
   'true': 'Yes'
   users:
-    edit:
-      title: Edit user %{user}
+    detail_inputs:
+      account_information: Account information
     form:
-      details: Details
       password: Password
-    index:
-      title: List users
-    new:
-      title: New user
-    show:
-      title: User %{user}
-    users:
-      actions: Actions

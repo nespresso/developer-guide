@@ -15,11 +15,11 @@ describe PageTitleAndHeadlineHelper do
       it { should have_content 'Some title' }
     end
 
-    describe '#headline_with_flash(user: "John")' do
-      before { helper.instance_variable_set(:@virtual_path, 'users.show') }
+    describe '#headline_with_flash(user: John)' do
+      before { helper.instance_variable_set(:@virtual_path, 'devise.registrations.show') }
       subject { helper.headline_with_flash(user: 'John') }
 
-      it { should have_content 'User John' }
+      it { should have_content 'Welcome, John!' }
     end
 
     context 'with a flash' do
@@ -68,7 +68,7 @@ describe PageTitleAndHeadlineHelper do
         helper.title_tag
       end
 
-      it { should eq '<title>This is the title - Accessibility Developer Guide</title>' }
+      it { should eq '<title>This is the title - ADG</title>' }
     end
 
     context 'with flash' do
@@ -79,7 +79,7 @@ describe PageTitleAndHeadlineHelper do
         helper.title_tag
       end
 
-      it { should eq '<title>Alert: This is an alert! Notice: This is a notice! This is the title - Accessibility Developer Guide</title>' }
+      it { should eq '<title>Alert: This is an alert! Notice: This is a notice! This is the title - ADG</title>' }
     end
   end
 end

@@ -1,13 +1,25 @@
 module ApplicationHelper
   def icon(name, content = nil)
     content_tag :span, class: ['glyphicon', "glyphicon-#{name}"] do
-      content_tag :span, content, class: 'sr-only' if content
+      sr_only content if content
     end
+  end
+
+  def sr_only(content)
+    content_tag :span, content, class: 'sr-only'
   end
 
   def flag(name, content = nil)
     content_tag :span, class: ['glyphicon', "bfh-flag-#{name.upcase}"] do
-      content_tag :span, content, class: 'sr-only' if content
+      sr_only content if content
+    end
+  end
+
+  def yes_or_no(bool)
+    if bool
+      icon 'ok', I18n.t(:true)
+    else
+      icon 'remove', I18n.t(:false)
     end
   end
 
@@ -45,10 +57,10 @@ module ApplicationHelper
   # TODO: Add spec!
   def user_avatar(content)
     if user_signed_in? && current_user.avatar?
-      image_tag(current_user.avatar.url(:thumb), class: 'avatar', alt: content)
+      image_tag(current_user.avatar.url(:thumb), class: 'avatar', alt: '')
     else
-      icon :user, content
-    end
+      icon :user
+    end + sr_only(content)
   end
 
   def container_for(object, options = {})
@@ -60,7 +72,7 @@ module ApplicationHelper
   end
 
   # See https://github.com/jejacks0n/navigasmic/issues/52
-  def active_if_controller?(controller_to_check)
-    :active if controller_name.to_s == controller_to_check.to_s
+  def active_if_controller?(*controllers_to_check)
+    :active if controllers_to_check.map(&:to_s).include? controller_name.to_s
   end
 end

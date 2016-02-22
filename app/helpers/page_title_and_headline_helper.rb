@@ -26,7 +26,8 @@ module PageTitleAndHeadlineHelper
 
     @headline = heading.nil? ? default_headline(options) : heading
 
-    content_tag :div, class: 'headline' do
+    # Tabindex is required so the focus is really set to the element when using the jump link
+    content_tag :div, id: 'headline', tabindex: 0 do
       content_tag(:h1, @headline) + flash_messages(flash)
     end
   end
@@ -38,7 +39,7 @@ module PageTitleAndHeadlineHelper
       translated_flash_name = t "flash.#{name}"
 
       content_tag :div, class: classes do
-        message = content_tag :p, "#{translated_flash_name}: #{message}", id: "flash_#{name}"
+        message = content_tag :p, "#{translated_flash_name}: #{message}", id: "flash", class: "flash-#{name}"
 
         button = content_tag :button, class: 'close', type: 'button', data: {dismiss: 'alert'} do
                    icon :remove, t('flash.close', name: translated_flash_name)
@@ -55,7 +56,7 @@ module PageTitleAndHeadlineHelper
       parts = []
       parts += flash.map { |key, value| "#{t "flash.#{key}"}: #{value}" } if flash.any?
       parts << headline
-      parts << "- #{t('app.name')}" unless current_page?(root_path)
+      parts << "- #{t('app.acronym')}" unless current_page?(root_path)
       parts.join ' '
     end
   end

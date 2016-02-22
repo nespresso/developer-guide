@@ -5,13 +5,19 @@ de:
       default_message: 'Bitte überprüfe die nachfolgenden Probleme:'
     hints:
       user:
+        about: Schreib etwas über dich (Biographie, Interessen, Hobbies...). Du kannst Pandoc Markdown verwenden zum Formatieren.
         password_confirmation: Gib dein Passwort nochmal ein, um Tippfehler zu vermeiden
+    inputs:
+      text_fullscreen:
+        toggler_text: Vollansicht umschalten (Esc)
+      upload:
+        click_to_choose_a_file: Klicken um eine %{attribute} Datei zu wählen
+        click_to_choose_another_file: Klicken, um eine andere %{attribute}-Datei zu wählen
+        file_preview: Dateivorschau
+        remove_file: Existierende %{attribute}-Datei entfernen
+        reset_selection: "%{attribute}-Dateiauswahl zurücksetzen"
     'no': Nein
-    remove_file: Existierende Datei entfernen
     required:
       mark: "*"
       text: Pflichtfeld
-    reset_selection: Zurücksetzen
-    select_another_file: Andere Datei auswählen
-    select_file: Datei auswählen
     'yes': Ja

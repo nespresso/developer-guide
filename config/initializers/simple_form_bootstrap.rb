@@ -7,7 +7,7 @@ SimpleForm.setup do |config|
   config.wrappers :vertical_form, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
     b.use :html5
     b.use :placeholder
-    b.optional :maxlength
+    b.use :maxlength
     b.optional :pattern
     b.optional :min_max
     b.optional :readonly
@@ -21,7 +21,7 @@ SimpleForm.setup do |config|
   config.wrappers :vertical_file_input, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
     b.use :html5
     b.use :placeholder
-    b.optional :maxlength
+    b.use :maxlength
     b.optional :readonly
     b.use :label, class: 'control-label'
 
@@ -60,7 +60,7 @@ SimpleForm.setup do |config|
   config.wrappers :horizontal_form, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
     b.use :html5
     b.use :placeholder
-    b.optional :maxlength
+    b.use :maxlength
     b.optional :pattern
     b.optional :min_max
     b.optional :readonly
@@ -76,7 +76,7 @@ SimpleForm.setup do |config|
   config.wrappers :horizontal_file_input, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
     b.use :html5
     b.use :placeholder
-    b.optional :maxlength
+    b.use :maxlength
     b.optional :readonly
     b.use :label, class: 'col-sm-3 control-label'
 
@@ -93,7 +93,7 @@ SimpleForm.setup do |config|
 
     b.wrapper tag: 'div', class: 'col-sm-offset-3 col-sm-9' do |wr|
       wr.wrapper tag: 'div', class: 'checkbox' do |ba|
-        ba.use :label_input, class: 'col-sm-9'
+        ba.use :label_input
       end
 
       wr.use :error, wrap_with: { tag: 'span', class: 'help-block' }
@@ -119,7 +119,7 @@ SimpleForm.setup do |config|
   config.wrappers :inline_form, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
     b.use :html5
     b.use :placeholder
-    b.optional :maxlength
+    b.use :maxlength
     b.optional :pattern
     b.optional :min_max
     b.optional :readonly

@@ -55,6 +55,13 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 end
 
+# Set locale for view specs, see https://github.com/rspec/rspec-rails/issues/255#issuecomment-2865917
+class ActionView::TestCase::TestController
+  def default_url_options(options = {})
+    {locale: I18n.default_locale}
+  end
+end
+
 # Set locale for feature specs, see https://github.com/rspec/rspec-rails/issues/255#issuecomment-24698753
 RSpec.configure do |config|
   config.before(:each, type: :feature) do
@@ -67,4 +74,33 @@ RSpec.configure do |config|
   config.before(:each, js: :true) do
     screen_width(:lg)
   end
+end
+
+# Set date and time always to 15th of june 2015 at 14:33:52
+RSpec.configure do |config|
+  config.include ActiveSupport::Testing::TimeHelpers
+
+  config.before(:each) do
+    travel_to DateTime.parse('2015-06-15 14:33:52 +0200')
+  end
+
+  config.after(:each) do
+    travel_back
+  end
+end
+
+RSpec.configure do |config|
+  config.include Base::Matchers, type: :feature
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+
+require 'strip_attributes/matchers'
+RSpec.configure do |config|
+  config.include StripAttributes::Matchers
 end

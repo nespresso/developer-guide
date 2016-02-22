@@ -9,18 +9,19 @@
 #= require jquery-ui-bootstrap-bridge
 #
 #= require bootstrap
-#= require bootstrap-formhelpers
+#= require cocoon
 #= require jasny-bootstrap
 #= require fancybox
 #
 #= require_self
 #
 # --- Add custom requires under here! ---
-#= require cocoon
 #= require example_script
 #= require form_accessibilizer
+#= require textarea_fullscreenizer
 # --- Add custom requires above here! ---
 #
 #= require init
+#= require callbacks
 
 @App = {}

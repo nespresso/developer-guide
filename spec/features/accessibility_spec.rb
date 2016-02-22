@@ -45,13 +45,13 @@ describe 'Accessibility' do
       expect(page).to have_title 'Accessibility Developer Guide'
 
       visit page_path('about')
-      expect(page).to have_title 'About - Accessibility Developer Guide'
+      expect(page).to have_title 'About - ADG'
     end
 
     it 'prepends flash messages' do
       visit new_user_registration_path
       click_button 'Sign up'
-      expect(page).to have_title 'Alert: User could not be created. Sign up - Accessibility Developer Guide'
+      expect(page).to have_title 'Alert: User could not be created. Sign up - ADG'
     end
   end
 end

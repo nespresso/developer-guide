@@ -27,27 +27,6 @@ In the following code snippet, replace `email@example.com` with your own email a
 
 Change the default URL options' `:host` in `config/environments/production.rb` to `http://ACCOUNT.SERVER.uberspace.de`.
 
-## Setup Ruby <sup>(remote)</sup>
-
-To [activate Ruby 2.1](http://uberspace.de/dokuwiki/cool:rails#ruby_aktivieren), execute the script for the newest Ruby path on [Uberspace's Ruby configuration page](https://wiki.uberspace.de/development:ruby#section22).
-
-Load your new configuration by executing `$ . ~/.bash_profile`.
-
-`ruby -v` should now output something like this:
-
-```
-$ ruby -v
-ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-linux]
-```
-
-## Setup gems management <sup>(remote)</sup>
-
-[Rails, bundler and other gems](https://uberspace.de/dokuwiki/cool:rails) need to be installed always in our user's directory.
-
-- `$ echo "gem: --user-install --no-rdoc --no-ri" > ~/.gemrc`
-- `$ gem install bundler`
-- `$ bundle config path ~/.gem`
-
 ## Setup Passenger with Nginx <sup>(remote)</sup>
 
 - `$ gem install passenger`
@@ -67,7 +46,7 @@ daemon off; # We execute Nginx using Daemontools # <-- Do we still need this??
 ...
 
 server {
-    listen            PORT; # Choose an open port (see instuctions below)!
+    listen            PORT; # Choose an open port (see instructions below)!
     server_name       ACCOUNT.SERVER.uberspace.de;
     root              /home/ACCOUNT/rails/current/public;
     passenger_enabled on;
@@ -201,3 +180,7 @@ OSX Mail:
 Thunderbird:
 
 - Just add the account in the account settings using user name and password - Thunberbird will automatically detect the correct settings!
+
+## Additional information
+
+- If you ever have to inspect server logs, they're here: `/home/ACCOUNT/nginx/logs/error.log`

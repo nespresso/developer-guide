@@ -1,0 +1,19 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Heterogeneous tables'
+
+  markdown:
+    An often encountered design paradigm: let the user select an option in a table and then display specific information about the selected option in the row below.
+
+    How can this be done without destroying the semantics of the table? See the example below (TODO: add JavaScript functionality!).
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'qbzJWy'
+
+#conclusion aria-hidden="true"
+  markdown:
+    ## Conclusion
+
+    - Use the `headers` attribute to associate a cell to specific `<th>` element(s)
+        - While NVDA respects this, JAWS doesn't seem to care, so it's always advisable to introduce the specific cell with some explaining text ("Here's info about...")

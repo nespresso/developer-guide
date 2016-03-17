@@ -43,12 +43,12 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
           - navigation.item 'Forms', page_path('forms_examples')
           - navigation.item 'JavaScript', page_path('javascript_examples')
 
-        - navigation.group 'Plugins' do
-          - navigation.item 'Overview', page_path('plugins_overview')
+        - navigation.group 'Widgets' do
+          - navigation.item 'Overview', page_path('widgets_overview')
           li role="separator" class="divider"
-          / - navigation.item 'Accordions', page_path('accordion_plugins')
-          / - navigation.item 'Carousels', page_path('carousel_plugins')
-          - navigation.item 'Tablists (tabs)', page_path('tablist_plugins')
+          / - navigation.item 'Accordions', page_path('accordion_widgets')
+          / - navigation.item 'Carousels', page_path('carousel_widgets')
+          - navigation.item 'Tablists (tabs)', page_path('tablist_widgets')
 
         - navigation.group 'Recipes' do
           - navigation.item 'Overview', page_path('recipes_overview')
@@ -60,10 +60,10 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
           - navigation.item 'Overview', page_path('appendix_overview')
           li role="separator" class="divider"
           - navigation.item 'How an experienced screenreader user approaches a website', page_path('how_an_experienced_screenreader_user_approaches_a_website')
-          - navigation.item 'How we review plugins', page_path('how_we_review_plugins')
+          - navigation.item 'How we review widgets', page_path('how_we_review_widgets')
           - navigation.item 'Relevant screenreaders', page_path('relevant_screenreaders')
           - navigation.item 'The golden thread for accessibility testing', page_path('the_golden_thread')
-          - navigation.item 'Things to consider when choosing a plugin', page_path('things_to_consider_when_choosing_a_plugin')
+          - navigation.item 'Things to consider when choosing a widget', page_path('things_to_consider_when_choosing_a_widget')
           - navigation.item 'Typical disabled users: their preferred tools and workflows', page_path('typical_disabled_users_tools_and_workflows')
 
         - navigation.group "#{fa_icon 'info-circle', class: 'visible-sm-inline-block'} <span class='hidden-sm'>More</span>" do

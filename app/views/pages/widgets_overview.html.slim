@@ -1,8 +1,8 @@
-= headline_with_flash 'Plugins overview'
+= headline_with_flash 'Widgets overview'
 
 .row
   .col-md-9
-    == render 'plugins_teaser'
+    == render 'widgets_teaser'
 
     .row
       / .col-md-4
@@ -14,19 +14,19 @@
       /   == render 'carousel_plugins_teaser'
 
       .col-md-4
-        h2 = link_to 'Tablists (tabs)', page_path('tablist_plugins')
-        == render 'tablist_plugins_teaser'
+        h2 = link_to 'Tablists (tabs)', page_path('tablist_widgets')
+        == render 'tablist_widgets_teaser'
 
       .col-md-4
         markdown:
           ## Want more? Know more?
 
-          There are a lot more plugins out there. Go test them and send us your review!
+          There are a lot more widgets out there. Go test them and send us your review!
 
           Or ask us to do a review while #{link_to 'donating some bucks', page_path('support_us')}!
 
   .col-md-3
-    == render 'plugins_related'
+    == render 'widgets_related'
 
 p#lets_go
   = link_to 'This was great action! But what to do in specific situations?', page_path('recipes_overview'), class: 'btn btn-warning btn-lg'

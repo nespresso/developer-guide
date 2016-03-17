@@ -1,8 +1,11 @@
-= headline_with_flash 'Tabs plugins'
+= headline_with_flash 'Tablist (tabs) plugins'
 
 .row
   .col-md-9
-    == render 'tabs_plugins_teaser'
+    == render 'tablist_plugins_teaser'
+
+    markdown:
+      **Notice:** Tablists are also called "tabs", "tab panels", or even "tabbed interface controls" (in German sometimes: "Reiter"). We call them "tablists" to avoid confusion with the "tab" key on the keyboard.
 
     .row
       .col-md-12
@@ -26,7 +29,7 @@
           li JAWS on IE and FF
           li NVDA on IE and FF
 
-        p In screenreaders, interaction with the tabs in both #{link_to 'browse and focus mode', example_path('browse_mode_vs_focus_mode')} was tested.
+        p In screenreaders, interaction with the tablist in both #{link_to 'browse and focus mode', example_path('browse_mode_vs_focus_mode')} was tested.
 
       / .col-md-6
       /   h3 Mobile
@@ -87,7 +90,7 @@ table.table.table-bordered.table-striped
       th = link_to 'Barrierefreies Webdesign Tabs', 'http://www.barrierefreies-webdesign.de/knowhow/tablist/tabpanel-links-tabindex.html'
       td
         ul
-          li.info Uses ARIA (and conforms to their #{link_to 'recommendation for tabs', 'http://www.w3.org/TR/wai-aria-practices-1.1/#h-tabpanel'}
+          li.info Uses ARIA (and conforms to their #{link_to 'recommendation for tablists', 'http://www.w3.org/TR/wai-aria-practices-1.1/#h-tabpanel'}
           li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
       td
         ul
@@ -228,7 +231,7 @@ table.table.table-bordered.table-striped
       td
         ul
           li.info No ARIA used
-          li.info Hybrid of jump links and tabs
+          li.info Hybrid of jump links and tablist
           li.info Allows navigation between tabs only using <code>Tab</code> key
       td
         ul

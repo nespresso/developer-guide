@@ -1,11 +1,11 @@
-= headline_with_flash 'Tablist (tabs) widgets'
+= headline_with_flash 'Tab panel widgets'
 
 .row
   .col-md-9
-    == render 'tablist_widgets_teaser'
+    == render 'tab_panel_widgets_teaser'
 
     markdown:
-      **Notice:** Tablists are also called "tabs", "tab panels", or even "tabbed interface controls" (in German sometimes: "Reiter"). We call them "tablists" to avoid confusion with the "tab" key on the keyboard.
+      **Notice:** Tab panels are also called "tabs" or "tabbed interface controls" (in German sometimes: "Reiter"). We call them "tab panels" to avoid confusion with the "tab" key on the keyboard.
 
     .row
       .col-md-12
@@ -29,7 +29,7 @@
           li JAWS on IE and FF
           li NVDA on IE and FF
 
-        p In screenreaders, interaction with the tablist in both #{link_to 'browse and focus mode', example_path('browse_mode_vs_focus_mode')} was tested.
+        p In screenreaders, interaction with the tab panel in both #{link_to 'browse and focus mode', example_path('browse_mode_vs_focus_mode')} was tested.
 
       / .col-md-6
       /   h3 Mobile
@@ -90,7 +90,7 @@ table.table.table-bordered.table-striped
       th = link_to 'Barrierefreies Webdesign Tabs', 'http://www.barrierefreies-webdesign.de/knowhow/tablist/tabpanel-links-tabindex.html'
       td
         ul
-          li.info Uses ARIA (and conforms to their #{link_to 'recommendation for tablists', 'http://www.w3.org/TR/wai-aria-practices-1.1/#h-tabpanel'}
+          li.info Uses ARIA (and conforms to their #{link_to 'recommendation for tab panels', 'http://www.w3.org/TR/wai-aria-practices-1.1/#h-tabpanel'}
           li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
       td
         ul
@@ -231,7 +231,7 @@ table.table.table-bordered.table-striped
       td
         ul
           li.info No ARIA used
-          li.info Hybrid of jump links and tablist
+          li.info Hybrid of jump links and tab panel
           li.info Allows navigation between tabs only using <code>Tab</code> key
       td
         ul

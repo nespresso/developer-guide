@@ -8,54 +8,32 @@
       **Notice:** dialogs are sometimes also called "modals", "popups", "lightboxes", or even "alerts". All of these terms (incl. "dialog") may be used interchangeably, but they may also refer to different UI concepts (or alternations) sometimes.
 
     .row
-      .col-md-6
+      .col-md-12
         h3 Desktop
 
         h4 Software
 
-        / dl.dl-horizontal
-        /   dt Screenreaders
-        /   dd #{link_to 'NVDA', 'http://www.nvaccess.org'}, version 2015.3
-        /   dd #{link_to 'JAWS', 'http://www.freedomscientific.com/Products/Blindness/JAWS'}, version 16.0.4463
-        /
-        /   dt Browsers
-        /   dd #{link_to 'Internet Explorer', 'http://windows.microsoft.com/de-ch/internet-explorer'} (IE), version/ 11.0.9600.18059
-        /   dd #{link_to 'Firefox', 'https://www.mozilla.org'} (FF), version 41.0.2
+        dl.dl-horizontal
+          dt Screenreaders
+          dd #{link_to 'NVDA', 'http://www.nvaccess.org'}, version 2016.1
+          dd #{link_to 'JAWS', 'http://www.freedomscientific.com/Products/Blindness/JAWS'}, version 17.0.1377
+          dt Browsers
+          dd #{link_to 'Internet Explorer', 'http://windows.microsoft.com/de-ch/internet-explorer'} (IE), version 11.0.9600.18230
+          dd #{link_to 'Firefox', 'https://www.mozilla.org'} (FF), version 44.0.2
 
         h4 Considered use-cases
 
-        / ul
-        /   li Keyboard-only
-        /   li JAWS on IE and FF
-        /  li NVDA on IE and FF
-
-        / p In screenreaders, interaction with the dialog in both #{link_to 'browse and focus mode', example_path('browse_mode_vs_focus_mode')} was tested.
-
-      .col-md-6
-        h3 Mobile
-
-        h4 Software
-
-        /   dl.dl-horizontal
-        /     dt Screenreaders
-        /     dd #{link_to 'VoiceOver (iOS)', 'http://www.apple.com/accessibility/ios/voiceover/'}, version ?
-        /
-        /     dt Browsers
-        /     dd #{link_to 'Safari', 'http://www.apple.com/safari/'}, version ?
-        /
-
-        h4 Considered use-cases
-      /
-      /   ul
-      /     li VoiceOver (iOS) on Safari
-      /     / li TalkBack on Firefox
+        ul
+          li Keyboard-only
+          li JAWS on IE and FF
+          li NVDA on IE and FF
 
     .row
       .col-md-12
         h2 Things to consider
 
         markdown:
-          Dialog widgets run into problems when there is more content in a dialog than it's possible to display without scrolling, as then there's a conflict between scrolling the page and moving the virtual cursor using the screenreader. To be on the save side, never pack too much info into a dialog!
+          Dialog widgets run into problems when there is more content in a dialog than it's possible to display without scrolling, as then there's a conflict between scrolling the page and moving the virtual cursor of a screenreader using up/down. To be on the save side, never pack too much info into a dialog!
 
           Our recommended widget [The Incredible Accessible Modal Window](https://github.com/gdkraus/accessible-modal-dialog) does have this problem too; here's the related issue: [Lightbox content not visible when longer than viewport](https://github.com/gdkraus/accessible-modal-dialog/issues/9).
 

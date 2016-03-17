@@ -8,46 +8,56 @@
       **Notice:** dialogs are sometimes also called "modals", "popups", "lightboxes", or even "alerts". All of these terms (incl. "dialog") may be used interchangeably, but they may also refer to different UI concepts (or alternations) sometimes.
 
     .row
-      .col-md-12
+      .col-md-6
         h3 Desktop
 
         h4 Software
 
-        dl.dl-horizontal
-          dt Screenreaders
-          dd #{link_to 'NVDA', 'http://www.nvaccess.org'}, version 2015.3
-          dd #{link_to 'JAWS', 'http://www.freedomscientific.com/Products/Blindness/JAWS'}, version 16.0.4463
-
-          dt Browsers
-          dd #{link_to 'Internet Explorer', 'http://windows.microsoft.com/de-ch/internet-explorer'} (IE), version 11.0.9600.18059
-          dd #{link_to 'Firefox', 'https://www.mozilla.org'} (FF), version 41.0.2
+        / dl.dl-horizontal
+        /   dt Screenreaders
+        /   dd #{link_to 'NVDA', 'http://www.nvaccess.org'}, version 2015.3
+        /   dd #{link_to 'JAWS', 'http://www.freedomscientific.com/Products/Blindness/JAWS'}, version 16.0.4463
+        /
+        /   dt Browsers
+        /   dd #{link_to 'Internet Explorer', 'http://windows.microsoft.com/de-ch/internet-explorer'} (IE), version/ 11.0.9600.18059
+        /   dd #{link_to 'Firefox', 'https://www.mozilla.org'} (FF), version 41.0.2
 
         h4 Considered use-cases
 
-        ul
-          li Keyboard-only
-          li JAWS on IE and FF
-          li NVDA on IE and FF
+        / ul
+        /   li Keyboard-only
+        /   li JAWS on IE and FF
+        /  li NVDA on IE and FF
 
-        p In screenreaders, interaction with the modal in both #{link_to 'browse and focus mode', example_path('browse_mode_vs_focus_mode')} was tested.
+        / p In screenreaders, interaction with the dialog in both #{link_to 'browse and focus mode', example_path('browse_mode_vs_focus_mode')} was tested.
 
-      / .col-md-6
-      /   h3 Mobile
-      /
-      /   h4 Software
-      /
-      /   dl.dl-horizontal
-      /     dt Screenreaders
-      /     dd #{link_to 'VoiceOver (iOS)', 'http://www.apple.com/accessibility/ios/voiceover/'}, version ?
-      /
-      /     dt Browsers
-      /     dd #{link_to 'Safari', 'http://www.apple.com/safari/'}, version ?
-      /
-      /   h4 Considered use-cases
+      .col-md-6
+        h3 Mobile
+
+        h4 Software
+
+        /   dl.dl-horizontal
+        /     dt Screenreaders
+        /     dd #{link_to 'VoiceOver (iOS)', 'http://www.apple.com/accessibility/ios/voiceover/'}, version ?
+        /
+        /     dt Browsers
+        /     dd #{link_to 'Safari', 'http://www.apple.com/safari/'}, version ?
+        /
+
+        h4 Considered use-cases
       /
       /   ul
       /     li VoiceOver (iOS) on Safari
       /     / li TalkBack on Firefox
+
+    .row
+      .col-md-12
+        h2 Things to consider
+
+        markdown:
+          Dialog widgets run into problems when there is more content in a dialog than it's possible to display without scrolling, as then there's a conflict between scrolling the page and moving the virtual cursor using the screenreader. To be on the save side, never pack too much info into a dialog!
+
+          Our recommended widget [The Incredible Accessible Modal Window](https://github.com/gdkraus/accessible-modal-dialog) does have this problem too; here's the related issue: [Lightbox content not visible when longer than viewport](https://github.com/gdkraus/accessible-modal-dialog/issues/9).
 
   .col-md-3
     == render 'widgets_related'
@@ -64,215 +74,78 @@ table.table.table-bordered.table-striped
 
   tbody
     tr
-      th = link_to 'Athena ICT Tabs', 'http://accessibility.athena-ict.com/aria/examples/tabpanel2.shtml'
+      th = link_to 'The Incredible Accessible Modal Window', 'https://github.com/gdkraus/accessible-modal-dialog'
       td
         ul
-          li.info Uses ARIA
-          li.info Intercepts <code>←</code>/<code>→</code> keys
+          li.info Background is visible
       td
         ul
           li
-            strong JAWS + FF/IE
+            strong Keyboard-only
             ul
-              li.neglectable #{link_to 'Focus mode', example_path('browse_mode_vs_focus_mode')} is toggled on and off whenever a tab is activated using <code>Enter</code>
-          li
-            strong NVDA + IE
-            ul
-              li.neglectable In #{link_to 'browse mode', example_path('browsing_paragraphs')}, tabs are announced #{link_to 'inline', example_path('block_vs_inline_block')} and thus are not specifically selectable using <code>↑</code>/<code>↓</code>
-          li
-            strong VoiceOver (iOS) + Safari
-            ul
-              li.neglectable When selecting a tab, it's announced twice
+              li.neglectable Focus is trapped within the dialog (it's not possible to leave the browser window using solely the tab key)
       td
         .label.label-success Recommended
 
     tr
-      th = link_to 'Barrierefreies Webdesign Tabs', 'http://www.barrierefreies-webdesign.de/knowhow/modal/tabpanel-links-tabindex.html'
+      th = link_to 'Bootstrap Modal', 'http://getbootstrap.com/javascript/#modals'
       td
         ul
-          li.info Uses ARIA (and conforms to their #{link_to 'recommendation for modals', 'http://www.w3.org/TR/wai-aria-practices-1.1/#h-tabpanel'}
-          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
-      td
-        ul
-          li
-            strong JAWS + FF/IE
-            ul
-              li.neglectable #{link_to 'Focus mode', example_path('browse_mode_vs_focus_mode')} is toggled on and off whenever a tab is activated using <code>Enter</code>
-          li
-            strong VoiceOver (iOS) + Safari
-            ul
-              li.neglectable When selecting a tab, the focus sometimes seems to jump somewhere into the content randomly
-      td
-        .label.label-success Recommended
-
-    tr
-      th = link_to 'Accessible Culture Tabs', 'http://accessibleculture.org/articles/2010/08/aria-tabs/'
-      td
-        ul
-          li.info Uses ARIA
-          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
-          li.info Of the different versions listed, we recommend #{link_to '#2b', 'http://accessibleculture.org/research-files/aria-tabs/version2b.php'} and #{link_to '#3a', 'http://accessibleculture.org/research-files/aria-tabs/version3a.php'}
+          li.info Background is visible
       td
         ul
           li
-            strong JAWS + FF/IE
+            strong Keyboard-only
             ul
-              li.neglectable #{link_to 'Focus mode', example_path('browse_mode_vs_focus_mode')} is toggled on and off whenever a tab is activated using <code>Enter</code>
-          li
-            strong JAWS + IE
-            ul
-              li.neglectable In #{link_to 'focus mode', example_path('browse_mode_vs_focus_mode')}, gives instruction to use <code>Space</code> to open tab, but doesn't work
-      td
-        .label.label-success Recommended
-
-    tr
-      th = link_to 'OAAA Tab Panel', 'http://oaa-accessibility.org/examplep/tabpanel2/'
-      td
-        ul
-          li.info Uses ARIA
-          li.info Uses <code>role="application"</code>
-          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
-      td
-      td
-        .label.label-warning For applications only
-
-    tr
-      th = link_to 'jQuery Accessible tab panel system', 'http://a11y.nicolas-hoffmann.net/tabs/'
-      td
-        ul
-          li.info Uses ARIA
-          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
-      td
-        ul
-          li
-            strong NVDA + IE
-            ul
-              li.killer No feedback when activating a tab
-          li
-            strong VoiceOver (iOS) + Safari
-            ul
-              li.neglectable When selecting a tab, it's announced twice
-      td
-        .label.label-danger Not recommended
-
-    tr
-      th = link_to 'Twitter Bootstrap Tabs', 'http://getbootstrap.com/javascript/#tabs'
-      td
-        ul
-          li.info Uses ARIA
-      td
+              li.neglectable Focus is trapped within the dialog (it's not possible to leave the browser window using solely the tab key)
         ul
           li
             strong JAWS + IE
             ul
-              li.neglectable Once a tab is selected, #{link_to 'focus mode', example_path('browse_mode_vs_focus_mode')} is activated and other tabs can only be selected by leaving focus mode again
-              li.killer Announces expanded status as "collapsed"
+              li.neglectable Elements outside the dialog can be reached
           li
             strong NVDA + IE
             ul
-              li.neglectable When opening a tab, its content is announced directly, but the focus itself stays on the tab
-      td
-        .label.label-danger Not recommended
-
-    tr
-      th = link_to 'Whatsock Tabs (ARIA)', 'http://whatsock.com/modules/aria_tabs_menu_modules/demo.htm'
-      td
-        ul
-          li.info Uses ARIA
-          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
-      td
-        ul
-          li
-            strong JAWS + FF/IE
-            ul
-              li.killer #{link_to 'Focus mode', example_path('browse_mode_vs_focus_mode')} is toggled on and off whenever a tab is activated
-      td
-        .label.label-danger Not recommended
-
-    tr
-      th = link_to 'Whatsock Tabs (non-ARIA)', 'http://whatsock.com/modules/aria_tabs_menu_modules/demo.htm'
-      td
-        ul
-          li.info No ARIA used
-      td
-        ul
-          li
-            strong JAWS/NVDA + FF/IE
-            ul
-              li.killer No feedback when activating a tab
-          li
-            strong NVDA + IE
-            ul
-              li.neglectable In #{link_to 'browse mode', example_path('browsing_paragraphs')}, tabs are announced #{link_to 'inline', example_path('block_vs_inline_block')} and thus are not specifically selectable using <code>↑</code>/<code>↓</code>
-      td
-        .label.label-danger Not recommended
-
-    tr
-      th = link_to 'jQuery UI Tabs', 'https://jqueryui.com/tabs/'
-      td
-        ul
-          li.info Uses ARIA
-          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
-      td
-        ul
-          li
-            strong JAWS/NVDA + FF/IE
-            ul
-              li.killer Announces expanded status as "collapsed"
-          li
-            strong NVDA + FF/IE
-            ul
-              li.killer Tabs can't be activated in #{link_to 'browse mode', example_path('browsing_paragraphs')}
-      td
-        .label.label-danger Not recommended
-
-    tr
-      th = link_to 'jQuery Accessible Tabs', 'http://blog.ginader.de/dev/jquery/accessible-tabs/simple.html'
-      td
-        ul
-          li.info No ARIA used
-          li.info Hybrid of jump links and modal
-          li.info Allows navigation between tabs only using <code>Tab</code> key
-      td
-        ul
-          li
-            strong JAWS/NVDA + FF/IE
-            ul
-              li.killer Buggy (behaviour becomes unpredictable when playing with it)
-      td
-        .label.label-danger Not recommended
-
-    tr
-      th = link_to 'Accessible jQuery UI Tabs', 'https://hanshillen.github.io/jqtest'
-      td
-        ul
-          li.info Uses ARIA
-          li.info Intercepts <code>↑</code>/<code>↓</code>/<code>←</code>/<code>→</code> keys
-      td
-        ul
-          li
-            strong JAWS + IE
-            ul
-              li.killer Focus jumps to the beginning of the document when activating a tab
+              li.killer Browse mode can't be activated (up/down scrolls the page, and esc always closes the dialog)
           li
             strong NVDA + FF
             ul
-              li.killer No feedback when activating a tab
+              li.killer Browse mode can't be activated in a user conform way: when opening the dialog, up/down scrolls the dialog (or the background), and esc closes the dialog. The only way to work around this is to tab once to reach a focusable element, upon which up/down can be used to browse.
       td
         .label.label-danger Not recommended
 
     tr
-      th = link_to 'Heydon Works Tabs', 'http://heydonworks.com/practical_aria_examples/#tab-interface'
+      th = link_to 'Heydon Works Dialog', 'http://heydonworks.com/practical_aria_examples/#warning-dialog'
       td
         ul
-          li.info Uses ARIA
-          li.info Intercepts <code>←</code>/<code>→</code> keys
+          li.info Background is <strong>not</strong> visible
       td
         ul
           li
+            strong NVDA + FF
+            ul
+              li.neglectable Announces info redundantly when opening dialog
+          li
             strong NVDA + IE
             ul
-              li.neglectable In #{link_to 'browse mode', example_path('browsing_paragraphs')}, tabs are announced #{link_to 'inline', example_path('block_vs_inline_block')} and thus are not specifically selectable using <code>↑</code>/<code>↓</code>
-              li.killer Can't be controlled in #{link_to 'browse mode', example_path('browsing_paragraphs')} (tabs must be entered using <code>Tab</code> to be controllable)
+              li.killer Elements outside the dialog can be reached, interaction in general feels quirky
+      td
+        .label.label-danger Not recommended
+
+    tr
+      th = link_to 'Athena ICT Dialog', 'http://accessibility.athena-ict.com/aria/examples/dialog.shtml'
+      td
+        ul
+          li.info Background is visible
+      td
+        ul
+          li
+            strong Keyboard-only
+            ul
+              li.killer Focus reaches background when using tab key (interestingly, for shift-tab it's prevented)
+          li
+            strong NVDA + IE
+            ul
+              li.killer Browse mode can't be activated (up/down scrolls the page, and esc always closes the dialog)
       td
         .label.label-danger Not recommended

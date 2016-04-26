@@ -7,8 +7,12 @@ main
     top: 51px    // Accommodate the navbar
     bottom: 60px // Accommodate the footer
 
-  a:not(.btn):not(.panel-title a)
+  a:not(.btn)
     text-decoration: underline
+
+    &:focus,
+    &:hover
+      text-decoration: none
 
   a[href^="http:"],
   a[href^="https:"]

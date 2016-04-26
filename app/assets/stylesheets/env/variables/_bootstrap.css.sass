@@ -1,6 +1,38 @@
 // All variables: http://getbootstrap.com/customize/#less-variables
 @import "bootstrap/variables"
 
-$icon-font-path: '/assets/bootstrap/' // Otherwise the fonts are searched in the wrong place
+$icon-font-path: '/assets/bootstrap/' // Otherwise the fonts are searched in the wrong place, see https://gist.github.com/iamatypeofwalrus/6467148
 
 $navbar-collapse-max-height: none // See https://github.com/twbs/bootstrap/issues/10028#issuecomment-23237561
+
+$blockquote-font-size: $font-size-base // Make block quotes the same size like normal text
+
+// Inputs
+$input-border: #797676 // #ccc
+$input-border-focus: #467846 // alt: #CD4A12
+$input-color: $text-color
+
+// Buttons
+$btn-success-bg: darken($btn-success-bg, 15%)
+$btn-info-bg:    darken($btn-info-bg, 20%)
+$btn-warning-bg: darken($btn-warning-bg, 25%)
+
+$btn-primary-border: darken($btn-primary-border, 10%)
+$btn-danger-border:  darken($btn-danger-border, 15%)
+$btn-success-border: darken($btn-success-border, 30%)
+$btn-info-border:    darken($btn-info-border, 30%)
+$btn-warning-border: darken($btn-warning-border, 35%)
+
+// Links
+// $link-color: $input-border-focus
+$link-color: #3c763d
+$link-hover-color: #078625
+
+// Navbar
+$navbar-inverse-toggle-border-color: #666666
+$navbar-inverse-link-active-bg: $input-border-focus
+$navbar-inverse-link-hover-bg: #002B54
+
+$dropdown-link-active-bg: $input-border-focus
+
+$hr-border: darken($hr-border, 10%)

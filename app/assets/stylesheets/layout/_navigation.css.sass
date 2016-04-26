@@ -10,6 +10,9 @@
       background-color: $navbar-inverse-link-active-bg
       color: $navbar-inverse-link-active-color
 
+  .navbar-collapse
+    border-color: $navbar-inverse-toggle-border-color !important
+
 .navbar
   .caret
     margin-left: 5px
@@ -25,6 +28,52 @@
     color: #fff
     padding-right: 10px
     line-height: 14px
+
+.navbar,
+.navbar-inverse
+  .navbar-brand
+    &.active
+      &,
+      &:hover
+        background-color: $input-border-focus
+        color: #fff
+        outline-color: #fff
+
+    &:focus,
+    &:hover
+      outline-offset: -1px
+      background-color: $navbar-inverse-link-hover-bg
+
+  a:focus
+    outline: 1px solid $input-border-focus
+    outline-offset: 0
+
+  li.active,
+  li.open
+    > a
+      outline-color: #fff
+
+    li
+      a:focus
+        outline: 1px solid $input-border-focus
+
+.dropdown-menu
+  margin-left: -1px // Make up for the 1px outline
+
+  a:focus
+    outline: 1px solid $input-border-focus
+    outline-offset: 0
+
+main,
+footer
+  a:focus
+    +box-shadow($link-color 0 0 5px)
+    outline: 0
+    background-color: rgba($link-color, .5)
+    color: #000
+
+.navbar-nav > li
+  margin-left: 1px
 
 #jump_links
   margin: 0 /* Otherwise, Bootstrap adds a -15px margin */
@@ -76,3 +125,19 @@
       hr
         clear: both
         margin-bottom: 5px
+
+#breadcrumbs
+  margin-top: 71px    // Accommodate the navbar
+
+  h3
+    +float-left
+    margin: 0 8px 0 0
+    font-size: $font-size-base
+    line-height: $line-height-base
+
+  .breadcrumb
+    margin-bottom: 0
+    padding: 0
+
+    a
+      padding-right: 4px

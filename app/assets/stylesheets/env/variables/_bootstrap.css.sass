@@ -7,9 +7,12 @@ $navbar-collapse-max-height: none // See https://github.com/twbs/bootstrap/issue
 
 $blockquote-font-size: $font-size-base // Make block quotes the same size like normal text
 
+// Links
+$link-color: #227922
+
 // Inputs
-$input-border: #797676 // #ccc
-$input-border-focus: #467846 // alt: #CD4A12
+$input-border: #797676
+$input-border-focus: $input-border
 $input-color: $text-color
 
 // Buttons
@@ -23,16 +26,11 @@ $btn-success-border: darken($btn-success-border, 30%)
 $btn-info-border:    darken($btn-info-border, 30%)
 $btn-warning-border: darken($btn-warning-border, 35%)
 
-// Links
-// $link-color: $input-border-focus
-$link-color: #3c763d
-$link-hover-color: #078625
-
 // Navbar
 $navbar-inverse-toggle-border-color: #666666
-$navbar-inverse-link-active-bg: $input-border-focus
+$navbar-inverse-link-active-bg: $link-color
 $navbar-inverse-link-hover-bg: #002B54
 
-$dropdown-link-active-bg: $input-border-focus
+$dropdown-link-active-bg: $link-color
 
 $hr-border: darken($hr-border, 10%)

@@ -1,14 +1,25 @@
-a,
-a.dropdown-toggle
-  &:focus
-    +box-shadow($input-border-focus 0 0 5px)
-    outline: 1px solid $input-border-focus
-    outline-offset: 0
+// Better rename to _focusable.sass?
 
-a.navbar-brand:focus
-  outline-offset: -1px
+#breadcrumbs,
+main,
+footer
+  [tabindex]:focus
+    outline: 1px dotted $input-border
 
-ul.nav > li
-  > a:focus,
-  > a.dropdown-toggle:focus
-    outline-offset: -1px
+  a,
+  a.dropdown-toggle,
+  .form-control,
+  .btn,
+  input,
+  textarea,
+  select,
+  button,
+    &:focus
+      outline: 2px dotted $link-color
+      outline-offset: 2px
+      box-shadow: none // Reset Bootstrap
+
+  ul.nav > li
+    > a:focus,
+    > a.dropdown-toggle:focus
+      outline-offset: -1px

@@ -35,9 +35,8 @@
     &.active
       &,
       &:hover
-        background-color: $input-border-focus
+        background-color: $link-color
         color: #fff
-        outline-color: #fff
 
     &:focus,
     &:hover
@@ -45,32 +44,23 @@
       background-color: $navbar-inverse-link-hover-bg
 
   a:focus
-    outline: 1px solid $input-border-focus
-    outline-offset: 0
+    outline: 1px solid #fff
+    outline-offset: -1px
 
   li.active,
   li.open
     > a
-      outline-color: #fff
 
     li
       a:focus
-        outline: 1px solid $input-border-focus
+        outline: 1px solid $link-color
 
 .dropdown-menu
   margin-left: -1px // Make up for the 1px outline
 
   a:focus
-    outline: 1px solid $input-border-focus
+    outline: 1px solid $link-color
     outline-offset: 0
-
-main,
-footer
-  a:focus
-    +box-shadow($link-color 0 0 5px)
-    outline: 0
-    background-color: rgba($link-color, .5)
-    color: #000
 
 .navbar-nav > li
   margin-left: 1px

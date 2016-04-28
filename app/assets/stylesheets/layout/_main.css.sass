@@ -7,23 +7,21 @@ main
     top: 51px    // Accommodate the navbar
     bottom: 60px // Accommodate the footer
 
-  a:not(.btn)
-    text-decoration: underline
-
-    &:focus,
-    &:hover
-      text-decoration: none
-
   a[href^="http:"],
   a[href^="https:"]
     &:after
       font: normal normal normal 14px/1 FontAwesome
       content: " \f08e"
-      color: $alert-danger-text
+
+  .actions
+    margin-bottom: $line-height-computed / 2
+
+  td .actions
+    margin-bottom: 0
+
+  img
+    +box-shadow
 
   table
     ul, ol
       padding-left: 20px
-
-  img
-    +box-shadow

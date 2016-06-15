@@ -1,0 +1,21 @@
+= headline_with_flash 'Proofs of concept'
+
+== render 'proofs_of_concept_examples_teaser'
+
+markdown:
+  Important: these widgets are proofs of concept and thus are not intended to be used as-is in a "real world" project, as they are only optimised for specific versions of screenreaders and browsers.
+
+  - **#{link_to 'Dialog: Proof of concept', example_path('dialog_proof_of_concept')}**
+  - **#{link_to 'Tooltips: Proof of concept', example_path('tooltips_proof_of_concept')}**
+  - **#{link_to 'Accordion: Proof of concept', example_path('accordion_proof_of_concept')}**
+  - **Autocomplete: Proof of concept <sup>to do</sup>**
+  - **Multi-select Autocomplete: Proof of concept <sup>to do</sup>**
+  - **Slideshow: Proof of concept <sup>to do</sup>**
+  - **Tabs: Proof of concept <sup>to do</sup>**
+  - **Datepicker: Proof of concept <sup>to do</sup>**
+  - **A lot more to come here soon (hopefully)**
+
+== render 'shared/no_content_yet'
+
+p#lets_go
+  = link_to "Examples done! What to do now? Get to know some recipes!", page_path('recipes_overview'), class: 'btn btn-warning'

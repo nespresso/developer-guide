@@ -16,9 +16,14 @@
 
     .row
       .col-md-6
+        h2 Widgets
+        == render 'widgets_teaser'
+
+      .col-md-6
         h2 Recipes
         == render 'recipes_teaser'
 
+    .row
       .col-md-6
         h2 Appendix
         == render 'appendix_teaser'
@@ -30,7 +35,7 @@
         **Full read vs. reading parts**
 
         While you can read this guide from beginning to end, we tried to make the different sections as self-standing as possible.
-        
+
         You are free to read every page on its own, but we encourage to read the full guide thoroughly.
 
     .alert.alert-info

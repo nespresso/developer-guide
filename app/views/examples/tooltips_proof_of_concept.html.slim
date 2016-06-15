@@ -1,0 +1,32 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Tooltips: Proof of concept'
+
+  markdown:
+    This is a little proof for the concept of tooltips. It only exists to show how accessible tooltips should behave.
+
+    ARIA roles and states were relinquished wherever possible, as they seem to be supported to different degrees by common browsers and screenreaders. So to prevent unforseeable problems, only plain ol' HTML and basic JavaScript was used.
+
+    Features:
+
+    - Gives proper feedback to screenreaders (on focus)
+    - Can be displayed using hover on both the element and the tooltip icon
+    - Can be displayed by focusing the element
+    - Can be toggled (when focusing the element) by pressing esc (in case it conceals something of interest)
+    - Can be hidden by clicking on it
+
+
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'wWWavy'
+
+#conclusion aria-hidden="true"
+  markdown:
+    Notes:
+
+    - It would have been easiest to simply associate the tooltip using `aria-describedby` to the element. But as in some screenreaders such info is only announced when the element is focused, we relied on visually hidden text instead.
+    - Only works on focusable elements (would be easy to extend to non-focusable elements, though)
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

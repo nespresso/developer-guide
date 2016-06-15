@@ -1,0 +1,27 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Accordion: Proof of concept'
+
+  markdown:
+    This is a little proof for the concept of accordions. It only exists to show how accessible accordions should behave.
+
+    ARIA roles and states were relinquished wherever possible, as they seem to be supported to different degrees by common browsers and screenreaders. So to prevent unforseeable problems, only plain ol' HTML and basic JavaScript was used.
+
+    Features:
+
+    - Gives proper feedback to screenreaders (expanded / collapsed)
+    - Hides collapsed contents effectively from everybody
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'GqqJgE'
+
+#conclusion aria-hidden="true"
+  markdown:
+    Notes:
+
+    - Though I think a button on the right side of the heading would semantically be more correct (something like "+"), mouse users want to click on the whole heading, so wrapping a link around it is needed (it's href is the container's ID)
+    - JAWS announces the headings redundantly when activating them the first time (in browse mode), especially in FF the state is announced as "expanded collapsed".
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

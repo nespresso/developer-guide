@@ -1,0 +1,48 @@
+#introduction aria-hidden="true"
+  = headline_with_flash 'Dialog: Proof of concept'
+
+  markdown:
+    This is a little proof for the concept of dialogs (modal). It only exists to show how an accessible dialog should behave.
+
+    ARIA roles and states were relinquished wherever possible, as they seem to be supported to different degrees by common browsers and screenreaders. So to prevent unforseeable problems, only plain ol' HTML, CSS and basic JavaScript was used.
+
+    Features:
+
+    - Announces the "Show dialog" button as collapsed to indicate expandable info
+    - Gives proper feedback to screenreaders:
+        - When opened, the focus is set to the dialog's title
+        - When closed, the focus is set back to the the button that opened the dialog
+    - Prevents screenreaders and keyboards from leaving the dialog while opened:
+        - `aria-hidden="true"` is temporarily applied to all elements in the background
+        - `tabindex="-1"` is temporarily applied to focusable elements in the background
+        - Both attributes are removed (resp. reset to their original state) when the dialog is closed
+    - Adds an opaque curtain to dim the background
+    - Prevents the background from being scrolled &rarr; removed as it caused the background to flicker because of the missing scrollbars)
+    - Allows content to exceed the dialog's height (and doesn't break any scrolling for screenreaders or keyboard-only users
+    - Allows to close the dialog by:
+        - Hitting the esc key
+        - Clicking a "Close dialog" button
+        - Clicking somewhere on the curtain
+
+    By the way, to see a list of recommended accessible dialog plugins, see #{link_to 'Dialog wigets', page_path('dialog_widgets')}!
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path
+
+= example 'RRRNXK'
+
+#conclusion aria-hidden="true"
+  markdown:
+    Known issues:
+
+    - NVDA+IE: the title isn't announced when the dialog is opened (a bug in NVDA, see [issue 5825](https://github.com/nvaccess/nvda/issues/5825))
+    - NVDA+IE: the "Show dialog" button isn't announced when the dialog is closed
+    - Some elements are announced as "clickable" (this has to do with the curtain being clickable to dismiss it, but maybe this can be optimised somehow, see [Are there ways to react upon a click without adding an event?](http://stackoverflow.com/questions/36151647))
+
+    Notes:
+
+    - `role="dialog"` wasn't used as this made NVDA+IE switch to focus mode
+    - Instead of setting the focus to the dialog title, another idea was to just leave the focus on the "show dialog" button, so that screenreaders would announce "expanded". As everything except the dialog would be hidden, the expectation was that moving the cursor (browse or focus) would make the cursor jump to the dialog. Sadly, in both JAWS and NVDA, the focus wasn't set to the first element, but to some later element (this seems to be an internal problem regarding the focus position of screenreaders). See [issue 5831](https://github.com/nvaccess/nvda/issues/5831).
+
+  p#home
+    = link_to 'Accessibility Developer Guide', root_path

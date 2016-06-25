@@ -1,0 +1,74 @@
+= headline_with_flash 'Windows in a box'
+
+== render 'windows_in_a_box_teaser'
+
+markdown:
+  ## Why Windows is a must-have
+
+  - Blind internet surfers use screenreader software to let it read the screen contents to them
+      - [JAWS](http://www.freedomscientific.com/Products/Blindness/Jaws) is the most prevalent commercial screenreader
+      - [NVDA](http://www.nvaccess.org/) is the most prevalent open source screenreader
+      - Source: [WebAIM: Screen Reader User Survey 2015 Results](http://webaim.org/projects/screenreadersurvey6/)
+      - Both are native Windows apps
+  - You won't get around acquiring some Windows operating system
+      - If you're on a Mac or Linux computer, you can install Windows as a virtual machine (see below)
+      - Even if Windows is your host OS already, it's a good thing to do accessibility testing in a virtual machine, as otherwise, running test tools (like a screenreader) may impair your daily workflow
+
+  ## Using a virtual machine (VM)
+
+  - The easiest way is to grab a [free Windows VM from modern.IE](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) and run it using VMWare virtualisation software
+  - All these VMs are free and legal, as they will expire after some time period (90 days?)
+  - I suggest you download the VM `IE11 on Win7` as it can be re-activated a few times after expiration
+
+  ### VMWare Fusion (Mac)
+
+  - Unzip the VM using [The Unarchiver](http://wakaba.c3.cx/s/apps/unarchiver.html), as the built-in unzip version isn't capable of zip64 files
+  - Download [VMWare Fusion (Mac)](http://www.vmware.com/ch/products/fusion) or [VMWare Workstation Player (Windows, Linux)](http://www.vmware.com/de/products/player/), install and launch it
+      - There are alternatives to VMWare, but VMWare has proven to us to be the most seamless and performing option
+  - Choose `File` → `Import` and select the `*.ovf` file in the extracted folder
+  - Start the VM
+  - If you have a retina display, under `Virtual Machine` → `Settings`, go to `Display` and deselect `Use full resolution for Retina display` (otherwise your eyes will begin to hurt)
+  - To be able to connect to the internet, first shutdown the VM, then add a network adapter by clicking on `Add Device...` and choosing `Network Adapter`
+      - Use option `Share with my Mac`
+      - You may have to start and restart the VM to make it work
+
+  #### Emulating the Insert key
+
+  - Screenreaders rely heavily on the Insert key which isn't available on Macs, so you will have to emulate it
+  - Download [Karabiner](https://github.com/tekezo/Karabiner), install and launch it
+  - Under `Misc & Uninstall` click on `Open private.xml`, which will open a Finder window
+  - Replace `private.xml` with (#{link_to 'private.xml', '/karabiner/private.xml'})
+  - Reload the configuration by clicking `Change Key` and then `Reload XML` (you should see an entry `Command-right to Insert (VMWare Fusion)` in the list, make sure it is active!)
+  - Now you can use your right Cmd key as Insert key (in VMWare Fusion only)
+  - Feel free to choose some other key instead of right Cmd, see [private.xml Reference Manual](https://pqrs.org/osx/karabiner/xml.html.en)
+  - PS: VMWare Fusion offers a similar feature under under `Preferences` → `Keyboard & Mouse` → `Key Mappings`
+      - Here, you can map a key combination to `Insert`, but sadly not a modifier key alone
+          - For example, you could map `Option-X`
+          - Now whenever you have to press an NVDA keyboard shortcut, instead of `Insert` press `Option-X` (for example, instead of `Insert-F7`, press `Option-X-F7`)
+          - This works for many cases, but some keyboard shortcuts of screenreaders are so complex that this won't work anymore
+  - PPS: You can also buy an [USB num lock keyboard](http://lmgtfy.com/?q=USB+num+lock+keyboard)
+
+  #### Prevent opening the Start menu when pressing Cmd-Tab
+
+  - Power users are used to use `Cmd-Tab` to switch between opened applications in OSX
+  - Sadly, this triggers the Start menu within the running Windows virtual machine
+  - Prevent this by going to `Preferences` → `Keyboard & Mouse` → `Mac Host Shortcuts`, then under `For Windows key, use` select `Right Command Key`.
+
+  #### VMWare preventing OSX from waking up correctly?
+
+  - There's a [known problem](https://communities.vmware.com/thread/467919?start=0&tstart=0) of VMWare Fusion that can prevent OSX from re-enabling keyboard and mouse after wake up from sleep
+      - If nothing else fixes the problem, [use SleepWatcher to shutdown the VM automatically before going to sleep](https://communities.vmware.com/message/2489757#2489757)
+
+  ### VMWare Workstation Player (Windows, Linux)
+
+  - Download [VMWare Workstation Player](http://www.vmware.com/de/products/player/), install and launch it
+  - TODO
+
+  ### Additional information
+
+  - Because these free VMs expire after some time (and you have to download a new one), it's better to get a registered copy of Windows yourself because many accessibility related tools only run on Windows and you will customize and maintain your own selection over time.
+  - If you already own a Windows serial, you can download the appropriate official ISO file directly from Microsoft → look here: [Where can I download Windows 7 (legally from Microsoft)?](https://superuser.com/questions/78761/where-can-i-download-windows-7-legally-from-microsoft/305434#305434)
+
+  ### Antivirus
+
+  - We hightly recommend to install an antivirus software in your VM, for example [Avira Free Antivirus](https://www.avira.com/)

@@ -2,8 +2,6 @@
 
 == render 'screenreader_installation_teaser'
 
-==
-
 markdown:
   ## Why a screenreader?
 
@@ -11,99 +9,141 @@ markdown:
   - Screenreaders rely exactly on the same website data like other web browsers do (including custom CSS and JavaScript), in fact: a screenreader runs on top of a "normal" web browser (e.g. Firefox)!
   - Conclusion: you won't get around learning how to use a screenreader if you want to design modern accessible websites
 
-  ## Our screenreader of choice: NVDA
+  ## NVDA screenreader
 
-  - Most blind internet surfers are using [NVDA](http://www.nvaccess.org/) or [JAWS](http://www.freedomscientific.com/Products/Blindness/Jaws)
-  - NVDA is free and more compliant to the specs, so we're using NVDA as reference
+  - NVDA is free and more compliant to the specs, so we're using NVDA as main reference when developing websites
 
-  ## NVDA installation
+  ### NVDA installation
 
-  - [Download NVDA](http://www.nvaccess.org/download/) and [install it](http://community.nvda-project.org/documentation/userGuide.html#toc9) (→ help, #{link_to "I don't use Windows!", page_path('i_dont_use_windows')})
-  - [Download Focus Highlight Plugin](http://addons.nvda-project.org/addons/focusHighlight.en.html) and install it
-    - This plugin shows a red border for focusable and a green border for non-focusable elements when NVDA is reading them
+  - [Download NVDA](http://www.nvaccess.org/download/)
 
-  ## Starting NVDA (and make it shut up on demand)
+  #### Normal installation (requires admin rights)
 
-  - You can start and restart NVDA any time by pressing the `Ctrl + Option + N`
+  - Normal installation means installing NVDA like any other application
+      - This means that NVDA can automatically start during and/or after log-on, that it provides a keyboard shortcut to start/restart it, associates add-on files, etc.
+      - We recommend normal over portable installation (see below)
+  - [Install NVDA](http://www.nvaccess.org/files/nvda/documentation/userGuide.html?#toc11)
+
+  #### Portable installation (no admin rights required)
+
+  - If you don't have admin rights on your computer, NVDA offers the option to be installed as `portable`
+      - NVDA's portable installation has [some restrictions](http://www.nvaccess.org/files/nvda/documentation/userGuide.html?#toc10)
+  - [Install NVDA](http://www.nvaccess.org/files/nvda/documentation/userGuide.html?#toc15)
+  - Be sure to manually create a new folder as installation location, e.g. `NVDA` on your Desktop
+
+  ### Starting NVDA
+
+  - If you chose normal installation, you can start (and restart) NVDA any time by pressing the `Ctrl + Option + N`
+      - If you choose portable installation, simply start NVDA using the `NVDA.exe` in its installation folder
   - After clicking away the start screen, you won't see much of NVDA except a small icon in the system tray
+      - By the way, using `CapsLock` as modifier key doesn't seem to work in a virtual machine (?)
+
+  ### NVDA Configuration
+
+  #### Opening the NVDA menu
+
+  - NVDA offers a menu with a lot of settings
+  - You can open it by pressing `Insert + N`
+  - You can navigate it using the arrow keys
+  - For quick navigation, press the letter on you keyboard that is underlined in the wanted menu item
+      - For example, press `E` for `Exit`
+      - In this guide, we indicate those letters by putting braces around them, like so: `(E)xit` or `Manage (a)dd-ons...`
+  - You can close the menu items by pressing `Esc`
+  - You can also open the NVDA menu by clicking on the Icon in the `System Tray`
+
+  #### Installing add-ons
+
+  - If you chose normal installation, double click the downloaded file and NVDA will install it
+  - If you chose portable installation, TODO
+
+  #### Make NVDA shut up on demand
+
   - After launching NVDA, it will begin talking and talking whatever your current focus lies on the screen:
       - You can make it shut up for the time being by pressing the `Ctrl` key
       - Whenever you move the focus though (e.g. by moving your mouse), NVDA will begin talking again!
       - To make NVDA completely shut up:
-          - You can shut it down: In the NVDA menu (which opens by pressing `Insert + N`), select `(E)xit`
-          - You can change speech mode to "beep" or "off" by pressing `Insert + S` repeatedly → be aware that NVDA is still running and intercepting your key presses!
+          - You can shut it down: In the NVDA menu, select `(E)xit`
+          - You can change speech mode to `beep` or `off` by pressing `Insert + S` repeatedly → be aware that NVDA is still running and intercepting your key presses!
 
-  ## NVDA Configuration
+  #### Disable mouse focus
 
-  ### Disable mouse focus
+  - As visually non-impaired developers, we usually want to rely on using the mouse sometimes
+  - To avoid NVDA brabbling like hell when moving it, we disable mouse focus like so:
+    - In the NVDA menu, choose `(P)references` → `(M)ouse settings`
+    - Disable `Enable mouse tracking` and press `Enter`
 
-  As visually non-impaired developers, we usually want to rely on using the mouse sometimes. To avoid NVDA brabbling like hell when moving it, we disable mouse focus like so:
+  #### FocusHighlight add-on
 
-  - In the NVDA menu, choose `(P)references` → `(M)ouse settings`
-  - Disable `Enable mouse tracking` and press `Enter`
+  - This add-on indicates visually where the cursor is when browsing and interacting with NVDA
+  - [Download Focus Highlight add-on](http://addons.nvda-project.org/addons/focusHighlight.en.html) (stable version) and install it
 
-  ### Stop reading and reading (and reading and reading...) automatically
+  #### Stop reading and reading (and reading and reading...) automatically
 
-  NVDA by default reads everything from the position of the focus onwards down (e.g. when refreshing a webpage). This is not what developers usually want.
-
+  - NVDA by default reads everything from the position of the focus onwards down (e.g. when refreshing a webpage)
+  - This is not what developers usually want.
   - In the NVDA menu, choose `(P)references` → `(B)rowse mode`
   - Disable `Automatic say all on page load` and press `Enter`
+  - Now NVDA stops after reading the current element.
 
-  Now NVDA stops after reading the current element.
+  #### A bearable voice synthesizer (optional)
 
-  ### A bearable voice synthesizer (optional)
-
-  The standard NVDA voice synthesizer is a bit hard to understand, so let's install a nicer, more natural one.
-
-  - [Microsoft Speech Platform - Runtime (Version 11)](http://www.microsoft.com/en-us/download/details.aspx?id=27225) and install it
-  - [Download Microsoft Speech Platform - Server Runtime Languages ](https://www.microsoft.com/en-us/download/details.aspx?id=21924) and install them (my favorites are `MSSpeech_TTS_en-US_ZiraPro` for english and `MSSpeech_TTS_de-DE_Hedda` for german)
-  - In the NVDA menu, choose `(P)references` → `(S)ynthesizer` (or simply press `P` and then `S`)
-  - As synthesizer, choose `Microsoft Speech Platform` and press `Enter`
+  - The standard NVDA voice synthesizer is a bit robotic, so let's install a nicer, more natural one.
+  - [Download Svox Pico add-on](http://files.nvaccess.org/nvda-addons/svox-pico-2.0.nvda-addon) and install it
+  - In the NVDA menu, choose `(P)references` → `(S)ynthesizer`
+  - As synthesizer, choose `Svox pico synthesizer` and press `Enter`
   - In the NVDA menu, choose `(P)references` → `(V)oice settings`, choose your desired voice, and press `Enter`
+  - While this voice synthesizer sounds more natural, it tends to be slower
+      - It might be a good idea to think about switching back to the original voice after you have accustomed a bit to NVDA
 
-  While this voice synthesizer sounds more natural, it tends to be slower. It might be a good idea to think about switching back to the original voice after you have accustomed a bit to NVDA and maybe want to let it read out stuff faster.
+  #### GUI language
 
-  ### GUI language
-
-  You can choose the language of NVDA itself (the GUI, not the voice).
-
+  - You can choose the language of NVDA itself (the GUI, not the voice).
   - In the NVDA menu, choose `(P)references` → `(G)eneral settings`
-  - Choose your desired language (I suggest you're using `English, en` to be able to easily follow this guide)
+  - Choose your desired language (we suggest you're using `English, en` to be able to easily follow this guide)
 
-  ### Keyboard layout
+  #### Keyboard layout
 
-  There's a "Desktop" and a "Laptop" layout. For this guide, "Laptop" is used.
-
+  - There's a `Desktop` and a `Laptop` layout. For this guide, `Laptop` is used.
   - In the NVDA menu, choose `(P)references` → `(K)eyboard settings`
-  - Choose "laptop" as keyboard layout
+  - Choose `laptop` as keyboard layout
 
-  ### Speech viewer shortcut
+  #### Speech viewer shortcut
 
-  The speech viewer displays the audio output in text form, which is very useful. By default, it can be opened like this: in the NVDA menu, choose `(T)ools` → `(S)peech viewer`. You can add a shortcut like this:
+  - The speech viewer displays the audio output in text form, which is very useful
+  - By default, it can be opened like this: in the NVDA menu, choose `(T)ools` → `(S)peech viewer`
+  - You can add a shortcut like this:
+    - In the NVDA menu, choose `(P)references` → `I(n)nput gestures`
+    - Enter `speech` into `Filter by`
+    - Under `Tools`, select `Toggles the NVDA Speech viewer...`
+    - Click `Add`
+    - Press the desired shortcut, e.g. `Ctrl + Option + V`
+    - From the popping up menu, choose the entry with `all layouts`
+    - Click `OK`
+  - At the time being, the speech viewer doesn't remember its position, see [issue #5050](https://github.com/nvaccess/nvda/issues/5050)
 
-  - In the NVDA menu, choose `(P)references` → `I(n)nput gestures`
-  - Enter `speech` as filter
-  - Under `Tools`, select `Toggles the NVDA Speech viewer...`
-  - Click `Add`
-  - Press the desired shortcut, e.g. `Ctrl + Option + V`
-  - From the popping up menu, choose the entry with `all layouts`
+  ### Keyboard vs. mouse
 
-  At the time being, the speech viewer doesn't remember its position, see [issue #5050](https://github.com/nvaccess/nvda/issues/5050).
-
-  ## Keyboard vs. mouse
-
-  - There are 3 typical user types:
-    - General users who use keyboard and mouse (while seeing the screen)
-    - People with motoric impairments who often only use a keyboard (while seeing the screen)
-    - Blind people who only use a keyboard (while - evidently - **not** seeing the screen)
-  - **Each and every piece** of your website has to be accessible to all 3 users, and the stuff displayed on screen should always reflect what you are doing with either keyboard or mouse!
+  - Blind people don't use a mouse
   - So you should learn #{link_to 'how to control a computer using the keyboard only', page_path('keyboard_navigation_basics')}
-  - Keep in mind: When NVDA is active, it intercepts the key strokes and may alter existing functionality or add new one! So don't be surprised when the computer sometimes behaves differently when controlling it with the keyboard while NVDA is activated.
+  - Keep in mind: When NVDA is active and browsing content, it intercepts every key stroke and may alter existing functionality or add new one
+  - So don't be surprised when the computer sometimes behaves differently when controlling it with the keyboard while NVDA is activated
 
-  ## Which browser to use?
+  ## JAWS screenreader
 
-  - Most NVDA users browse with Internet Explorer or [Firefox](http://www.mozilla.com/en-US/firefox)
-  - For development, Firefox surely is a good choice, but be sure to test your stuff on Internet Explorer, too!
-    - NVDA accesses the accessibility layer of the chosen browser
-    - This means: NVDA behaves differently depending on the browser (or whatever application) used
-  - Chrome (at the time being) sadly is no browser of choice in this respect
+  ### JAWS installation
+
+  - [Download JAWS](http://www.freedomscientific.com/Downloads/JAWS) and [install it](http://www.freedomscientific.com/Content/Documents/Manuals/JAWS/JAWS-Quick-Start-Guide.pdf)
+
+  ### Starting JAWS
+
+  - TODO
+
+  ### JAWS configuration
+
+  - TODO
+
+  #### Braille Viewer
+
+  - JAWS doesn't offer a `Speech Viewer` like NVDA, but at least its `Braille Viewer` gives some basic info about where JAWS' focus is at the moment
+      - More info here: [Re: Any JAWS equivalent to NVDA "Speech Viewer"?](http://webaim.org/discussion/mail_message?id=22894)
+

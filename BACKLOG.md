@@ -1,5 +1,21 @@
 # Backlog Accessibility Developer Guide
 
+## Wanted Features
+
+### Tagging Mechanismus
+
+- Jede Ressource im ADG kann getaggt werden
+- Über die Tags können Nutzer sich zwischen verwandten Themen bewegen
+
+### Custom Pandoc-Abkürzungen
+
+- Z.B. [example-123] könnte einen direkten Link nach Example 123 geben
+
+### Kommentarfunktion
+
+- Bei Pages einfache Kommentare ermöglichen
+- Bei Examples Möglichkeit, Forks zu Verlinken?
+
 ## Do not forget to...
 
 - Use `build_stubbed` method to create test data whenever possible!

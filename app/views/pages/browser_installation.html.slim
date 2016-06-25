@@ -1,0 +1,138 @@
+= headline_with_flash 'Screenreader installation: JAWS'
+
+== render 'browser_installation_teaser'
+
+markdown:
+  ## Which browser to use?
+
+  - Screenreaders access the accessibility layer of the currently active application
+  - Browsers render a website and offer information through the accessibility layer
+  - The same way websites don't look 100% identical in different browsers, their accessibility layers aren't identical
+  - It's important to make sure your website works on the most typical combinations of screenreaders and browsers, which are:
+      - JAWS on Internet Explorer
+      - JAWS on Firefox
+      - NVDA on Firefox
+  - For both screenreaders and browsers, we always use the most current stable versions
+  - Regarding screenreader usage, [Edge](http://windows.microsoft.com/en-US/windows-10/getstarted-get-to-know-microsoft-edge) is **not** relevant yet, and neither is Chrome!
+  - There are a lot of browser add-ons which are useful in the daily workflow of an accessibility web developer, so beneath Internet Explorer and Firefox we also suggest to install Chrome
+
+  ### Internet Explorer (IE)
+
+  - [Internet Explorer](http://windows.microsoft.com/en-US/internet-explorer/download-ie) is already installed in a Windows environment (make sure it's the most recent version 11!)
+      - This may be the reason why it's still the most wide-spread browser used with JAWS
+  - Make sure that in the menu, under `View` → `Toolbars`, all items are selected
+      - If you don't see the menu, press the `Alt` key (`Option` on Mac) once
+
+  #### Web Accessibility Toolbar (WAT)
+
+  - Download and install the [Web Accessibility Toolbar](https://www.paciellogroup.com/resources/wat/)
+
+  ### Firefox (FF)
+
+  - Firefox is used by both JAWS and NVDA users a lot
+  - For development, Firefox in combination with NVDA is the best choice, but be sure to test your stuff on the other combinations, too!
+  - [Download Firefox](https://www.mozilla.org/en-US/firefox/new/) and install it
+  - Make sure that in the menu, under `View` → `Toolbars`, all items are selected
+      - If you don't see the menu, press the `Alt` key (`Option` on Mac) once
+
+  #### Web Developer Toolbar
+
+  - Install the [Web Developer Toolbar](https://addons.mozilla.org/de/firefox/addon/web-developer/)
+
+  #### HeadingsMap
+
+  - Install [HeadingsMap](https://addons.mozilla.org/de/firefox/addon/headingsmap/)
+  - If you want an icon for HeadingsMap in the toolbar, click `Open menu` (the "burger" icon on the top right), click `Customize` and drag the icon to the toolbar, then click `Exit customize`
+
+  #### Tanaguru Contrast-Finder
+
+  - Install the [Tanaguru Contrast-Finder](https://addons.mozilla.org/de/firefox/addon/tanaguru-contrast-finder/)
+
+  ### Chrome
+
+  - [Download Chrome](https://www.google.com/chrome/browser/desktop/) and install it
+
+  #### WAVE Evaluation Tool
+
+  - [Download WAVE Evaluation Tool](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) and install it
+  - This also exists for Firefox, but is outdated
+
+  #### HeadingsMap
+
+  - Install [HeadingsMap](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi)
+  - This is the same as the one for Firefox
+
+  #### Colour Contrast Analyser
+
+  - Install [Colour Contrast Analyser](https://chrome.google.com/webstore/detail/color-contrast-analyzer/dagdlcijhfbmgkjokkjicnnfimlebcll)
+
+  #### Accessibility Developer Tools
+
+  - Install [Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb)
+
+  #### aXe
+
+  - Install [aXe](https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd)
+
+  #### NoCoffee
+
+  - Install [NoCoffee](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl/related)
+
+  ### Bookmarks
+
+  - We suggest you add every bookmarklet to every browser, but be sure to have them at least in your main browser
+
+  #### Accessibility Developer Guide
+
+  - Bookmark this: [Accessibility Developer Guide](http://developer-guide.access4all.ch/)
+
+  #### Web Content Accessibility Guidelines (WCAG) 2.0
+
+  - Bookmark this: [Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/WCAG20/)
+
+  #### W3C Markup Validation Service
+
+  - Bookmark this: [W3C Markup Validation Service](https://validator.w3.org/)
+
+  #### Tenon.io
+
+  - Bookmark this: [Tenon.io](http://tenon.io/)
+
+  #### TAW
+
+  - Bookmark this: [TAW](http://www.tawdis.net/)
+
+  #### SortSite
+
+  - Bookmark this: [SortSite](http://www.powermapper.com/products/sortsite/checks/accessibility-checks/)
+
+  ### Bookmarklets
+
+  - Bookmarklets are bookmarks containing JavaScript code instead of an URL
+      - They are executed while surfing a website and typically analyse some stuff and display results
+  - Install bookmarklets by dragging the specified link to your bookmarks toolbar
+      - If you're not able to drag and drop, copy the link location, create a bookmark manually, and paste the copied code as URL
+  - We suggest you add every bookmarklet to every browser, but be sure to have them at least in your main browser
+
+  #### Visible Headings bookmarklet
+
+  - Bookmark this: #{render 'visible_headings_bookmarklet_code'}
+  - This doesn't work in IE
+
+  #### Contents structured
+
+  - This is a slightly optimised version of the [Inhalte gegliedert](http://testen.bitv-test.de/bookmarklets.html) bookmarklet
+      - Our version highlights some more elements
+  - Bookmark this: #{render 'contents_structured_bookmarklet_code'}
+
+  #### HTML_CodeSniffer
+
+  - Go to [HTML_CodeSniffer](http://squizlabs.github.io/HTML_CodeSniffer/) and get the bookmarklet there
+
+  #### Revenge.css
+
+  - Go to [Revenge.css](http://heydonworks.com/revenge_css_bookmarklet/) and get the bookmarklet there
+
+  #### Diagnostic.css
+
+  - Go to [Diagnostic.css](http://www.karlgroves.com/2013/09/07/diagnostic-css-super-quick-web-accessibility-testing/) and get the bookmarklet there

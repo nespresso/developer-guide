@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+  <appdef>
+    <appname>VMWARE_FUSION</appname>
+    <equal>com.vmware.fusion</equal>
+  </appdef>
+
+  <item>
+    <name>Command-right to Insert</name>
+    <identifier>private.cmd_right_to_insert</identifier>
+    <only>VMWARE_FUSION</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_R,
+      KeyCode::PC_INSERT
+    </autogen>
+  </item>
+</root>

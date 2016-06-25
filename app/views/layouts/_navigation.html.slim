@@ -31,8 +31,10 @@ nav#navigation.navbar.yamm.navbar-inverse.navbar-fixed-top
         - navigation.group '<span class="hidden-sm">Preparation</span><span class="visible-sm-inline-block" aria-hidden="false">Prep.</span>' do
           - navigation.item 'Overview', page_path('preparation_overview')
           li role="separator" class="divider"
+          - navigation.item 'Windows in a box', page_path('windows_in_a_box')
           - navigation.item 'Screenreader installation', page_path('screenreader_installation')
-          - navigation.item "I don't use Windows!", page_path('i_dont_use_windows')
+          - navigation.item 'Browser installation', page_path('browser_installation')
+          - navigation.item 'Other tools', page_path('other_tools')
           - navigation.item 'Keyboard navigation basics', page_path('keyboard_navigation_basics')
 
         - navigation.group 'Examples' do

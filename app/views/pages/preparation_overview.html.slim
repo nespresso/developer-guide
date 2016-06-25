@@ -6,12 +6,21 @@
 
     .row
       .col-md-4
+        h2 = link_to 'Windows in a box', page_path('windows_in_a_box')
+        == render 'windows_in_a_box_teaser'
+
+      .col-md-4
         h2 = link_to 'Screenreader installation', page_path('screenreader_installation')
         == render 'screenreader_installation_teaser'
 
       .col-md-4
-        h2 = link_to "I don't use Windows!", page_path('i_dont_use_windows')
-        == render 'i_dont_use_windows_teaser'
+        h2 = link_to 'Browser installation', page_path('browser_installation')
+        == render 'browser_installation_teaser'
+
+    .row
+      .col-md-4
+        h2 = link_to 'Other tools', page_path('other_tools')
+        == render 'other_tools_teaser'
 
       .col-md-4
         h2 = link_to 'Keyboard navigation basics', page_path('keyboard_navigation_basics')

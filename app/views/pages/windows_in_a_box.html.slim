@@ -54,6 +54,16 @@ markdown:
   - Sadly, this triggers the Start menu within the running Windows virtual machine
   - Prevent this by going to `Preferences` → `Keyboard & Mouse` → `Mac Host Shortcuts`, then under `For Windows key, use` select `Right Command Key`.
 
+  #### Integration
+
+  - We think it's easiest to have VMWare running in `Single Window` mode (default)
+      - Use `Cmd-Tab` to switch between Mac apps
+      - Use `Alt-Tab` to switch between Windows apps (when VMWare is active)
+
+  - If you want all Windows apps to be accessible from the Dock, the "Unity" mode is pretty cool, too
+      - Even the Windows' task bar icons will appear in the Mac's menu bar!
+  - Whichever mode you prefer, simply start new Windows apps through the VMWare icon in the menu bar
+
   #### VMWare preventing OSX from waking up correctly?
 
   - There's a [known problem](https://communities.vmware.com/thread/467919?start=0&tstart=0) of VMWare Fusion that can prevent OSX from re-enabling keyboard and mouse after wake up from sleep
@@ -63,6 +73,16 @@ markdown:
 
   - Download [VMWare Workstation Player](http://www.vmware.com/de/products/player/), install and launch it
   - TODO
+
+  #### Integration
+
+  - We think `Single Window` mode (default) isn't the best choice
+      - There's a conflict between the host Windows and the virtual machine when using `Alt-Tab`.
+  - We suggest to use the "Unity" mode
+      - You will notice a yellow border around the virtual machine's windows (and a small yellow icon in their menu bars)
+      - Simply start new Windows apps through the VMWare menu bar on the bottom left, right above the host Windows' Start menu
+      - There's a small bug that causes the VMWare app to be displayed when switching between opened windows
+          - This won't happen as long as the VMWare app window is minimized
 
   ### Additional information
 
